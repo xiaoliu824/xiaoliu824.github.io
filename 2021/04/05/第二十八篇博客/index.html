@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | 小六的博客</title>
+  <title>第二十八篇博客 | 小六的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小六的博客">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="学习JavaScript的第九天(数组)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第二十八篇博客">
+<meta property="og:url" content="http://example.com/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="小六的博客">
+<meta property="og:description" content="学习JavaScript的第九天(数组)">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/js/js91.png">
+<meta property="og:image" content="http://example.com/js/js92.png">
+<meta property="og:image" content="http://example.com/js/js93.png">
+<meta property="article:published_time" content="2021-04-05T08:35:14.000Z">
+<meta property="article:modified_time" content="2021-04-05T09:51:52.405Z">
 <meta property="article:author" content="小六">
+<meta property="article:tag" content="-JavaScript">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/js/js91.png">
   
     <link rel="alternative" href="/atom.xml" title="小六的博客" type="application/atom+xml">
   
@@ -156,36 +165,91 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-第二十八篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      第二十八篇博客
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+
+        
+        <a href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
   	<time datetime="2021-04-05T08:35:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十八篇博客</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习JavaScript的第九天-数组"><a href="#学习JavaScript的第九天-数组" class="headerlink" title="学习JavaScript的第九天(数组)"></a>学习JavaScript的第九天(数组)</h1><a id="more"></a>
+<h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h2><p>1.数组也是一个对象，它和普通对象功能类似，也是用来存储一些值的。</p>
+<p>2.不同的是普通对象是使用字符串作为属性名的，而数组是使用数字来作为索引操作元素的。</p>
+<p>3.索引<br>从0开始的整数<br>数组的存储性能比普通对象要好，在开发中我们经常使用数组来存储一些数据</p>
+<h2 id="2-操作数组"><a href="#2-操作数组" class="headerlink" title="2.操作数组"></a>2.操作数组</h2><h3 id="2-1向数组中添加元素"><a href="#2-1向数组中添加元素" class="headerlink" title="2.1向数组中添加元素"></a>2.1向数组中添加元素</h3><p>语法:数组[索引]=值;</p>
+<h3 id="2-2读取数组中的元素"><a href="#2-2读取数组中的元素" class="headerlink" title="2.2读取数组中的元素"></a>2.2读取数组中的元素</h3><p>语法:数组[索引]<br>如果读取不存在的索引，不会报错，会返回undefined</p>
+<h3 id="2-3获取数组的长度"><a href="#2-3获取数组的长度" class="headerlink" title="2.3获取数组的长度"></a>2.3获取数组的长度</h3><p>语法:数组.length<br>①    对于连续的数组，可以使用length属性来获取数组的长度(元素的个数)</p>
+<p>②    对于非连续的数组，使用length属性获得数组的最大索引+1<br>  尽量不要创建非连续的数组</p>
+<h3 id="2-4修改数组长度"><a href="#2-4修改数组长度" class="headerlink" title="2.4修改数组长度"></a>2.4修改数组长度</h3><p>①如果修改的length小于原来的数组长度，多余的元素会被删除。<br>②如果修改的length大于原来的数组长度，多余的部分会空出来。</p>
+<h3 id="2-5向数组的最后一个位置添加元素"><a href="#2-5向数组的最后一个位置添加元素" class="headerlink" title="2.5向数组的最后一个位置添加元素"></a>2.5向数组的最后一个位置添加元素</h3><p>语法:数组[数组.length]=值;<br>数组.length(相当于最大索引+1)</p>
+<p><img src="/js/js91.png"></p>
+<h2 id="3-数组的字面量"><a href="#3-数组的字面量" class="headerlink" title="3.数组的字面量"></a>3.数组的字面量</h2><p>1.使用字面量创建数组 语法：[ ]</p>
+<p>2.使用字面量创建数组时，可以在创建时指定数组中的元素</p>
+<p>3.使用构造函数创建数组时，也可以同时添加元素，将要添加的元素作为参数传递。(元素之间用逗号隔开)</p>
+<p>4.当创建数组只有一个参数时<br>①    字面量代表的是创建一个数组，数组中有这个元素,这个元素就是参数</p>
+<p>②    构造函数代表的是创建一个长度为多少的数组，这个多少为参数<br>例如参数为6时<br>①数组=[6] ②数组.length=6</p>
+<p>5.数组中的元素可以是任意数据类型</p>
+<p><img src="/js/js92.png"></p>
+<h2 id="4-数组的方法"><a href="#4-数组的方法" class="headerlink" title="4.数组的方法"></a>4.数组的方法</h2><h3 id="4-1push"><a href="#4-1push" class="headerlink" title="4.1push()"></a>4.1push()</h3><p>①该方法可以向数组的末尾添加一个或多个元素，并返回数组的新的长度。</p>
+<p>②可以将要添加的元素作为方法的参数传递，这样这些元素会自动添加到数组的末尾。</p>
+<p>③该方法会将数组新的长度作为返回值返回</p>
+<h3 id="4-2pop"><a href="#4-2pop" class="headerlink" title="4.2pop()"></a>4.2pop()</h3><p>①该方法可以删除数组的最后一个元素，并将删除元素作为返回值返回</p>
+<h3 id="4-3unshift"><a href="#4-3unshift" class="headerlink" title="4.3unshift()"></a>4.3unshift()</h3><p>①向数组开头添加一个或多个元素，并返回新的长度(新的长度会作为返回值返回)</p>
+<p>②向前边加入元素后，其他元素的索引会依次调整</p>
+<h3 id="4-4shift"><a href="#4-4shift" class="headerlink" title="4.4shift()"></a>4.4shift()</h3><p>①可以删除数组的第一个元素，并将删除元素作为返回值返回</p>
+<p><img src="/js/js93.png"></p>
+<h2 id="5-数组的遍历"><a href="#5-数组的遍历" class="headerlink" title="5.数组的遍历"></a>5.数组的遍历</h2>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wxsq.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,364 +261,118 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-04-05T08:17:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第二十七篇博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十七篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0JavaScript%E7%9A%84%E7%AC%AC%E4%B9%9D%E5%A4%A9-%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">学习JavaScript的第九天(数组)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">1.数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84"><span class="toc-number">1.2.</span> <span class="toc-text">2.操作数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%90%91%E6%95%B0%E7%BB%84%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1向数组中添加元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E8%AF%BB%E5%8F%96%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2读取数组中的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3获取数组的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E4%BF%AE%E6%94%B9%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4修改数组长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5%E5%90%91%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5向数组的最后一个位置添加元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">3.数组的字面量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">4.数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1push"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1push()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2pop"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2pop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3unshift"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3unshift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4shift"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4shift()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E7%BB%84%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.5.</span> <span class="toc-text">5.数组的遍历</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-04-05T07:04:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-05</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/05/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十六篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-03-31T04:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十五篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-03-31T03:25:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十四篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-03-31T02:29:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十三篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-03-31T01:48:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/31/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十二篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/19/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-03-19T07:35:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/19/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/17/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-01-17T10:42:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/17/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二十篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/12/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-01-12T08:58:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/12/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AF%87%E5%8D%9A%E5%AE%A2/">第十九篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="page-number" href="/archives/2021/page/3/">3</a><a class="extend next" rel="next" href="/archives/2021/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -578,8 +396,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
