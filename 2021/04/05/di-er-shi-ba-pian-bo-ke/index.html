@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-05
+                    2021-09-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    742
+                    1.2k
                 </div>
                 
 
@@ -441,7 +441,18 @@
 <p>②向前边加入元素后，其他元素的索引会依次调整</p>
 <h3 id="4-4shift"><a href="#4-4shift" class="headerlink" title="4.4shift()"></a>4.4shift()</h3><p>①可以删除数组的第一个元素，并将删除元素作为返回值返回</p>
 <p><img src="/js/js93.png"></p>
-<h2 id="5-数组的遍历"><a href="#5-数组的遍历" class="headerlink" title="5.数组的遍历"></a>5.数组的遍历</h2>
+<h3 id="4-5slice"><a href="#4-5slice" class="headerlink" title="4.5slice()"></a>4.5slice()</h3><p>①可以用来从数组中提取指定元素<br>该方法不会改变原数组,而是将截取到的元素封装到一个新数组中返回</p>
+<p>②参数<br>slice(start,end)<br>1.start 截取开始的位置索引,包含开始索引<br>2.end   截取结束的位置索引,不包含结束索引(不包含结束位置这个元素)<br> 第二个参数可以省略不写,此时会截取从开始索引往后的所有元素<br>3.索引可以传递一个负值,如果传递一个负值,则从后往前计算(-1 -&gt; 倒数第一个)</p>
+<p><img src="/js/js96.png"></p>
+<h2 id="5-数组的遍历"><a href="#5-数组的遍历" class="headerlink" title="5.数组的遍历"></a>5.数组的遍历</h2><p>所谓的遍历数组,就是将数组中的元素取出来</p>
+<p>①使用for进行遍历<br>语法:for(var i=0;i&lt;数组.length;i++){<br>console.log(数组[索引]);<br>}</p>
+<p><img src="/js/js94.png"></p>
+<p>②forEach<br> Ⅰ.forEach()这个方法只支持IE8以上的浏览器IE8及以下，浏览器均不支持该方法，如果需要兼容IE8，尽量不要使用forEach。</p>
+<p> Ⅱ.forEach()方法需要一个函数作为参数,像这种函数,由我们创建但是不由我们调用(由浏览器调用),我们称为回调函数</p>
+<p> Ⅲ.数组中有几个元素就会执行几次,每次执行时,浏览器会将遍历到的元素以实参的形式传递进来，我们可以来定义形参,来读取这些内容</p>
+<p> Ⅳ.浏览器会在回调函数中传递三个参数<br>  ①第一个参数,就是当前正在遍历的元素<br>  ②第二个参数,就是当前正在遍历元素的索引<br>  ③第三个参数,就是正在遍历的数组</p>
+<p><img src="/js/js95.png"></p>
+
                 
             </div>
             <hr/>
@@ -965,7 +976,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.8k</span>
+                        class="white-color">25.2k</span>
             
             
             
