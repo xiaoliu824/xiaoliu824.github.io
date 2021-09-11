@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-10
+                    2021-09-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.8k
                 </div>
                 
 
@@ -433,17 +433,27 @@
 <p>②    构造函数代表的是创建一个长度为多少的数组，这个多少为参数<br>例如参数为6时<br>①数组=[6] ②数组.length=6</p>
 <p>5.数组中的元素可以是任意数据类型</p>
 <p><img src="/js/js92.png"></p>
-<h2 id="4-数组的方法"><a href="#4-数组的方法" class="headerlink" title="4.数组的方法"></a>4.数组的方法</h2><h3 id="4-1push"><a href="#4-1push" class="headerlink" title="4.1push()"></a>4.1push()</h3><p>①该方法可以向数组的末尾添加一个或多个元素，并返回数组的新的长度。</p>
+<h2 id="4-数组的方法"><a href="#4-数组的方法" class="headerlink" title="4.数组的方法"></a>4.数组的方法</h2><h3 id="4-1-push"><a href="#4-1-push" class="headerlink" title="4.1 push()"></a>4.1 push()</h3><p>①该方法可以向数组的末尾添加一个或多个元素，并返回数组的新的长度。</p>
 <p>②可以将要添加的元素作为方法的参数传递，这样这些元素会自动添加到数组的末尾。</p>
 <p>③该方法会将数组新的长度作为返回值返回</p>
-<h3 id="4-2pop"><a href="#4-2pop" class="headerlink" title="4.2pop()"></a>4.2pop()</h3><p>①该方法可以删除数组的最后一个元素，并将删除元素作为返回值返回</p>
-<h3 id="4-3unshift"><a href="#4-3unshift" class="headerlink" title="4.3unshift()"></a>4.3unshift()</h3><p>①向数组开头添加一个或多个元素，并返回新的长度(新的长度会作为返回值返回)</p>
+<h3 id="4-2-pop"><a href="#4-2-pop" class="headerlink" title="4.2 pop()"></a>4.2 pop()</h3><p>①该方法可以删除数组的最后一个元素，并将删除元素作为返回值返回</p>
+<h3 id="4-3-unshift"><a href="#4-3-unshift" class="headerlink" title="4.3 unshift()"></a>4.3 unshift()</h3><p>①向数组开头添加一个或多个元素，并返回新的长度(新的长度会作为返回值返回)</p>
 <p>②向前边加入元素后，其他元素的索引会依次调整</p>
-<h3 id="4-4shift"><a href="#4-4shift" class="headerlink" title="4.4shift()"></a>4.4shift()</h3><p>①可以删除数组的第一个元素，并将删除元素作为返回值返回</p>
+<h3 id="4-4-shift"><a href="#4-4-shift" class="headerlink" title="4.4 shift()"></a>4.4 shift()</h3><p>①可以删除数组的第一个元素，并将删除元素作为返回值返回</p>
 <p><img src="/js/js93.png"></p>
-<h3 id="4-5slice"><a href="#4-5slice" class="headerlink" title="4.5slice()"></a>4.5slice()</h3><p>①可以用来从数组中提取指定元素<br>该方法不会改变原数组,而是将截取到的元素封装到一个新数组中返回</p>
+<h3 id="4-5-slice"><a href="#4-5-slice" class="headerlink" title="4.5 slice()"></a>4.5 slice()</h3><p>①可以用来从数组中提取指定元素<br>该方法不会改变原数组,而是将截取到的元素封装到一个新数组中返回</p>
 <p>②参数<br>slice(start,end)<br>1.start 截取开始的位置索引,包含开始索引<br>2.end   截取结束的位置索引,不包含结束索引(不包含结束位置这个元素)<br> 第二个参数可以省略不写,此时会截取从开始索引往后的所有元素<br>3.索引可以传递一个负值,如果传递一个负值,则从后往前计算(-1 -&gt; 倒数第一个)</p>
 <p><img src="/js/js96.png"></p>
+<h3 id="4-6-splice"><a href="#4-6-splice" class="headerlink" title="4.6 splice()"></a>4.6 splice()</h3><p>1.可以用于删除数组中的指定元素<br>2.使用splice()会影响到原数组,会将指定元素从原数组中删除,并将删除的元素作为返回值返回<br>3.参数<br> ①第一个参数,表示开始位置的索引<br> ②第二个参数,表示删除元素的数量<br> ③第三个元素及以后,可以传递一些新元素,这些元素将会自动插入到开始位置索引前面</p>
+<p> <img src="/js/js97.png"></p>
+<h3 id="4-7-concat"><a href="#4-7-concat" class="headerlink" title="4.7 concat()"></a>4.7 concat()</h3><p> 1.concat()可以连接两个或多个数组,并将新的数组返回<br> 2.该方法不会对原数组产生影响<br> 3.里面可以写数组,也可以写元素</p>
+<p> <img src="/js/js99.png"></p>
+<h3 id="4-8-join"><a href="#4-8-join" class="headerlink" title="4.8 join()"></a>4.8 join()</h3><p> 1.该方法可以将数组转换为一个字符串<br> 2.该方法不会对原数组产生影响,而是将转换后的字符串作为结果返回<br> 3.在join()中可以指定一个字符串作为参数,这个字符串将会成为数组中元素的连接符<br> 4.如果不指定连接符,默认用逗号作为连接符</p>
+<p> <img src="/js/js100.png"></p>
+<h3 id="4-9-reverse"><a href="#4-9-reverse" class="headerlink" title="4.9 reverse()"></a>4.9 reverse()</h3><p> 1.该方法用来反转数组(前面的去后面,后面的去前面)<br> 2.该方法会直接修改数组</p>
+<p> <img src="/js/js101.png"></p>
+<h3 id="4-10-sort"><a href="#4-10-sort" class="headerlink" title="4.10 sort()"></a>4.10 sort()</h3><p> 1.该方法可以用来对数组中的元素进行排序<br> 2.该方法会影响到原数组,默认会按照Unicode编码进行排序<br> 3.对于纯数字的数组,使用sort()排序时,也会按照Unicode编码进行排序,所以对数字进行排序可能得到错误的结果<br> 4.我们可以自己来指定排序顺序,在sort()中添加一个回调函数,来指定排序规则,回调函数中需要定义两个形参,浏览器会分别使用数组中的元素作为实参去调用函数,使用哪个元素调用不稳定,但是肯定的是在数组中,a一定在b的前边<br> 5.浏览器会根据回调函数的返回值来决定元素的顺序<br>  ①如果返回一个大于0的值,则元素会交换位置<br>  ②如果返回一个小于0的值,则元素位置不变<br>  ③如果返回0,则认为两个元素想等,也不交换位置<br>  ④如果需要升序排列,则返回a-b,如果需要降序排列,则返回b-a</p>
+<p> <img src="/js/js102.png"></p>
 <h2 id="5-数组的遍历"><a href="#5-数组的遍历" class="headerlink" title="5.数组的遍历"></a>5.数组的遍历</h2><p>所谓的遍历数组,就是将数组中的元素取出来</p>
 <p>①使用for进行遍历<br>语法:for(var i=0;i&lt;数组.length;i++){<br>console.log(数组[索引]);<br>}</p>
 <p><img src="/js/js94.png"></p>
@@ -451,7 +461,8 @@
 <p> Ⅱ.forEach()方法需要一个函数作为参数,像这种函数,由我们创建但是不由我们调用(由浏览器调用),我们称为回调函数</p>
 <p> Ⅲ.数组中有几个元素就会执行几次,每次执行时,浏览器会将遍历到的元素以实参的形式传递进来，我们可以来定义形参,来读取这些内容</p>
 <p> Ⅳ.浏览器会在回调函数中传递三个参数<br>  ①第一个参数,就是当前正在遍历的元素<br>  ②第二个参数,就是当前正在遍历元素的索引<br>  ③第三个参数,就是正在遍历的数组</p>
-<p><img src="/js/js95.png"></p>
+<p> <img src="/js/js95.png"></p>
+<h2 id="6-数组的去重操作"><a href="#6-数组的去重操作" class="headerlink" title="6.数组的去重操作"></a>6.数组的去重操作</h2><p> <img src="/js/js98.png"></p>
 
                 
             </div>
@@ -976,7 +987,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.2k</span>
+                        class="white-color">25.8k</span>
             
             
             
