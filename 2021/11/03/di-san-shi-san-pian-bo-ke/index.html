@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第三十二篇博客, 张小六">
+    <meta name="keywords" content="第三十三篇博客, 张小六">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第三十二篇博客 | 张小六</title>
+    <title>第三十三篇博客 | 张小六</title>
     <link rel="icon" type="image/jpeg" href="/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第三十二篇博客</h1>
+                    <h1 class="description center-align post-title">第三十三篇博客</h1>
                 </div>
             </div>
         </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-01
+                    2021-11-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-02
+                    2021-11-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    847
+                    504
                 </div>
                 
 
@@ -415,22 +415,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="学习JavaScript的第十三天-字符串方法"><a href="#学习JavaScript的第十三天-字符串方法" class="headerlink" title="学习JavaScript的第十三天(字符串方法)"></a>学习JavaScript的第十三天(字符串方法)</h1><a id="more"></a>
-<h2 id="一、字符串的相关方法"><a href="#一、字符串的相关方法" class="headerlink" title="一、字符串的相关方法"></a>一、字符串的相关方法</h2><h3 id="1-字符保存"><a href="#1-字符保存" class="headerlink" title="1.字符保存"></a>1.字符保存</h3><p>1.在底层字符串是以字符数组的形式保存的<br>例如: HELLO(字符串) -&gt; [‘H’,’E’,’L’,’L’,’O’]</p>
-<h3 id="2-属性"><a href="#2-属性" class="headerlink" title="2.属性"></a>2.属性</h3><p>length 可以用来获取字符串的长度</p>
-<h3 id="3-方法"><a href="#3-方法" class="headerlink" title="3.方法"></a>3.方法</h3><p>①charAt()<br> 该方法可以返回字符串中指定位置的字符,根据索引来获取指定的字符</p>
-<p>②charCodeAt()<br> 该方法用来获取指定位置字符的字符编码(Unicode编码)</p>
-<p>③String.fromCharCode()<br> 该方法可以根据字符编码去获取字符</p>
-<p>④concat()<br> Ⅰ.该方法可以用来连接两个或多个字符串<br> Ⅱ.作用和”+”一样<br> Ⅲ.该方法对原字符串不会产生影响</p>
-<p>⑤indexOf()<br> Ⅰ.该方法可以检索一个字符串中是否含有指定内容<br> Ⅱ.如果该字符串中含有指定内容,就返回其(该字符)在字符串中第一次出现的索引<br> Ⅲ.如果没有找到指定的内容,则返回-1<br> Ⅳ.可以指定一个第二个参数,指定开始检索的位置索引(从索引为几的位置开始进行检索)</p>
-<p>⑥lastIndexOf()<br> Ⅰ.该方法用法和indexOf()一样,它返回一个指定的字符串值最后出现的位置<br> Ⅱ.不同的是indexOf()是从前往后找,lastIndexOf()从后往前找<br> Ⅲ.也可以指定开始查找的位置</p>
-<p>⑦slice()<br> Ⅰ.可以从字符串中截取指定的内容<br> Ⅱ.不会影响到原字符串,而是将截取内容返回<br> Ⅲ.参数<br>  (1)第一个参数,表示开始位置的索引(包括开始位置,截取到的结果包含该位置的元素)<br>  (2)第二个参数,表示结束位置的索引(不包括结束位置,截取到的结果不包含该位置的元素)<br>   如果省略第二个参数,则会截取到后边所有的<br>  (3)第二个参数也可以传递一个负数作为参数,负数的话将会从后边计算</p>
-<p>⑧substring()<br> Ⅰ.可以用来截取一个字符串,和slice()类似<br> Ⅱ.参数<br>  (1)第一个参数,表示开始位置的索引(包括开始位置,截取到的结果包含该位置的元素)<br>  (2)第二个参数,表示结束位置的索引(不包括结束位置,截取到的结果不包含该位置的元素)<br>  (3)第二个参数不可以传一个负值作为参数,如果传了一个负值,默认使用0<br>  (4)会自动调整参数位置(如果第二个参数小于第一个参数,则会自动交换参数位置)</p>
-<p>⑨substr<br> Ⅰ.该方法用来截取字符串<br> Ⅱ.参数<br>  (1)第一个参数表示截取开始位置的索引<br>  (2)第二个参数表示截取的长度(截取的数量,截取几个元素)</p>
-<p>⑩split()<br> Ⅰ.该方法可以将一个字符串拆分为一个数组<br> Ⅱ.参数<br>  (1)需要一个字符串作为参数,将会根据该字符串去拆分数组<br>  (2)如果传递一个空串作为参数,则会将每个字符都拆分为数组中的一个元素<br> 例如: var Str = ‘abcde’<br>      Str.split(‘’) 结果为 [‘a’,’b’,’c’,’d’,’e’]</p>
-<p>⑩①toUpperCase()<br> Ⅰ.该方法用来将一个字符串转换为大写并返回</p>
-<p>⑩②toLowerCase()<br> Ⅰ.该方法用来将一个字符串转换为小写并返回</p>
-<p><img src="/js/js108.png"><br><img src="/js/js109.png"></p>
+                <h1 id="学习JavaScript的第十四天-正则表达式"><a href="#学习JavaScript的第十四天-正则表达式" class="headerlink" title="学习JavaScript的第十四天(正则表达式)"></a>学习JavaScript的第十四天(正则表达式)</h1><a id="more"></a>
+<h2 id="一、正则表达式"><a href="#一、正则表达式" class="headerlink" title="一、正则表达式"></a>一、正则表达式</h2><h3 id="1-什么是正则"><a href="#1-什么是正则" class="headerlink" title="1.什么是正则"></a>1.什么是正则</h3><p> 正则表达式用于定义一些字符串的规则,计算机可以根据正则表达式来检查一个字符串是否符合规则,或者将字符串中符合规则的字符提取出来</p>
+<h3 id="2-创建正则表达式"><a href="#2-创建正则表达式" class="headerlink" title="2.创建正则表达式"></a>2.创建正则表达式</h3><p> 语法: var 变量 = new RegExp(‘正则表达式’,’匹配模式’);<br> ①两个参数都是字符串<br>   Ⅰ.第一个参数为正则表达式<br>   Ⅱ.第二个参数为匹配模式</p>
+<p> ②使用typeof检查正则对象,会返回object</p>
+<p> ③var res = new RegExp(‘a’,’i’)<br>   这个正则表达式可以用来检查一个字符串中是否含有a,忽略大小写,有就返回true,没有返回false</p>
+<p> ④在构造函数中,可以传递一个匹配模式作为第二个参数,可以是i(忽略大小写)、g(全局匹配模式)</p>
+<h3 id="3-正则表达式的方法"><a href="#3-正则表达式的方法" class="headerlink" title="3.正则表达式的方法"></a>3.正则表达式的方法</h3><p> test()<br> 该方法可以用来检查一个字符串是否符合正则表达式的规则,符合返回true,不符合返回false</p>
+<p> <img src="/js/js110.png"></p>
+<h2 id="二、正则表达式的语法"><a href="#二、正则表达式的语法" class="headerlink" title="二、正则表达式的语法"></a>二、正则表达式的语法</h2><h3 id="1-使用字面量来创建正则表达式"><a href="#1-使用字面量来创建正则表达式" class="headerlink" title="1.使用字面量来创建正则表达式"></a>1.使用字面量来创建正则表达式</h3><p> 语法: var 变量 = /正则表达式/匹配模式(这里要注意不是字符串,构造函数创建时为字符串)<br> 使用字面量创建更加简单,使用构造函数创建更加灵活</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2.|"></a>2.|</h3><p> 使用”|”表示或者的意思</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3.[]"></a>3.[]</h3><p> 使用”[]”, “[]”里面的内容也是或的关系<br> 例如:<br>  ①”[ab]” == a|b(a或b)<br>  ②”[a-z]” 表示任意的小写字母<br>  ③”[A-Z]” 表示任意大写字母<br>  ④”[A-z]” 表示任意字母<br>  ⑤”[0-9]” 表示任意数字</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4.[^]"></a>4.[^]</h3><p> 使用”[^]”,表示除了括号内的字符都可以<br> 例如:<br>  ①[^ab] 表示找除了ab以外的字符,如果有就返回true,没有则返回false<br>  var reg = /[^ab]/<br>  reg.test(‘abc’)<br>  返回true,该字符串除了ab,还剩下c<br>  ②[^0-9] 表示除了数字</p>
+<p><img src="/js/js111.png"></p>
 
                 
             </div>
@@ -457,7 +454,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaoliu824.github.io/2021/11/01/di-san-shi-er-pian-bo-ke/">https://xiaoliu824.github.io/2021/11/01/di-san-shi-er-pian-bo-ke/</a>
+                    <a href="https://xiaoliu824.github.io/2021/11/03/di-san-shi-san-pian-bo-ke/">https://xiaoliu824.github.io/2021/11/03/di-san-shi-san-pian-bo-ke/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -668,9 +665,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/11/03/di-san-shi-san-pian-bo-ke/">
                     <div class="card-image">
@@ -688,9 +686,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -699,6 +697,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -717,24 +716,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/31/di-san-shi-yi-pian-bo-ke/">
+                <a href="/2021/11/01/di-san-shi-er-pian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第三十一篇博客">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第三十二篇博客">
                         
-                        <span class="card-title">第三十一篇博客</span>
+                        <span class="card-title">第三十二篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习JavaScript的第十二天(包装类)
+                            学习JavaScript的第十三天(字符串方法)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-01
                             </span>
                         <span class="publish-author">
                             
