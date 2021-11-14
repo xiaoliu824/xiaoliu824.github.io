@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第二十五篇博客, 张小六">
+    <meta name="keywords" content="第三十五篇博客, 张小六">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第二十五篇博客 | 张小六</title>
+    <title>第三十五篇博客 | 张小六</title>
     <link rel="icon" type="image/jpeg" href="/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第二十五篇博客</h1>
+                    <h1 class="description center-align post-title">第三十五篇博客</h1>
                 </div>
             </div>
         </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-11-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-05
+                    2021-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.1k
                 </div>
                 
 
@@ -415,47 +415,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="学习JavaScript的第六天-对象"><a href="#学习JavaScript的第六天-对象" class="headerlink" title="学习JavaScript的第六天(对象)"></a>学习JavaScript的第六天(对象)</h1><a id="more"></a>
-<h2 id="1-对象Object"><a href="#1-对象Object" class="headerlink" title="1.对象Object"></a>1.对象Object</h2><p>1.JS中数据类型<br>String、 number、 Boolean、Null、undefined（五种基本数据类型）以上5种为基本数据类型，只要不是上边5种，全都是对象。<br>基本数据类型都是独立的个体，值和值之间没有关系<br>如果使用基本数据类型的值，我们所创建的变量都是独立的，不能成为一个整体</p>
-<p>2.Object  对象<br>对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性。</p>
-<h2 id="2-对象的分类"><a href="#2-对象的分类" class="headerlink" title="2.对象的分类"></a>2.对象的分类</h2><p>1.内建对象<br>ES标准中定义的对象，在任何ES的实现中都可以使用<br>比如:Math String Boolean Number Object</p>
-<p>2.宿主对象<br>由JS的运行环境提供的对象，主要指浏览器提供的对象（目前来讲）<br>比如:BOM(浏览器对象模型)  DOM(文档对象模型) 表示的是两组数据</p>
-<p>3.自定义对象<br>由开发人员自己创建的对象</p>
-<h2 id="3-操作对象"><a href="#3-操作对象" class="headerlink" title="3.操作对象"></a>3.操作对象</h2><p>1.使用new关键字调用的函数,是构造函数(constructor)，构造函数是专门用来创建对象的<br>使用typeof检查一个对象时，返回一个object</p>
-<p>2.在对象中保存的值被称为属性</p>
-<p>3.向对象添加属性<br>语法:对象.属性名=属性值; </p>
-<p>4.读取对象中的属性<br>语法:对象.属性名<br>如果读取对象中没有的属性，不会报错而是会返回undefiend。</p>
-<p>5.修改对象的属性值<br>语法:对象.属性名=新值；</p>
-<p>6.删除对象的属性<br>语法:delete 对象.属性名</p>
-<p><img src="/js/js59.png"></p>
-<h2 id="4-属性名"><a href="#4-属性名" class="headerlink" title="4.属性名"></a>4.属性名</h2><p>1.对象的属性名不强制要求遵守标识符的规范，但我们尽量按照标识符的规范去做。</p>
-<p>2.如果使用特殊的属性名不能使用(.)的方式来操作而使用</p>
-<p>另一种方式：<br>语法 对象[“属性名”]=属性值；<br>读取时也采用 对象[“属性名”]这种方式。<br>使用[ ]这种形式去操作属性值，更加的灵活。<br>在[ ]中可以传一个变量,变量的值是多少，就会读取那个属性</p>
-<p><img src="/js/js60.png"></p>
-<h2 id="5-属性值"><a href="#5-属性值" class="headerlink" title="5.属性值"></a>5.属性值</h2><p>在JS中属性值可以是一个任意类型的值，也可以是一个对象<br><img src="/js/js61.png"></p>
-<h2 id="6-in-运算符"><a href="#6-in-运算符" class="headerlink" title="6.in 运算符"></a>6.in 运算符</h2><p>通过该运算符可以检查对象中是否有特定的属性值，如果有返回true，没有返回false<br>语法:“属性” in 对象</p>
-<p><img src="/js/js62.png"></p>
-<h2 id="7-基本数据类型和引用数据类型"><a href="#7-基本数据类型和引用数据类型" class="headerlink" title="7.基本数据类型和引用数据类型"></a>7.基本数据类型和引用数据类型</h2><p>1.基本数据类型<br>①string ②number ③boolean ④null ⑤undefined</p>
-<p>2.引用数据类型<br>Object</p>
-<p>3.JS中变量都是保存在栈内存中的，<br>①基本数据类型的值在栈内存中存储，值与值之间都是独立存在的，修改一个变量的值不会影响其他的变量的值。<br><img src="/js/js63.png"><br><img src="/js/js63yx.png"></p>
-<p>②对象(object)保存在堆内存中的，每次创建一个新的对象，就会在堆内存中开辟一个新的空间，而变量保存的是对象的内存地址(对象的引用)。如果两个变量保存的是同一个对象引用，当通过一个变量修改属性时，另一个也会受到影响。<br><img src="/js/js64.png"></p>
-<p><img src="/js/js64yx1.png"></p>
-<p><img src="/js/js64yx2.png"></p>
-<p>4.当比较两个基本数据类型时，就是比较两个值。<br>当比较两个引用数据类型时，它是比较两个对象的内存地址，如果两个值一摸一样，但地址不同，它也会返回false。<br><img src="/js/js65.png"></p>
-<p><img src="/js/js65yx.png"></p>
-<h2 id="8-对象字面量"><a href="#8-对象字面量" class="headerlink" title="8.对象字面量"></a>8.对象字面量</h2><p>1.使用对象字面量，可以在创建时，直接指定对象中的属性</p>
-<p>2.语法: {属性名:属性值, 属性名:属性值……}</p>
-<p>3.对象字面量的属性名可以加引号，也可以不加，建议不加,如果属性名为特殊的名字，必须加引号</p>
-<p>4.属性名和属性值是一组一组的名值对结构<br>名和值之间用冒号(:)连接,多个名值对之间用(,)隔开<br>如果一个属性之后没有其他属性了，就不要写逗号(写了容易报错)</p>
-<p><img src="/js/js66.png"></p>
-<h2 id="9-枚举对象中的属性"><a href="#9-枚举对象中的属性" class="headerlink" title="9.枚举对象中的属性"></a>9.枚举对象中的属性</h2><p>1.使用for…in 语句<br>2.语法: for(var 变量 in 对象){</p>
-<p>}</p>
-<p>3.for…in语句 对象中有几个属性,循环就执行几次</p>
-<p>4.每次执行时,会将对象中的一个属性的名字赋值给变量</p>
-<p><img src="/js/js76.png"></p>
-<h2 id="10-使用工厂方法创建对象"><a href="#10-使用工厂方法创建对象" class="headerlink" title="10.使用工厂方法创建对象"></a>10.使用工厂方法创建对象</h2><p>通过该方法可以大批量创建对象</p>
-<p><img src="/js/js83.png"></p>
-<p>使用工厂方法创建的对象，使用的构造函数都是Object 所以创建的对象都是Object这个类型，就导致我们无法区分出多种不同类型的对象</p>
+                <h1 id="学习JavaScript的第十六天-DOM操作样式"><a href="#学习JavaScript的第十六天-DOM操作样式" class="headerlink" title="学习JavaScript的第十六天(DOM操作样式)"></a>学习JavaScript的第十六天(DOM操作样式)</h1><a id="more"></a>
+<h2 id="一、DOM操作内联样式"><a href="#一、DOM操作内联样式" class="headerlink" title="一、DOM操作内联样式"></a>一、DOM操作内联样式</h2><h3 id="1-通过JS修改元素的样式"><a href="#1-通过JS修改元素的样式" class="headerlink" title="1.通过JS修改元素的样式"></a>1.通过JS修改元素的样式</h3><p> ①语法:<br>  元素.style.样式名 = 样式值(字符串形式)</p>
+<p>  注意:如果css样式名中含有-(减号),这种名称在JS是不合法的<br>  例如:<br>   background-color 需要将这种样式名修改为驼峰命名法,去掉-(减号),将-(减号)后的字母大写</p>
+<p> ②我们通过style属性设置的样式都是内联样式,而内联样式有较高的优先级,所有通过JS修改的样式会立即显示</p>
+<p> ③如果在样式中添加!important,则此时样式会有最高的优先级,即使通过JS也无法覆盖,此时JS样式会失效,所以尽量不要为样式添加!important</p>
+<h3 id="2-驼峰命名法"><a href="#2-驼峰命名法" class="headerlink" title="2.驼峰命名法"></a>2.驼峰命名法</h3><p> 当变量名或函数名是由一个或多个单词连结在一起,第一个单词以小写开始,从第二个单词往后的每个单词的首字母都采用大写字母,例如myName</p>
+<h3 id="3-读取元素样式"><a href="#3-读取元素样式" class="headerlink" title="3.读取元素样式"></a>3.读取元素样式</h3><p> 通过JS读取元素的样式<br> 语法: 元素.style.样式名</p>
+<h3 id="4-注意"><a href="#4-注意" class="headerlink" title="4.注意"></a>4.注意</h3><p> 通过style属性设置和读取的样式都是内联样式,无法读取样式表里的样式</p>
+<p><img src="/js/js133.png"></p>
+<h2 id="二、读取元素当前显示的样式"><a href="#二、读取元素当前显示的样式" class="headerlink" title="二、读取元素当前显示的样式"></a>二、读取元素当前显示的样式</h2><h3 id="1-currentStyle-只支持IE"><a href="#1-currentStyle-只支持IE" class="headerlink" title="1.currentStyle(只支持IE)"></a>1.currentStyle(只支持IE)</h3><p> ①语法<br> 元素.currentStyle.样式名(只支持IE浏览器)<br> 它可以用来读取当前元素正在显示的样式,如果当前元素没有设置样式,将返回样式的默认值<br> currentStyle只有IE支持,其他浏览器都不支持</p>
+<p><img src="/js/js134.png"></p>
+<h3 id="2-getComputedStyle-支持其他浏览器"><a href="#2-getComputedStyle-支持其他浏览器" class="headerlink" title="2.getComputedStyle(支持其他浏览器)"></a>2.getComputedStyle(支持其他浏览器)</h3><p> ①该方法用来获取元素当前正在显示的样式,这个方法是window的方法,可以直接使用</p>
+<p> ②参数<br>  第一个参数,要获取样式的元素<br>  第二个参数,可以传递一个伪元素,一般为null</p>
+<p> ③该方法一般会返回一个对象,对象中封装了当前元素对应的样式</p>
+<p> ④读取方法返回的样式<br>  对象.样式名(获取样式)<br>  如果获取的样式,没有设置值,则会获取到真实的值,而不是默认值.<br>  例如:<br>   width没有设置,不会返回auto(默认值),而是返回一个真实的长度</p>
+<p> ⑤该方法不支持IE8及以下的浏览器</p>
+<p> ⑥通过currentStyle和getComputedStyle()读取到的样式都是只读的,不可以修改,如果要修改必须通过style属性</p>
+<p> <img src="/js/js135.png"></p>
+<h3 id="3-定义一个函数，用来获取指定元素的样式"><a href="#3-定义一个函数，用来获取指定元素的样式" class="headerlink" title="3.定义一个函数，用来获取指定元素的样式"></a>3.定义一个函数，用来获取指定元素的样式</h3><p>  参数: obj 要获取样式的元素  name 要获取的样式名(字符串形式)<br><img src="/js/js136.png"></p>
+<h2 id="三、其他样式操作的属性"><a href="#三、其他样式操作的属性" class="headerlink" title="三、其他样式操作的属性"></a>三、其他样式操作的属性</h2><h3 id="3-1-clientWidth-可见宽度-和-clientHeight-可见高度"><a href="#3-1-clientWidth-可见宽度-和-clientHeight-可见高度" class="headerlink" title="3.1 clientWidth(可见宽度) 和 clientHeight(可见高度)"></a>3.1 clientWidth(可见宽度) 和 clientHeight(可见高度)</h3><p> ①这两个属性可以获取元素的可见高度和可见宽度<br> ②这些属性都不带px的,返回的都是一个数字,可以直接进行计算<br> ③会获取元素的宽度和高度,包括内容区和内边距<br> ④这些属性都是只读的,不能修改,修改用style的方式</p>
+<p><img src="/js/js137.png"></p>
+<h3 id="3-2-offsetWidth-整个宽度-和-offsetHeight-整个高度"><a href="#3-2-offsetWidth-整个宽度-和-offsetHeight-整个高度" class="headerlink" title="3.2 offsetWidth(整个宽度) 和 offsetHeight(整个高度)"></a>3.2 offsetWidth(整个宽度) 和 offsetHeight(整个高度)</h3><p> ①这两个属性可以获取元素的整个高度和宽度,包括内容区、内边距和边框</p>
+<p><img src="/js/js138.png"></p>
+<h3 id="3-3-offsetParent"><a href="#3-3-offsetParent" class="headerlink" title="3.3 offsetParent"></a>3.3 offsetParent</h3><p> ①可以获取当前元素的定位父元素<br> ②会获取到离当前元素最近的开启了定位的祖先元素,如果所有祖先元素都没开启定位,就返回body</p>
+<h3 id="3-4-offsetLeft"><a href="#3-4-offsetLeft" class="headerlink" title="3.4 offsetLeft"></a>3.4 offsetLeft</h3><p> 获取当前元素相对于其定位父元素的水平偏移量</p>
+<h3 id="3-5-offsetTop"><a href="#3-5-offsetTop" class="headerlink" title="3.5 offsetTop"></a>3.5 offsetTop</h3><p> 获取当前元素相对于其定位父元素的垂直偏移量</p>
+<p><img src="/js/js139.png"></p>
+<h3 id="3-6-scrollWidth"><a href="#3-6-scrollWidth" class="headerlink" title="3.6 scrollWidth"></a>3.6 scrollWidth</h3><p> 可以获取元素整个可以滚动区域的宽度(滚动条滚动,可以看到的都算)</p>
+<h3 id="3-7-scrollHeight"><a href="#3-7-scrollHeight" class="headerlink" title="3.7 scrollHeight"></a>3.7 scrollHeight</h3><p> 可以获取元素整个可以滚动区域的高度(滚动条滚动,可以看到的都算)</p>
+<h3 id="3-8-scrollLeft"><a href="#3-8-scrollLeft" class="headerlink" title="3.8 scrollLeft"></a>3.8 scrollLeft</h3><p> 可以获取水平滚动条滚动的距离</p>
+<h3 id="3-9-scrollTop"><a href="#3-9-scrollTop" class="headerlink" title="3.9 scrollTop"></a>3.9 scrollTop</h3><p> 可以获取垂直滚动条垂直滚动的距离</p>
+<p><img src="/js/js140.png"></p>
+<h2 id="四、滚动条"><a href="#四、滚动条" class="headerlink" title="四、滚动条"></a>四、滚动条</h2><p> ①当满足scrollHeight - scrollTop == clientHeight时,说明垂直滚动条已经滚动到底部了</p>
+<p> ②当满足scrollWidth - scrollLeft == clientWidth时,说明水平滚动条已经滚动到头了</p>
+<p><img src="/js/js141.png"></p>
+<h2 id="五、设置元素是否可用"><a href="#五、设置元素是否可用" class="headerlink" title="五、设置元素是否可用"></a>五、设置元素是否可用</h2><p> 1.disabled属性可以设置一个元素是否禁用<br>  如果设置为true,则元素禁用<br>  如果设置为false,则元素可用 </p>
 
                 
             </div>
@@ -482,7 +477,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaoliu824.github.io/2021/03/31/di-er-shi-wu-pian-bo-ke/">https://xiaoliu824.github.io/2021/03/31/di-er-shi-wu-pian-bo-ke/</a>
+                    <a href="https://xiaoliu824.github.io/2021/11/14/di-san-shi-wu-pian-bo-ke/">https://xiaoliu824.github.io/2021/11/14/di-san-shi-wu-pian-bo-ke/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -693,29 +688,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/05/di-er-shi-liu-pian-bo-ke/">
+                <a href="/2021/11/14/di-san-shi-wu-pian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="第二十六篇博客">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第三十五篇博客">
                         
-                        <span class="card-title">第二十六篇博客</span>
+                        <span class="card-title">第三十五篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习JavaScript的第七天(函数)
+                            学习JavaScript的第十六天(DOM操作样式)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -724,6 +720,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -742,24 +739,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/31/di-er-shi-si-pian-bo-ke/">
+                <a href="/2021/11/14/di-san-shi-si-pian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第二十四篇博客">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第三十四篇博客">
                         
-                        <span class="card-title">第二十四篇博客</span>
+                        <span class="card-title">第三十四篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习JavaScript的第五天(语句)
+                            学习JavaScript的第十五天(DOM)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
                             </span>
                         <span class="publish-author">
                             
