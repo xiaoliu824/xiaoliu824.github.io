@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-03
+                    2021-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    504
+                    1.6k
                 </div>
                 
 
@@ -428,6 +428,21 @@
 <h3 id="3"><a href="#3" class="headerlink" title="3.[]"></a>3.[]</h3><p> 使用”[]”, “[]”里面的内容也是或的关系<br> 例如:<br>  ①”[ab]” == a|b(a或b)<br>  ②”[a-z]” 表示任意的小写字母<br>  ③”[A-Z]” 表示任意大写字母<br>  ④”[A-z]” 表示任意字母<br>  ⑤”[0-9]” 表示任意数字</p>
 <h3 id="4"><a href="#4" class="headerlink" title="4.[^]"></a>4.[^]</h3><p> 使用”[^]”,表示除了括号内的字符都可以<br> 例如:<br>  ①[^ab] 表示找除了ab以外的字符,如果有就返回true,没有则返回false<br>  var reg = /[^ab]/<br>  reg.test(‘abc’)<br>  返回true,该字符串除了ab,还剩下c<br>  ②[^0-9] 表示除了数字</p>
 <p><img src="/js/js111.png"></p>
+<h2 id="三、字符串和正则相关的方法"><a href="#三、字符串和正则相关的方法" class="headerlink" title="三、字符串和正则相关的方法"></a>三、字符串和正则相关的方法</h2><h3 id="1-split"><a href="#1-split" class="headerlink" title="1.split"></a>1.split</h3><p> 该方法可以将一个字符串拆分为一个数组<br> ①方法中可以传递一个正则表达式作为参数,这样方法将会根据正则表达式去拆分字符串<br> var str = ‘1a2b3c4d5’ str.split(/[A-z]/) //1,2,3,4,5<br> ②这个方法即使不设置全局匹配,也会全部进行拆分</p>
+<h3 id="2-search"><a href="#2-search" class="headerlink" title="2.search"></a>2.search</h3><p> 该方法可以检索字符串中是否含有指定内容<br>  ①如果搜索到指定内容,则会返回第一次出现的索引<br>  ②如果没有搜索到,则会返回-1<br>  ③它可以接收一个正则表达式来作为参数,根据正则表达式去检索字符串<br>  ④search只会检索第一个出现的,即使设置全局匹配也没有用</p>
+<h3 id="3-match"><a href="#3-match" class="headerlink" title="3.match"></a>3.match</h3><p> 该方法可以根据正则表达式,从一个字符串中将符合要求的内容提取出来<br> ①默认情况下,match只会找到第一个符合要求的内容,找到后就停止检索<br> ②我们可以设置一个全局匹配模式,这样就会匹配到所有内容<br> ③可以为一个正则表达式设置多个匹配模式,顺序无所谓<br> /[a-z]/ig(设置两种匹配模式,既忽略大小写也全局匹配)<br> ④match会将所有匹配到的内容封装到一个数组中返回,即使只匹配到一个结果,也会封装到数组中</p>
+<h3 id="4-replace"><a href="#4-replace" class="headerlink" title="4.replace"></a>4.replace</h3><p> 该方法可以将字符串中指定内容替换为新的内容<br> 参数:<br> ①第一个参数为被替换的内容,可以接收一个正则表达式作为参数<br> ②第二个参数为新的内容(替换内容)<br> 该方法默认只会替换第一个出现的,可以设置其匹配模式为全局匹配(g)则进行全局匹配</p>
+<p> <img src="/js/js112.png"></p>
+<h2 id="四、正则表达式语法"><a href="#四、正则表达式语法" class="headerlink" title="四、正则表达式语法"></a>四、正则表达式语法</h2><h3 id="1-量词-数量"><a href="#1-量词-数量" class="headerlink" title="1.量词(数量)"></a>1.量词(数量)</h3><p> ①通过量词可以设置一个内容出现的次数<br> ②量词只对它前边的一个内容起作用<br> 例如:<br>  ab{3} b出现3次   (ab){3} 这样写是ab出现3次<br>  a{n}    a正好出现n次(正好出现n次)<br>  a{m,n}  a出现m-n次(m到n次,超出n次数为false(不行))<br>  ab{2,3} （b出现2次行，3次也行,4次则为false(不行)）<br>  a{m,}   a出现m次以上 b{3,} (b出现3次以上)</p>
+<p> ③+ 表示至少出现一次,相当于{1,}<br> ④* 表示0次或多次匹配,相当于{0,}(表示有没有都可以)<br> ⑤? 表示0次或一次匹配,相当于{0,1}(要么没有,要么只有一个，多了就不行了)<br> ⑥^ 表示开头 /^a/ (a开头的) 匹配开头的a<br> ⑦$ 表示结尾 /a$/ (a结尾的) 匹配结尾的a,a后面不能再有内容<br> 如果在正则表达式中同时使用^(表示开头)、$(表示结尾)则要求字符串必须完全符合正则表达式</p>
+<p> ⑧”.” 表示除换行符外的所有字符  “.“来表示普通的”.”(点)<br> 直接写(.)表示除换行符外的所有字符,使用()转义,告诉计算机这就是一个普通的点(.)<br> 在正则表达式中使用\作为转义字符</p>
+<p> ⑨”\“ 两个斜杠表示一个斜杠<br> 注意:使用构造函数创建正则时,由于它的参数是一个字符串,而”&quot;是字符串中的转义字符,如果要使用”&quot;,需要使用”\“来表示</p>
+<h2 id="五、特殊的表示"><a href="#五、特殊的表示" class="headerlink" title="五、特殊的表示"></a>五、特殊的表示</h2><h3 id="1-w和-W"><a href="#1-w和-W" class="headerlink" title="1.\w和\W"></a>1.\w和\W</h3><p> ①\w 表示任意字母、数字、<em>(下划线) [A-z0-9</em>]<br> ②\W 表示除了字母、数字、<em>(下划线) [^A-z0-9</em>]</p>
+<h3 id="2-d和-D"><a href="#2-d和-D" class="headerlink" title="2.\d和\D"></a>2.\d和\D</h3><p> ①\d 表示任意的数字 [0-9]<br> ②\D 表示除了数字 [^0-9]</p>
+<h3 id="3-s和-S"><a href="#3-s和-S" class="headerlink" title="3.\s和\S"></a>3.\s和\S</h3><p> ①\s 表示空格<br> ②\S 表示除了空格(除了空格,有没有其他的字符)</p>
+<h3 id="4-b和-B"><a href="#4-b和-B" class="headerlink" title="4.\b和\B"></a>4.\b和\B</h3><p> ①\b 表示单词边界(是否是一个独立的单词)<br> /\bchild\b/ 加了两个单词边界,独立的单词,前后都不可以挨着其他单词<br> ②\B 表示除了单词边界</p>
+<p>去除开头和结尾的空格<br>var str = ‘      hello        ‘<br>result = str.replace(/^\s*|\s*$/g,’’)</p>
+<p><img src="/js/js113.png"></p>
 
                 
             </div>
@@ -952,7 +967,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.9k</span>
+                        class="white-color">29k</span>
             
             
             
