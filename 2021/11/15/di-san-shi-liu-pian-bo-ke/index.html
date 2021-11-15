@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第十篇博客, 张小六">
+    <meta name="keywords" content="第三十六篇博客, 张小六">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第十篇博客 | 张小六</title>
+    <title>第三十六篇博客 | 张小六</title>
     <link rel="icon" type="image/jpeg" href="/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第十篇博客</h1>
+                    <h1 class="description center-align post-title">第三十六篇博客</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/css/">
-                                <span class="chip bg-color">-css</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">-JavaScript</span>
                             </a>
                         
                     </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-07
+                    2021-11-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-07
+                    2021-11-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    780
+                    491
                 </div>
                 
 
@@ -415,40 +415,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CSS基本知识"><a href="#CSS基本知识" class="headerlink" title="CSS基本知识"></a>CSS基本知识</h1><a id="more"></a>
-<h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h2><p>1.css是指层叠样式表，控制网页外观。</p>
-<p>2.样式定义如何显示 HTML 元素。</p>
-<p>3.样式通常存储在样式表中。</p>
-<p>4.把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题。</p>
-<p>5.外部样式表可以极大提高工作效率，外部样式表通常存储在 CSS 文件中，多个样式定义可层叠为一个。</p>
-<h2 id="2-引入方式"><a href="#2-引入方式" class="headerlink" title="2.引入方式"></a>2.引入方式</h2><h3 id="2-1内联样式表"><a href="#2-1内联样式表" class="headerlink" title="2.1内联样式表"></a>2.1内联样式表</h3><p>1.定义<br>使用标签的style属性引入css样式。</p>
-<p><img src="/css/c1.png"><br>运行结果:<br><img src="/css/c1yx.png"></p>
-<h3 id="2-2内部样式表"><a href="#2-2内部样式表" class="headerlink" title="2.2内部样式表"></a>2.2内部样式表</h3><p>1.定义<br>在style标签中书写CSS代码。style标签写在head标签中。</p>
-<p><img src="/css/c2.png"><br>运行结果:<br><img src="/css/c2yx.png"></p>
-<h3 id="2-3外部样式表"><a href="#2-3外部样式表" class="headerlink" title="2.3外部样式表"></a>2.3外部样式表</h3><h4 id="2-3-1链接式"><a href="#2-3-1链接式" class="headerlink" title="2.3.1链接式"></a>2.3.1链接式</h4><p>1.定义<br>CSS代码保存在扩展名为.css的样式表中。HTML文件引用扩展名为.css的样式表。</p>
-<p>2.语法<br>&lt; link type=”text/css” rel=”styleSheet”  href=”CSS文件路径” /&gt;</p>
-<p><img src="/css/c3.png"><br>css样式<br><img src="/css/c3ys.png"><br>运行结果:<br><img src="/css/c2yx.png"></p>
-<h4 id="2-3-2导入式"><a href="#2-3-2导入式" class="headerlink" title="2.3.2导入式"></a>2.3.2导入式</h4><p>1.定义<br>CSS代码保存在扩展名为.css的样式表中。HTML文件引用扩展名为.css的样式表。</p>
-<p>2.语法<br>&lt; style type=”text/css”&gt;<br>  @import url(“css文件路径”);<br>&lt; /style&gt;</p>
-<p><img src="/css/c4.png"><br>css样式<br><img src="/css/c3ys.png"><br>运行结果:<br><img src="/css/c2yx.png"></p>
-<h4 id="2-4权重"><a href="#2-4权重" class="headerlink" title="2.4权重"></a>2.4权重</h4><p>1.内联样式权重最大，内部样式和外部样式权重值相等，采用哪个取决于代码书写顺序，后写覆盖先写。</p>
-<p>2.先写的样式表有后写样式表中没有的样式，此则没有的样式会继续保留不会被覆盖</p>
-<h2 id="3-css继承性"><a href="#3-css继承性" class="headerlink" title="3.css继承性"></a>3.css继承性</h2><p>1.定义<br>定义：继承就是给父及设置了一些属性，子级继承了父及的该属性。</p>
-<p>1.color,font-,text-,line-*(这些可以继承)</p>
-<p>2.a标签的文字颜色和下划线是不能继承的</p>
-<p>3.h标签的文字大小是不能继承的</p>
-<p>4.像一些盒子元素，定位元素（浮动，绝对，固定定位）不能继承</p>
-<p><img src="/css/c5.png"><br>运行结果:<br><img src="/css/c5yx.png"><br>子级继承了字体颜色，边框不能继承</p>
-<h2 id="4-css层叠"><a href="#4-css层叠" class="headerlink" title="4.css层叠"></a>4.css层叠</h2><p>1.定义<br>1.层叠性只有在多个选择器选中”同一个标签”, 然后又设置了”相同的属性”, 才会发生层叠性。</p>
-<p>2.层叠性由优先级决定，间接选中就是指继承。</p>
-<p>3.都是直接选中时，并且是同类型的选择器时，谁写在后面就听谁的。</p>
-<p>2.优先级<br>!important &gt; 行内样式&gt;ID选择器 &gt; 类选择器 &gt; 标签 &gt; 通配符 &gt; 继承 &gt; 浏览器默认属性</p>
-<p>3.不冲突时，多个样式可层叠为一个。</p>
-<p><img src="/css/cd1.png"></p>
-<p>4.冲突时，按不同样式规则优先级来应用样式。<br><img src="/css/cd2.png"><br><img src="/css/cd3.png"><br><img src="/css/cd4.png"><br><img src="/css/cd5.png"><br><img src="/css/cd6.png"><br><img src="/css/cd7.png"><br><img src="/css/cd8.png"><br><img src="/css/cd9.png"><br><img src="/css/cd10.png"><br><img src="/css/cd11.png"></p>
-<p>5.如何计算权重<br>（数标签的数量）先数id,如果id相等再数类如果id不相等id多的选择器权重高，权重越高，优先级越高。如果id选择器数量相同，再数类选择器，最后数标签。</p>
-<p>比较权重的时候一定要注意：我们的选择器一定要命中对应的标签才可能让标签拥有对应的属性。</p>
-
+                <h1 id="学习JavaScript的第十七天-事件"><a href="#学习JavaScript的第十七天-事件" class="headerlink" title="学习JavaScript的第十七天(事件)"></a>学习JavaScript的第十七天(事件)</h1><a id="more"></a>
+<h2 id="一、事件"><a href="#一、事件" class="headerlink" title="一、事件"></a>一、事件</h2><h3 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h3><p> 事件就是指文档或浏览器窗口中发生的一些特定的交互瞬间。</p>
+<p> <img src="/js/js118.png"></p>
+<h3 id="2-事件对象"><a href="#2-事件对象" class="headerlink" title="2.事件对象"></a>2.事件对象</h3><p> 当事件的响应函数被触发时,浏览器每次都会将一个事件对象作为实参传递进响应函数中,在事件对象中封装了当前事件相关的一切信息,比如:鼠标的坐标、鼠标的滚轮方向…</p>
+<h3 id="3-事件方法"><a href="#3-事件方法" class="headerlink" title="3.事件方法"></a>3.事件方法</h3><h4 id="3-1-onmousemove"><a href="#3-1-onmousemove" class="headerlink" title="3.1 onmousemove"></a>3.1 onmousemove</h4><p> 该事件将会在鼠标在元素中移动时触发</p>
+<h4 id="3-2-clientX-和-clientY"><a href="#3-2-clientX-和-clientY" class="headerlink" title="3.2 clientX 和 clientY"></a>3.2 clientX 和 clientY</h4><p> ①clientX 可以获取鼠标指针的水平坐标<br> ②clientY 可以获取鼠标指针的垂直坐标<br> 这两个用于获取鼠标在当前的可见窗口的坐标</p>
+<p> <img src="/js/js142.png"></p>
+<h4 id="3-3-pageX-和-pageY"><a href="#3-3-pageX-和-pageY" class="headerlink" title="3.3 pageX 和 pageY"></a>3.3 pageX 和 pageY</h4><p>  ①pageX 可以获取鼠标相对于当前页面的水平坐标<br>  ②pageY 可以获取鼠标相对于当前页面的垂直坐标<br>  ③这两个属性在IE8中不支持,所以兼容IE8则不使用</p>
+<p><img src="/js/js143.png"></p>
+<h2 id="二、事件冒泡-Bubble"><a href="#二、事件冒泡-Bubble" class="headerlink" title="二、事件冒泡(Bubble)"></a>二、事件冒泡(Bubble)</h2><p> ①所谓事件冒泡指的是事件的向上传导,当后代元素上的事件被触发时,其祖先元素的相同事件也会被触发</p>
+<p> ②在开发中大部分情况冒泡都是有用的,如果不希望发生冒泡,可以通过事件对象取消</p>
+<p> ③取消冒泡<br> 将事件对象的cancelBubble属性设置为true,取消冒泡</p>
+<p><img src="/js/js144.png"></p>
+<h2 id="三、事件的委派"><a href="#三、事件的委派" class="headerlink" title="三、事件的委派"></a>三、事件的委派</h2><p> ①指将事件统一绑定给元素的共同的祖先元素,这样当后代元素上的事件触发时,会一直冒泡到祖先元素,从而通过祖先元素的响应函数来处理事件</p>
+<p> ②事件委派是利用了冒泡,通过委派可以减少事件绑定的次数,提高程序性能</p>
+<p> ③target<br>  event中的target表示触发事件的对象(事件由谁触发就是谁)</p>
+<p><img src="/js/js145.png"><br><img src="/js/js146.png"></p>
+<h2 id="四、事件的绑定"><a href="#四、事件的绑定" class="headerlink" title="四、事件的绑定"></a>四、事件的绑定</h2>
                 
             </div>
             <hr/>
@@ -474,7 +458,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaoliu824.github.io/2021/01/07/di-shi-pian-bo-ke/">https://xiaoliu824.github.io/2021/01/07/di-shi-pian-bo-ke/</a>
+                    <a href="https://xiaoliu824.github.io/2021/11/15/di-san-shi-liu-pian-bo-ke/">https://xiaoliu824.github.io/2021/11/15/di-san-shi-liu-pian-bo-ke/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -512,8 +496,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/css/">
-                                    <span class="chip bg-color">-css</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">-JavaScript</span>
                                 </a>
                             
                         </div>
@@ -685,29 +669,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/08/di-shi-yi-pian-bo-ke/">
+                <a href="/2021/11/15/di-san-shi-liu-pian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第十一篇博客">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第三十六篇博客">
                         
-                        <span class="card-title">第十一篇博客</span>
+                        <span class="card-title">第三十六篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CSS选择器
+                            学习JavaScript的第十七天(事件)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -716,11 +701,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">-css</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">-JavaScript</span>
                     </a>
                     
                 </div>
@@ -734,24 +720,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/07/di-jiu-pian-bo-ke/">
+                <a href="/2021/11/14/di-san-shi-wu-pian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第九篇博客">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第三十五篇博客">
                         
-                        <span class="card-title">第九篇博客</span>
+                        <span class="card-title">第三十五篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HTML marquee标签
+                            学习JavaScript的第十六天(DOM操作样式)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
                             </span>
                         <span class="publish-author">
                             
@@ -764,8 +750,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">-html</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">-JavaScript</span>
                     </a>
                     
                 </div>
