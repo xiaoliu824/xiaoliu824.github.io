@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2021-11-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    491
+                    1.2k
                 </div>
                 
 
@@ -432,7 +432,30 @@
 <p> ②事件委派是利用了冒泡,通过委派可以减少事件绑定的次数,提高程序性能</p>
 <p> ③target<br>  event中的target表示触发事件的对象(事件由谁触发就是谁)</p>
 <p><img src="/js/js145.png"><br><img src="/js/js146.png"></p>
-<h2 id="四、事件的绑定"><a href="#四、事件的绑定" class="headerlink" title="四、事件的绑定"></a>四、事件的绑定</h2>
+<h2 id="四、事件的绑定"><a href="#四、事件的绑定" class="headerlink" title="四、事件的绑定"></a>四、事件的绑定</h2><h3 id="4-1-对象-事件"><a href="#4-1-对象-事件" class="headerlink" title="4.1 对象.事件"></a>4.1 对象.事件</h3><p> ①使用对象.事件=函数的形式绑定的单击响应函数,它只能同时为一个元素的一个事件绑定一个响应函数,不能绑定多个,如果绑定多个,后面的会覆盖掉前面的</p>
+<h3 id="4-2-addEventListener"><a href="#4-2-addEventListener" class="headerlink" title="4.2 addEventListener"></a>4.2 addEventListener</h3><p> ①通过这个方法也可以为元素绑定响应函数</p>
+<p> ②参数<br>  Ⅰ.事件的字符串,不需要加on(onclick写成click)</p>
+<p>  Ⅱ.回调函数,当事件触发时该函数会被调用</p>
+<p>  Ⅲ.是否在捕获阶段发生事件,默认值是false(在冒泡阶段执行),true(表示在捕获阶段执行)</p>
+<p>  Ⅳ.使用addEventListener()可以同时为一个元素的相同事件同时绑定多个响应函数,这样当事件触发时,响应函数将会按照函数的绑定顺序执行</p>
+<p>  Ⅴ.这个方法不支持IE8</p>
+<h3 id="4-3-attachEvent"><a href="#4-3-attachEvent" class="headerlink" title="4.3 attachEvent"></a>4.3 attachEvent</h3><p> ①在IE8中可以使用attachEvent()来绑定事件</p>
+<p> ②参数<br>  Ⅰ.事件字符串,需要加on<br>  Ⅱ.回调函数</p>
+<p> ③这个方法可以同时为一个事件绑定多个处理函数,不同的是它是后绑定先触发</p>
+<p><img src="/js/js147.png"></p>
+<h3 id="4-4-自定义函数"><a href="#4-4-自定义函数" class="headerlink" title="4.4 自定义函数"></a>4.4 自定义函数</h3><p> ①自定义一个函数,用来为指定元素绑定响应函数</p>
+<p> ②参数<br>  Ⅰ.obj 要绑定事件的对象<br>  Ⅱ.eventStr 事件的字符串(不要on)<br>  Ⅲ.callback 回调函数</p>
+<p><img src="/js/js148.png"></p>
+<h2 id="五、事件的传播"><a href="#五、事件的传播" class="headerlink" title="五、事件的传播"></a>五、事件的传播</h2><h3 id="1-事件传播理解"><a href="#1-事件传播理解" class="headerlink" title="1.事件传播理解"></a>1.事件传播理解</h3><p> ①关于事件的传播网景公司和微软公司有不同的理解<br>  Ⅰ.微软公司认为事件应该是由内向外传播,也就是当事件触发时,应该先触发当前元素上的事件,然后向当前元素的祖先元素上传播,也就是说事件在冒泡阶段执行</p>
+<p>  Ⅱ.网景公司认为事件应该是由外向内传播,也就是当事件触发时,应该先触发当前元素最外层的祖先元素的事件,然后在向内传播</p>
+<h3 id="2-事件传播的阶段"><a href="#2-事件传播的阶段" class="headerlink" title="2.事件传播的阶段"></a>2.事件传播的阶段</h3><p> ①w3c综合了两个公司的方案,将事件的传播分为了3个阶段</p>
+<p> ②三个阶段<br>  Ⅰ.捕获阶段<br>   在捕获阶段时从最外层的祖先元素,向目标元素进行事件的捕获,但是默认此时不会触发事件</p>
+<p>  Ⅱ.目标阶段<br>   事件捕获到目标元素,捕获结束后开始在目标元素上触发事件</p>
+<p>  Ⅲ.冒泡阶段<br>   事件从目标元素向它的祖先元素传递,依次触发祖先元素上的事件</p>
+<p> ③如果希望在捕获阶段就触发事件,可以将addEventListener()的第三个参数设置为true,一般情况下,我们不会希望在捕获阶段触发事件,这个参数一般为false</p>
+<p> ④IE8及以下浏览器中没有捕获阶段</p>
+<p><img src="/js/js149.png"></p>
+
                 
             </div>
             <hr/>
@@ -956,7 +979,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">31.9k</span>
+                        class="white-color">32.6k</span>
             
             
             
