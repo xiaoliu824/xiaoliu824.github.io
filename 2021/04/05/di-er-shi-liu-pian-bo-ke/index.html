@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-05
+                    2021-11-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.4k
                 </div>
                 
 
@@ -430,16 +430,23 @@
 <p><img src="/js/js70.png"></p>
 <p>6.实参可以是一个对象，也可以是一个函数<br>例如：<br>mj()与mj的区别<br>mj() 调用函数，相当于使用函数的返回值<br>mj 函数对象，相当于直接使用对象本身(将mj函数对象作为返回值返回)</p>
 <p><img src="/js/js72.png"></p>
-<h2 id="5-函数的返回值"><a href="#5-函数的返回值" class="headerlink" title="5.函数的返回值"></a>5.函数的返回值</h2><h2 id="5-1返回值"><a href="#5-1返回值" class="headerlink" title="5.1返回值"></a>5.1返回值</h2><p>1.可以使用return来设置函数的返回值</p>
+<h2 id="5-函数的返回值"><a href="#5-函数的返回值" class="headerlink" title="5.函数的返回值"></a>5.函数的返回值</h2><h3 id="5-1返回值"><a href="#5-1返回值" class="headerlink" title="5.1返回值"></a>5.1返回值</h3><p>1.可以使用return来设置函数的返回值</p>
 <p>2.语法:return 值<br>return后的值将会作为函数的执行结果返回<br>可以定义一个变量来接收执行结果</p>
 <p>3.return后的语句都不会执行</p>
 <p>4.如果return语句后不跟任何值就相当于返回一个undefined。如果函数中不写return，也会返回undefined</p>
 <p>5.return后可以跟任意类型的值<br><img src="/js/js71.png"></p>
-<h2 id="5-2返回值类型"><a href="#5-2返回值类型" class="headerlink" title="5.2返回值类型"></a>5.2返回值类型</h2><p>返回值可以是任意数据类型，可以是一个函数，也可以是一个对象。</p>
+<h3 id="5-2返回值类型"><a href="#5-2返回值类型" class="headerlink" title="5.2返回值类型"></a>5.2返回值类型</h3><p>返回值可以是任意数据类型，可以是一个函数，也可以是一个对象。</p>
 <p><img src="/js/js73.png"></p>
-<h2 id="6-立即执行函数"><a href="#6-立即执行函数" class="headerlink" title="6.立即执行函数"></a>6.立即执行函数</h2><p>1.函数定义完，立即被调用,这种函数叫立即执行函数<br>立即执行函数往往只执行一次</p>
+<h2 id="6-函数的方法"><a href="#6-函数的方法" class="headerlink" title="6.函数的方法"></a>6.函数的方法</h2><h3 id="1-call和apply"><a href="#1-call和apply" class="headerlink" title="1.call和apply"></a>1.call和apply</h3><p> ①这两个方法都是函数对象的方法,需要通过函数对象来调用<br> (fun()这个是函数返回值,fun是函数对象)</p>
+<p> ②当对函数调用call()和apply(),都会调用函数执行<br> (函数调用这两个方法都会执行函数)</p>
+<p> ③在调用call()和apply()可以将一个对象指定为方法的第一个参数,此时这个对象将会成为函数执行时的this(call和apply中第一个参数传递的是谁,谁就是函数执行时的this)</p>
+<p> ④call()方法可以将实参在对象之后依次传递<br> 函数.call(传递对象,实参…)</p>
+<p> ⑤apply()方法需要将实参封装到一个数组中统一传递<br> 函数.apply(指定对象,[实参…])</p>
+<p> ⑥使用call和apply调用时,this是指定的那个对象</p>
+<p><img src="/js/js103.png"></p>
+<h2 id="7-立即执行函数"><a href="#7-立即执行函数" class="headerlink" title="7.立即执行函数"></a>7.立即执行函数</h2><p>1.函数定义完，立即被调用,这种函数叫立即执行函数<br>立即执行函数往往只执行一次</p>
 <p><img src="/js/js74.png"></p>
-<h2 id="7-构造函数"><a href="#7-构造函数" class="headerlink" title="7.构造函数"></a>7.构造函数</h2><p>1.构造函数就是一个普通函数，创建方式和普通函数没有区别，不同的是构造函数习惯上首字母大写。</p>
+<h2 id="8-构造函数"><a href="#8-构造函数" class="headerlink" title="8.构造函数"></a>8.构造函数</h2><p>1.构造函数就是一个普通函数，创建方式和普通函数没有区别，不同的是构造函数习惯上首字母大写。</p>
 <p>2.构造函数和普通函数的区别是调用方式的不同<br>普通函数直接调用，构造函数需要使用new关键字来调用</p>
 <p>3.构造函数的流程<br>①创建一个新的对象<br>②将新建的对象设置为函数中的this,在构造函数中可以使用this来引用新建的对象。<br>③逐行执行函数中的代码<br>④将新建对象作为返回值返回</p>
 <p>4.使用同一个构造函数创建的对象，我们称为一类对象，也将一个构造函数称为一个类。<br>我们通过一个构造函数创建的对象，称为是该类的实例。</p>
@@ -449,29 +456,35 @@
 <p>3.所有对象都是Object的后代，所以任何对象和Object做instanceof检查时，都返回true。</p>
 <p><img src="/js/js84.png"></p>
 <p>构造函数修改<br><img src="/js/js85.png"><br><img src="/js/js86.png"></p>
-<h2 id="8-方法"><a href="#8-方法" class="headerlink" title="8.方法"></a>8.方法</h2><p>1.对象的属性值可以是任何的数据类型，也可以是一个函数。</p>
+<h2 id="9-方法"><a href="#9-方法" class="headerlink" title="9.方法"></a>9.方法</h2><p>1.对象的属性值可以是任何的数据类型，也可以是一个函数。</p>
 <p>2.函数也可以称为对象的属性，如果一个函数作为一个对象的属性保存，那么我们称这个函数是这个对象的方法，调用这个函数也可以说是调用对象的方法(method)。</p>
-<h2 id="9-作用域"><a href="#9-作用域" class="headerlink" title="9.作用域"></a>9.作用域</h2><p>作用域指一个变量的作用的范围<br>在JS中一共有两种作用域:全局作用域和函数作用域</p>
-<h3 id="9-1全局作用域"><a href="#9-1全局作用域" class="headerlink" title="9.1全局作用域"></a>9.1全局作用域</h3><p>①直接编写在script标签内部的JS代码,都在全局作用域</p>
+<h2 id="10-作用域"><a href="#10-作用域" class="headerlink" title="10.作用域"></a>10.作用域</h2><p>作用域指一个变量的作用的范围<br>在JS中一共有两种作用域:全局作用域和函数作用域</p>
+<h3 id="10-1全局作用域"><a href="#10-1全局作用域" class="headerlink" title="10.1全局作用域"></a>10.1全局作用域</h3><p>①直接编写在script标签内部的JS代码,都在全局作用域</p>
 <p>②全局作用域在页面打开时创建，页面关闭时销毁</p>
 <p>③在全局作用域中有一个全局对象window<br>它代表的是一个浏览器的窗口,它由浏览器创建，我们可以直接使用。</p>
 <p>④在全局作用域中:<br>1.创建的变量都会作为window对象的属性保存<br>2.创建的函数都会作为window对象的方法保存</p>
 <p>⑤全局作用域中的变量都是全局变量，在页面的任意部分都可以访问到。</p>
 <p><img src="/js/js77.png"></p>
-<h3 id="9-2函数作用域"><a href="#9-2函数作用域" class="headerlink" title="9.2函数作用域"></a>9.2函数作用域</h3><p>①调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁。</p>
+<h3 id="10-2函数作用域"><a href="#10-2函数作用域" class="headerlink" title="10.2函数作用域"></a>10.2函数作用域</h3><p>①调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁。</p>
 <p>②每调用一次函数就会创建一个新的函数作用域，它们之间互相是独立的。</p>
 <p>③在函数作用域中可以访问全局作用域的变量，在全局作用域中不可访问函数作用域的变量。</p>
 <p>④当在函数作用域中操作一个变量时，它会先在自身域中寻找，如果有就直接使用，如果没有就向上一级作用域中寻找，直至找到全局作用域。<br>如果全局作用域中没有找到，则会报错。</p>
 <p>⑤在函数中要访问全局变量可以使用window对象。</p>
 <p>⑥函数作用域中也有声明提前的特性，使用var关键字声明的变量，会在函数中所有的代码执行之前被声明。<br>函数声明也会在函数中所有的代码执行之前被创建。</p>
 <p><img src="/js/js80.png"><br><img src="/js/js81.png"></p>
-<h2 id="10-声明提前"><a href="#10-声明提前" class="headerlink" title="10.声明提前"></a>10.声明提前</h2><h2 id="10-1变量的声明提前"><a href="#10-1变量的声明提前" class="headerlink" title="10.1变量的声明提前"></a>10.1变量的声明提前</h2><p>使用var关键字声明的变量，会在所有代码执行之前被声明(但是不会赋值)<br>但如果声明变量时不使用var关键字，则变量不会被声明提前<br><img src="/js/js78.png"></p>
-<h2 id="10-2函数的声明提前"><a href="#10-2函数的声明提前" class="headerlink" title="10.2函数的声明提前"></a>10.2函数的声明提前</h2><p>1.使用函数声明形式创建的函数function(){ }<br>它会在所有代码执行之前就被创建，所以我们可以在函数声明前调用函数。</p>
+<h2 id="11-声明提前"><a href="#11-声明提前" class="headerlink" title="11.声明提前"></a>11.声明提前</h2><h3 id="11-1变量的声明提前"><a href="#11-1变量的声明提前" class="headerlink" title="11.1变量的声明提前"></a>11.1变量的声明提前</h3><p>使用var关键字声明的变量，会在所有代码执行之前被声明(但是不会赋值)<br>但如果声明变量时不使用var关键字，则变量不会被声明提前<br><img src="/js/js78.png"></p>
+<h3 id="11-2函数的声明提前"><a href="#11-2函数的声明提前" class="headerlink" title="11.2函数的声明提前"></a>11.2函数的声明提前</h3><p>1.使用函数声明形式创建的函数function(){ }<br>它会在所有代码执行之前就被创建，所以我们可以在函数声明前调用函数。</p>
 <p>2.使用函数表达式创建的函数var 函数名=function(){ },不会被提前创建，所以不能在声明前调用。</p>
 <p><img src="/js/js79.png"></p>
-<h2 id="11-this"><a href="#11-this" class="headerlink" title="11.this"></a>11.this</h2><p>1.解析器在调用函数时，每次都会向函数内部传递进一个隐含参数，这个隐含参数是this。<br>this指向的是一个对象。这个对象我们称为函数的上下文对象。</p>
+<h2 id="12-this"><a href="#12-this" class="headerlink" title="12.this"></a>12.this</h2><p>1.解析器在调用函数时，每次都会向函数内部传递进一个隐含参数，这个隐含参数是this。<br>this指向的是一个对象。这个对象我们称为函数的上下文对象。</p>
 <p>2.根据函数的调用方式不同，this会指向不同的对象<br>①以函数的形式调用时，this永远都是window<br>②以方法的形式调用时，this就是调用方法的那个对象</p>
 <p><img src="/js/js82.png"></p>
+<h2 id="13-arguments"><a href="#13-arguments" class="headerlink" title="13.arguments"></a>13.arguments</h2><h3 id="1-隐含参数"><a href="#1-隐含参数" class="headerlink" title="1.隐含参数"></a>1.隐含参数</h3><p> 在调用函数时,浏览器每次都会传递两个隐含参数:<br>  ①函数的上下文对象this<br>  ②封装实参的对象arguments</p>
+<h3 id="2-什么是arguments"><a href="#2-什么是arguments" class="headerlink" title="2.什么是arguments"></a>2.什么是arguments</h3><p> arguments是一个类数组对象(和数组很像,但不是数组),它可以通过索引来操作数据,也可以获取长度</p>
+<h3 id="3-保存实参"><a href="#3-保存实参" class="headerlink" title="3.保存实参"></a>3.保存实参</h3><p> 在调用函数时,我们传递的实参在arguments中保存</p>
+<h3 id="4-用途"><a href="#4-用途" class="headerlink" title="4.用途"></a>4.用途</h3><p> arguments.length 可以用来获取实参的长度<br> 即使不定义形参,也可以通过arguments来使用实参<br> 不管定不定义形参,函数调用传递的实参都会在arguments中保存<br> arguments[0] 表示第一个实参,后面的依次类推</p>
+<h3 id="5-callee属性"><a href="#5-callee属性" class="headerlink" title="5.callee属性"></a>5.callee属性</h3><p> arguments里有一个属性叫做callee,这个属性对应一个函数对象,就是当前正在执行的函数对象</p>
+<p><img src="/js/js104.png"></p>
 
                 
             </div>
@@ -994,7 +1007,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">34.7k</span>
+                        class="white-color">35.3k</span>
             
             
             
