@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-06
+                    2021-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    494
+                    1.8k
                 </div>
                 
 
@@ -409,6 +409,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -424,6 +427,30 @@
 <p> ⑥中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性；</p>
 <p> ⑦一旦data中的数据发生改变，那么页面中用到该数据的地方也会自动更新</p>
 <p> 注意区分: js表达式和js代码(语句)<br>   1.js表达式:一个表达式会产生一个值,可以放在任何一个需要值的地方<br>    ① a<br>    ② demo(1)<br>    ③ x=== y ? 1 : 2<br>   2.js代码(语句)<br>    ① if(){}<br>    ② for(){}</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 引入Vue <span class="token operator">--</span><span class="token operator">></span>
+		<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"../js/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 准备好一个容器 <span class="token operator">--</span><span class="token operator">></span>
+		<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"demo"</span><span class="token operator">></span>
+			<span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello，<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>，<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>address<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+		<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> <span class="token operator">></span>
+			Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token comment">//阻止 vue 在启动时生成生产提示。</span>
+
+			<span class="token comment">//创建Vue实例</span>
+			<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+				el<span class="token operator">:</span><span class="token string">'#demo'</span><span class="token punctuation">,</span> <span class="token comment">//el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符串。</span>
+				data<span class="token operator">:</span><span class="token punctuation">&#123;</span> <span class="token comment">//data中用于存储数据，数据供el所指定的容器去使用，值我们暂时先写成一个对象。</span>
+					name<span class="token operator">:</span><span class="token string">'atguigu'</span><span class="token punctuation">,</span>
+					address<span class="token operator">:</span><span class="token string">'北京'</span>
+				<span class="token punctuation">&#125;</span>
+			<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+		<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+
+
+
+
 <h2 id="二、模板语法"><a href="#二、模板语法" class="headerlink" title="二、模板语法"></a>二、模板语法</h2><h3 id="1-Vue模板语法"><a href="#1-Vue模板语法" class="headerlink" title="1.Vue模板语法"></a>1.Vue模板语法</h3><p> Vue模板语法有两大类: ①插值语法 ②指令语法</p>
 <h3 id="2-分类"><a href="#2-分类" class="headerlink" title="2.分类"></a>2.分类</h3><h4 id="2-1-插值语法"><a href="#2-1-插值语法" class="headerlink" title="2.1 插值语法"></a>2.1 插值语法</h4><p> ①功能<br>  用于解析标签体内容</p>
 <p> ②写法<br>  ,xxx是js表达式,且可以直接读取到data中的所有属性</p>
@@ -435,6 +462,68 @@
 <h4 id="2-2-双向绑定-v-model"><a href="#2-2-双向绑定-v-model" class="headerlink" title="2.2 双向绑定(v-model)"></a>2.2 双向绑定(v-model)</h4><p> 数据不仅能从data流向页面,还可以从页面流向data</p>
 <p> 备注:<br>  ①双向绑定一般都应用在表单类的元素上 (如: input、select)</p>
 <p>  ②v-model:value 可以简写为v-model,因为v-model默认收集的就是value值</p>
+<h2 id="四、el与data的两种写法"><a href="#四、el与data的两种写法" class="headerlink" title="四、el与data的两种写法"></a>四、el与data的两种写法</h2><h3 id="1-el"><a href="#1-el" class="headerlink" title="1.el"></a>1.el</h3><p> ① new Vue时配置的el属性<br> ② 先创建Vue实例,随后通过vm.$mount(‘#root’)指定el的值</p>
+<h3 id="2-data"><a href="#2-data" class="headerlink" title="2.data"></a>2.data</h3><p> ①对象式<br> ②函数式<br>  如何选择:在组件中,data必须使用函数式,否则会报错</p>
+<h3 id="3-原则"><a href="#3-原则" class="headerlink" title="3.原则"></a>3.原则</h3><p> 由Vue管理的函数,一定不要写箭头函数,一旦写了箭头函数,this就不再是Vue实例了</p>
+<h2 id="五、Vue中的MVVM"><a href="#五、Vue中的MVVM" class="headerlink" title="五、Vue中的MVVM"></a>五、Vue中的MVVM</h2><h3 id="1-MVVM模型"><a href="#1-MVVM模型" class="headerlink" title="1.MVVM模型"></a>1.MVVM模型</h3><p> ①M: 模型(Model): data中的数据<br> ②V: 视图(View): 模板代码<br> ③VM: 视图模型(ViewModel): Vue实例</p>
+<h3 id="2-观察发现"><a href="#2-观察发现" class="headerlink" title="2.观察发现"></a>2.观察发现</h3><p> ①data中所有的属性,最后都出现在了vm身上<br> ②vm身上所有的属性及Vue原型上所有属性,在Vue模板中都可以直接使用</p>
+<h2 id="六、数据代理"><a href="#六、数据代理" class="headerlink" title="六、数据代理"></a>六、数据代理</h2><h3 id="1-Object-definedProerty"><a href="#1-Object-definedProerty" class="headerlink" title="1.Object.definedProerty"></a>1.Object.definedProerty</h3><h3 id="2-何为数据代理"><a href="#2-何为数据代理" class="headerlink" title="2.何为数据代理"></a>2.何为数据代理</h3><p> 通过一个对象代理对另一个对象中属性的操作(读/写)</p>
+<h3 id="3-Vue中的数据代理"><a href="#3-Vue中的数据代理" class="headerlink" title="3.Vue中的数据代理"></a>3.Vue中的数据代理</h3><h4 id="3-1-Vue中数据代理"><a href="#3-1-Vue中数据代理" class="headerlink" title="3.1 Vue中数据代理"></a>3.1 Vue中数据代理</h4><p> 通过vm对象来代理data对象中属性的操作(读/写)</p>
+<h4 id="3-2-Vue中数据代理的好处"><a href="#3-2-Vue中数据代理的好处" class="headerlink" title="3.2 Vue中数据代理的好处"></a>3.2 Vue中数据代理的好处</h4><p> 更加方便的操作data中的数据</p>
+<h4 id="3-3-基本原理"><a href="#3-3-基本原理" class="headerlink" title="3.3 基本原理"></a>3.3 基本原理</h4><p> 通过Object.defineProperty()把data对象中所有属性添加到vm上,为每一个添加到vm上的属性,都指定一个getter/setter。在getter/setter内部去操作(读/写)data中对应的属性</p>
+<h2 id="七、事件"><a href="#七、事件" class="headerlink" title="七、事件"></a>七、事件</h2><h3 id="1-事件的基本使用"><a href="#1-事件的基本使用" class="headerlink" title="1.事件的基本使用"></a>1.事件的基本使用</h3><p> ①使用v-on:xxx 或 @xxx 绑定事件,其中xxx是事件名</p>
+<p> ②事件的回调函数需要配置在methods对象中,最终会在vm上</p>
+<p> ③methods中配置的函数,不要使用箭头函数,否则this就不是vm了</p>
+<p> ④methods中配置的函数,都是被Vue所管理的函数,this指向是vm或组件实例对象</p>
+<p> ⑤@click=”demo”和@click=”demo($event)”效果一致,但后者可以传参</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
+			<span class="token operator">&lt;</span>h2<span class="token operator">></span>欢迎来到<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>学习<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+			<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>button v<span class="token operator">-</span>on<span class="token operator">:</span>click<span class="token operator">=</span><span class="token string">"showInfo"</span><span class="token operator">></span>点我提示信息<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span> <span class="token operator">--</span><span class="token operator">></span>
+			<span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"showInfo1"</span><span class="token operator">></span>点我提示信息<span class="token number">1</span>（不传参）<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+			<span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"showInfo2($event,66)"</span><span class="token operator">></span>点我提示信息<span class="token number">2</span>（传参）<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+		<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+		Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token comment">//阻止 vue 在启动时生成生产提示。</span>
+
+		<span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+			el<span class="token operator">:</span><span class="token string">'#root'</span><span class="token punctuation">,</span>
+			data<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+				name<span class="token operator">:</span><span class="token string">'尚硅谷'</span><span class="token punctuation">,</span>
+			<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+			methods<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+				<span class="token function">showInfo1</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+					<span class="token comment">// console.log(event.target.innerText)</span>
+					<span class="token comment">// console.log(this) //此处的this是vm</span>
+					<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'同学你好！'</span><span class="token punctuation">)</span>
+				<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+				<span class="token function">showInfo2</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span>number</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span>number<span class="token punctuation">)</span>
+					<span class="token comment">// console.log(event.target.innerText)</span>
+					<span class="token comment">// console.log(this) //此处的this是vm</span>
+					<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'同学你好！！'</span><span class="token punctuation">)</span>
+				<span class="token punctuation">&#125;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<h3 id="2-事件修饰符"><a href="#2-事件修饰符" class="headerlink" title="2.事件修饰符"></a>2.事件修饰符</h3><p> ①prevent: 阻止默认事件(常用)</p>
+<p> ②stop：阻止事件冒泡(常用)</p>
+<p> ③once: 事件只触发一次(常用)</p>
+<p> ④capture: 使用事件的捕获模式</p>
+<p> ⑤self: 只有event.target是当前操作的元素时才触发事件</p>
+<p> ⑥passive: 事件的默认行为立即执行,无需等待事件回调执行完毕</p>
+<h3 id="3-键盘事件"><a href="#3-键盘事件" class="headerlink" title="3.键盘事件"></a>3.键盘事件</h3><h4 id="3-1-Vue中常用的按键别名"><a href="#3-1-Vue中常用的按键别名" class="headerlink" title="3.1 Vue中常用的按键别名"></a>3.1 Vue中常用的按键别名</h4><p> (1) 回车 =&gt; enter<br> (2) 删除 =&gt; delete (捕获“删除”和“退格”键)<br> (3) 退出 =&gt; esc<br> (4) 空格 =&gt; space<br> (5) 换行 =&gt; tab (特殊，必须配合keydown去使用)<br> (6) 上 =&gt; up<br> (7) 下 =&gt; down<br> (8) 左 =&gt; left<br> (9) 右 =&gt; right</p>
+<h4 id="3-2-系统修饰键-用法特殊-ctrl、alt、shift、meta"><a href="#3-2-系统修饰键-用法特殊-ctrl、alt、shift、meta" class="headerlink" title="3.2 系统修饰键(用法特殊) ctrl、alt、shift、meta"></a>3.2 系统修饰键(用法特殊) ctrl、alt、shift、meta</h4><p> (1).配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。<br> (2).配合keydown使用：正常触发事件。</p>
+<h4 id="3-3-定制按键别名"><a href="#3-3-定制按键别名" class="headerlink" title="3.3 定制按键别名"></a>3.3 定制按键别名</h4><p> Vue.config.keyCodes.自定义键名 = 键码</p>
+<h4 id="3-4-注意点"><a href="#3-4-注意点" class="headerlink" title="3.4 注意点"></a>3.4 注意点</h4><p> ①Vue未提供别名的按键,可以使用按键原始的key值去绑定,但注意要转为kebab-case(短横线命名)</p>
+<p> ②可以使用KeyCode去指定具体的按键(不推荐)</p>
+<h2 id="八、计算属性"><a href="#八、计算属性" class="headerlink" title="八、计算属性"></a>八、计算属性</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p> 要用的属性不存在,需要通过已有属性计算得来</p>
+<h3 id="2-原理"><a href="#2-原理" class="headerlink" title="2.原理"></a>2.原理</h3><p> 底层借助了Objece.defineproperty方法提供的getter和setter</p>
+<h3 id="3-get函数何时执行"><a href="#3-get函数何时执行" class="headerlink" title="3.get函数何时执行"></a>3.get函数何时执行</h3><p> ①初次读取时会执行一次<br> ②当依赖的数据发生改变时会再次被调用</p>
+<h3 id="4-优势"><a href="#4-优势" class="headerlink" title="4.优势"></a>4.优势</h3><p> 与methods实现相比,内部有缓存机制(复用),效率更高,调试更方便</p>
+<h3 id="5-备注"><a href="#5-备注" class="headerlink" title="5.备注"></a>5.备注</h3><p> ①计算属性最终会出现在vm上,直接读取使用即可<br> ②如果计算属性要被修改,那必须写set函数去响应修改,且set中要引起计算时依赖的数据发生改变</p>
+<h2 id="九、监视属性"><a href="#九、监视属性" class="headerlink" title="九、监视属性"></a>九、监视属性</h2><h3 id="1-监视属性watch"><a href="#1-监视属性watch" class="headerlink" title="1.监视属性watch"></a>1.监视属性watch</h3><p> ①当被监视的属性变化时,回调函数自动调用,进行相关操作</p>
+<p> ②监视的属性必须存在,才能进行监视</p>
+<p> ③监视的两种写法<br>  Ⅰ.new Vue时传入的watch配置<br>  Ⅱ.通过vm.$watch监视</p>
 
                 
             </div>
@@ -959,7 +1048,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35.8k</span>
+                        class="white-color">37.1k</span>
             
             
             
