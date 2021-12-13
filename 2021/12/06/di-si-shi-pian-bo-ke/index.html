@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-09
+                    2021-12-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    5.4k
                 </div>
                 
 
@@ -524,6 +524,168 @@
 <h2 id="九、监视属性"><a href="#九、监视属性" class="headerlink" title="九、监视属性"></a>九、监视属性</h2><h3 id="1-监视属性watch"><a href="#1-监视属性watch" class="headerlink" title="1.监视属性watch"></a>1.监视属性watch</h3><p> ①当被监视的属性变化时,回调函数自动调用,进行相关操作</p>
 <p> ②监视的属性必须存在,才能进行监视</p>
 <p> ③监视的两种写法<br>  Ⅰ.new Vue时传入的watch配置<br>  Ⅱ.通过vm.$watch监视</p>
+<h3 id="2-深度监视"><a href="#2-深度监视" class="headerlink" title="2.深度监视"></a>2.深度监视</h3><p> ①Vue中的watch默认不监测对象内部值的改变(默认监视一层)<br> ②配置deep: true可以监视对象内部值改变(监视多层)</p>
+<p> ③备注<br>  (1).Vue自身可以监测对象内部值的改变，但Vue提供的watch默认不可以！<br>  (2).使用watch时根据数据的具体结构，决定是否采用深度监视。</p>
+<h3 id="3-computed和watch之间的区别"><a href="#3-computed和watch之间的区别" class="headerlink" title="3.computed和watch之间的区别"></a>3.computed和watch之间的区别</h3><p> 1.computed能完成的功能,watch都可以完成</p>
+<p> 2.watch能完成的功能,computed不一定能完成,例如:watch可以进行异步操作</p>
+<p> 3.两个重要的小原则<br>  Ⅰ.所被Vue管理的函数,最好写成普通函数,这样this的指向才是vm 或 组件实例对象</p>
+<p>  Ⅱ.所有不被Vue所管理的函数(定时器的回调函数、ajax回调函数等、promise的回调函数),最好写成箭头函数,这样this的指向才是vm 或 组件实例对象</p>
+<h2 id="十、绑定样式"><a href="#十、绑定样式" class="headerlink" title="十、绑定样式"></a>十、绑定样式</h2><h3 id="1-class样式"><a href="#1-class样式" class="headerlink" title="1. class样式"></a>1. class样式</h3><p> 写法:class=”xxx” xxx可以是字符串、对象、数组。</p>
+<p> 字符串写法适用于：类名不确定，要动态获取。</p>
+<p> 对象写法适用于：要绑定多个样式，个数不确定，名字也不确定。</p>
+<p> 数组写法适用于：要绑定多个样式，个数确定，名字也确定，但不确定用不用。</p>
+<h3 id="2-style样式"><a href="#2-style样式" class="headerlink" title="2. style样式"></a>2. style样式</h3><p> :style=”{fontSize: xxx}”其中xxx是动态值。</p>
+<p> :style=”[a,b]”其中a、b是样式对象。</p>
+<h2 id="十一、条件渲染"><a href="#十一、条件渲染" class="headerlink" title="十一、条件渲染"></a>十一、条件渲染</h2><h3 id="1-v-if"><a href="#1-v-if" class="headerlink" title="1. v-if"></a>1. v-if</h3><p> ①写法: (1)v-if = “表达式” (2)v-else-if = “表达式” (3)v-else = “表达式”</p>
+<p> ②适用<br>  适用于切换频率较低的场景</p>
+<p> ③特点<br>  不展示的DOM元素直接被移除</p>
+<p> ④注意<br>  v-if可以和v-else-if、v-else一起使用,但要求结构不能被”打断”</p>
+<h3 id="2-v-show"><a href="#2-v-show" class="headerlink" title="2. v-show"></a>2. v-show</h3><p> ①写法: v-show = “表达式”</p>
+<p> ②适用<br>  适用于切换频率较高的场景</p>
+<p> ③特点<br>  不展示的DOM元素未被移除,仅仅是使用样式将其隐藏</p>
+<h3 id="3-备注"><a href="#3-备注" class="headerlink" title="3.备注"></a>3.备注</h3><p> 使用v-if时,DOM元素可能无法获取到,而使用v-show,DOM元素一定可以获取到</p>
+<h2 id="十二、列表渲染"><a href="#十二、列表渲染" class="headerlink" title="十二、列表渲染"></a>十二、列表渲染</h2><h3 id="1-v-for"><a href="#1-v-for" class="headerlink" title="1. v-for"></a>1. v-for</h3><p> ①.用于展示列表数据</p>
+<p> ②.语法：v-for=”(item, index) in xxx” :key=”yyy”</p>
+<p> ③.可遍历：数组、对象、字符串(用的很少)、指定次数(用的很少)</p>
+<h3 id="2-Vue中的key有什么作用-key的内部原理"><a href="#2-Vue中的key有什么作用-key的内部原理" class="headerlink" title="2. Vue中的key有什么作用(key的内部原理)"></a>2. Vue中的key有什么作用(key的内部原理)</h3><h4 id="2-1-虚拟DOM中key的作用"><a href="#2-1-虚拟DOM中key的作用" class="headerlink" title="2.1 虚拟DOM中key的作用"></a>2.1 虚拟DOM中key的作用</h4><p> key是虚拟DOM对象的标识,当数据发生变化时,Vue会根据新数据生成新的虚拟DOM,随后Vue进行新虚拟DOM与旧虚拟DOM的差异比较</p>
+<h4 id="2-2-比较规则"><a href="#2-2-比较规则" class="headerlink" title="2.2 比较规则"></a>2.2 比较规则</h4><p> (1)旧虚拟DOM中找到了与新虚拟DOM相同的key<br>  ①若虚拟DOM中内容没变,直接使用之前的真实DOM!</p>
+<p>  ②若虚拟DOM中内容变了,则生成新的真实DOM,随后替换掉页面中之前的真实DOM</p>
+<p> (2)旧虚拟DOM中未找到与新虚拟DOM相同的key<br>  创建新的真实DOM,随后渲染到页面</p>
+<h4 id="2-3-用index作为key会引发的问题"><a href="#2-3-用index作为key会引发的问题" class="headerlink" title="2.3 用index作为key会引发的问题"></a>2.3 用index作为key会引发的问题</h4><p> ①若对数据进行:逆序添加、逆序删除等破坏顺序操作:<br>  Ⅰ.会产生没有必要的真实DOM更新 ==&gt; 界面效果没问题,但效率低</p>
+<p>  Ⅱ.如果结构中包含输入类的DOM:<br>   会产生错误的DOM更新 ===&gt; 界面出现问题</p>
+<h4 id="2-4-开发中如何选择key"><a href="#2-4-开发中如何选择key" class="headerlink" title="2.4 开发中如何选择key"></a>2.4 开发中如何选择key</h4><p> (1)最好使用每条数据的唯一标识作为key,比如id、手机号、身份证号、学号等唯一值</p>
+<p> (2)如果不存在对数据进行逆序添加、逆序删除等破坏顺序的操作,仅仅用于渲染列表用于展示,使用index作为key是没有问题的</p>
+<h2 id="十三、Vue监视数据的原理"><a href="#十三、Vue监视数据的原理" class="headerlink" title="十三、Vue监视数据的原理"></a>十三、Vue监视数据的原理</h2><h3 id="1-监视数据"><a href="#1-监视数据" class="headerlink" title="1. 监视数据"></a>1. 监视数据</h3><p> Vue会监视data中所有层次的数据</p>
+<h3 id="2-如何监测对象中的数据"><a href="#2-如何监测对象中的数据" class="headerlink" title="2. 如何监测对象中的数据"></a>2. 如何监测对象中的数据</h3><p> 通过setter实现监视,且要在new Vue时,就要传入要监测的数据<br> (1)对象中后追加的属性,Vue默认不做响应式</p>
+<p> (2)如需给后添加的属性做响应式,请使用如下API<br>  Vue.set(target，propertyName/index，value) 或<br>  vm.$set(target，propertyName/index，value)</p>
+<h3 id="3-如何监视数组中的数据"><a href="#3-如何监视数组中的数据" class="headerlink" title="3. 如何监视数组中的数据"></a>3. 如何监视数组中的数据</h3><p> 通过包裹数组更新元素的方法实现,本质上就做了两件事情:<br>  ①调用原生对应的方法对数组进行更新<br>  ②重新解析模板,进而更新页面</p>
+<h3 id="4-Vue中修改数组中的某个元素一定要用如下方法"><a href="#4-Vue中修改数组中的某个元素一定要用如下方法" class="headerlink" title="4. Vue中修改数组中的某个元素一定要用如下方法"></a>4. Vue中修改数组中的某个元素一定要用如下方法</h3><p> ①.使用这些API:push()、pop()、shift()、unshift()、splice()、sort()、reverse()</p>
+<p> ②.Vue.set() 或 vm.$set()</p>
+<h3 id="5-特别注意"><a href="#5-特别注意" class="headerlink" title="5. 特别注意"></a>5. 特别注意</h3><p> Vue.set() 和 vm.$set() 不能给vm 或 vm的根数据对象 添加属性！！！</p>
+<h2 id="十四、收集表单数据"><a href="#十四、收集表单数据" class="headerlink" title="十四、收集表单数据"></a>十四、收集表单数据</h2><h3 id="1-input为输入框"><a href="#1-input为输入框" class="headerlink" title="1. input为输入框"></a>1. input为输入框</h3><p> input的type属性值为text时,则v-model收集的是value值，用户输入的就是value值</p>
+<h3 id="2-input为单选框"><a href="#2-input为单选框" class="headerlink" title="2. input为单选框"></a>2. input为单选框</h3><p> input的type属性值为radio时,则v-model收集的是value值，且要给标签配置value值</p>
+<h3 id="3-input为多选框"><a href="#3-input为多选框" class="headerlink" title="3. input为多选框"></a>3. input为多选框</h3><p> input的type属性值为checkbox时:<br>  ①没有配置input的value属性，那么收集的就是checked(勾选 or 未勾选，是布尔值)</p>
+<p>  ②配置input的value值<br>   (1)v-model的初始值是非数组，那么收集的就是checked(勾选 or 未勾选，是布尔值)</p>
+<p>   (2)v-model的初始值是数组，那么收集的的就是value组成的数组</p>
+<h3 id="4-备注"><a href="#4-备注" class="headerlink" title="4. 备注"></a>4. 备注</h3><p> v-model的三个修饰符<br>  Ⅰ.lazy: 失去焦点再收集数据<br>  Ⅱ.number: 输入字符串转为有效的数字<br>  Ⅲ.trim: 输入首尾空格过滤</p>
+<h2 id="十五、过滤器"><a href="#十五、过滤器" class="headerlink" title="十五、过滤器"></a>十五、过滤器</h2><h3 id="1-定义-1"><a href="#1-定义-1" class="headerlink" title="1. 定义"></a>1. 定义</h3><p> 过滤器,对要显示的数据进行特定格式化后再显示(适用于一些简单逻辑的处理)</p>
+<h3 id="2-语法"><a href="#2-语法" class="headerlink" title="2. 语法"></a>2. 语法</h3><h4 id="2-1-注册过滤器"><a href="#2-1-注册过滤器" class="headerlink" title="2.1 注册过滤器"></a>2.1 注册过滤器</h4><p> ①全局注册 <code>Vue.filter(name,callback)</code><br> ②局部注册 <code>new Vue&#123;filters:&#123;&#125;&#125;</code></p>
+<h4 id="2-2-使用过滤器"><a href="#2-2-使用过滤器" class="headerlink" title="2.2 使用过滤器"></a>2.2 使用过滤器</h4><p> ①插值使用 <code>&#123;&#123; xxx | 过滤器名&#125;&#125;</code><br> ②绑定使用 v-bind:属性 = “xxx | 过滤器名”</p>
+<h4 id="2-3-备注"><a href="#2-3-备注" class="headerlink" title="2.3 备注"></a>2.3 备注</h4><p> 1.过滤器也可以接收额外参数,多个过滤器也可以串联<br> 2.并没有改变原本的数据,是产生新的对应的数据</p>
+<h2 id="十六、指令"><a href="#十六、指令" class="headerlink" title="十六、指令"></a>十六、指令</h2><h3 id="1-指令"><a href="#1-指令" class="headerlink" title="1. 指令"></a>1. 指令</h3><p> ① v-bind    : 单向绑定解析表达式, 可简写为 :xxx</p>
+<p> ② v-model    : 双向数据绑定</p>
+<p> ③ v-for      : 遍历数组/对象/字符串</p>
+<p> ④ v-on       : 绑定事件监听, 可简写为@</p>
+<p> ⑤ v-if          : 条件渲染（动态控制节点是否存存在）<br>    v-else     : 条件渲染（动态控制节点是否存存在）</p>
+<p> ⑥ v-show     : 条件渲染 (动态控制节点是否展示)</p>
+<p> ⑦ v-text<br>  Ⅰ.作用<br>   向其所在的节点中渲染文本内容</p>
+<p>  Ⅱ.与插值的区别<br>   v-text会替换掉节点中的内容,插值不会</p>
+<p> ⑧ v-html<br>  Ⅰ.作用<br>   向指定节点中渲染包含html结构的内容</p>
+<p>  Ⅱ.与插值的区别<br>   (1) v-html会替换掉节点中所有的内容,插值不会</p>
+<p>   (2) v-html可以识别html结构</p>
+<p>  Ⅲ.严重注意<br>   (1) 在网站上动态渲染任意HTML是非常危险的,容易导致XSS攻击</p>
+<p>   (2) 一定要在可信的内容上使用v-html,永不用在用户提交的内容上</p>
+<p>  ⑨ v-cloak<br>   Ⅰ.本质是一个特殊属性,Vue实例创建完毕并接管容器后,会删掉v-cloak属性</p>
+<p>   Ⅱ.使用css配合v-cloak,可以解决网速慢时,页面展示出的问题(网慢,未编译成功)</p>
+<p>  ⑩ v-once<br>   Ⅰ. v-once所在节点在初次动态渲染后,就视为静态内容了</p>
+<p>   Ⅱ.以后数据的改变不会引起v-once所在结构的更新,可以用于性能优化</p>
+<p>  ⑩① v-pre<br>   Ⅰ.跳过其所在节点的编译过程</p>
+<p>   Ⅱ.可以利用它跳过,没有使用指令语法、没有使用插值语法的节点,会加快编译</p>
+<h3 id="2-自定义指令"><a href="#2-自定义指令" class="headerlink" title="2. 自定义指令"></a>2. 自定义指令</h3><h4 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h4><p> (1) 局部指令<br>   <code>new Vue(&#123; directives:&#123; 指令名:配置对象 &#125; &#125;)</code><br>   <code>new Vue(&#123; directives:&#123; 指令名:回调函数 &#125; &#125;)</code></p>
+<p> (2) 全局指令<br>  <code> Vue.directive(指令名,配置对象)</code><br>  <code> Vue.directive(指令名,回调函数)</code></p>
+<h4 id="2-2-配置对象中常用的3个回调"><a href="#2-2-配置对象中常用的3个回调" class="headerlink" title="2.2 配置对象中常用的3个回调"></a>2.2 配置对象中常用的3个回调</h4><ol>
+<li><p>bind: 指令与元素成功绑定时调用</p>
+</li>
+<li><p>inserted: 指令所在元素被插入页面时调用</p>
+</li>
+<li><p>update: 指令所在模板结构被重新解析时调用</p>
+</li>
+</ol>
+<h4 id="2-3-备注-1"><a href="#2-3-备注-1" class="headerlink" title="2.3 备注"></a>2.3 备注</h4><ol>
+<li><p>指令定义时不加v-,但使用时要加v-</p>
+</li>
+<li><p>指令名如果是多个,要使用kebab-case命名方式,不要使用camelCase命名</p>
+</li>
+</ol>
+<h2 id="十七、Vue生命周期"><a href="#十七、Vue生命周期" class="headerlink" title="十七、Vue生命周期"></a>十七、Vue生命周期</h2><h3 id="1-什么是生命周期"><a href="#1-什么是生命周期" class="headerlink" title="1. 什么是生命周期"></a>1. 什么是生命周期</h3><p> ①又名: 生命周期回调函数、生命周期函数、生命周期钩子</p>
+<p> ②是什么: Vue在关键时刻帮我们调用的一些特殊名称的函数</p>
+<p> ③生命周期函数的名字不可更改,但函数的具体内容是根据程序员根据需求编写的</p>
+<p> ④生命周期函数中的this指向是vm 或 组件实例对象</p>
+<h3 id="2-生命周期图"><a href="#2-生命周期图" class="headerlink" title="2. 生命周期图"></a>2. 生命周期图</h3><h3 id="3-常用的生命周期钩子"><a href="#3-常用的生命周期钩子" class="headerlink" title="3. 常用的生命周期钩子"></a>3. 常用的生命周期钩子</h3><ol>
+<li><p>mounted: 发送ajax请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】</p>
+</li>
+<li><p>beforeDestroy: 清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】</p>
+</li>
+</ol>
+<h3 id="4-关于销毁Vue实例"><a href="#4-关于销毁Vue实例" class="headerlink" title="4. 关于销毁Vue实例"></a>4. 关于销毁Vue实例</h3><p> 1.销毁后借助Vue开发者工具看不到任何信息</p>
+<p> 2.销毁后自定义事件会失效,但原生DOM事件依然有效</p>
+<p> 3.一般不会在beforeDestroy操作数据,因为即便操作数据,也不会触发更新流程了</p>
+<h2 id="十八、组件"><a href="#十八、组件" class="headerlink" title="十八、组件"></a>十八、组件</h2><h3 id="1-Vue中使用组件的三大步骤"><a href="#1-Vue中使用组件的三大步骤" class="headerlink" title="1. Vue中使用组件的三大步骤"></a>1. Vue中使用组件的三大步骤</h3><p> ①定义组件(创建组件)<br> ②注册组件<br> ③使用组件(写组件标签)</p>
+<h3 id="2-如何定义一个组件"><a href="#2-如何定义一个组件" class="headerlink" title="2. 如何定义一个组件"></a>2. 如何定义一个组件</h3><ol>
+<li><p>使用Vue.extend(options)创建,其中options和new Vue(options)时传入的那个options几乎一样,但也有点区别</p>
+</li>
+<li><p>区别<br>① el不要写,为什么？<br>最终所有的组件都要经过一个vm的管理,由vm中的el决定服务哪个容器</p>
+<p>② data必须写成函数,为什么？<br>避免组件被复用时,数据存在引用关系</p>
+<p>③ 备注<br>使用template可以配置组件结构</p>
+</li>
+</ol>
+<h3 id="3-编写组件标签"><a href="#3-编写组件标签" class="headerlink" title="3. 编写组件标签"></a>3. 编写组件标签</h3><p>  ①<code>&lt;组件名 /&gt;</code><br>  ②<code>&lt;组件名&gt;&lt;/组件名&gt;</code></p>
+<h3 id="4-几个注意点"><a href="#4-几个注意点" class="headerlink" title="4. 几个注意点"></a>4. 几个注意点</h3><h4 id="4-1-关于组件名"><a href="#4-1-关于组件名" class="headerlink" title="4.1 关于组件名"></a>4.1 关于组件名</h4><p> ① 一个单词组成<br>  第一种写法(首字母小写): school<br>  第二种写法(首字母大写): School</p>
+<p> ② 多个单词组成<br>  第一种写法(kebab-case命名): my-school<br>  第二种写法(CamelCase命名): MySchool (需要Vue脚手架支持)</p>
+<p> ③ 备注<br>  (1) 组件名尽可能回避HTML中已有的元素名称,例如: h2、H2都不行</p>
+<p>  (2) 可以使用name配置项指定组件在开发者工具中呈现的名字</p>
+<h4 id="4-2-关于组件标签"><a href="#4-2-关于组件标签" class="headerlink" title="4.2 关于组件标签"></a>4.2 关于组件标签</h4><p> 第一种写法: <code>&lt;school&gt;&lt;/school&gt;</code><br> 第二种写法: <code>&lt;school /&gt;</code><br> 备注: 不用使用脚手架时,<code>&lt;school/&gt;</code>会导致后续组件不能渲染(写了多个,只渲染出一个)</p>
+<h4 id="4-3-简写方式"><a href="#4-3-简写方式" class="headerlink" title="4.3 简写方式"></a>4.3 简写方式</h4><p> <code>const school = Vue.extend(options) </code><br> 可简写为：const school = options</p>
+<h3 id="5-关于VueComponent"><a href="#5-关于VueComponent" class="headerlink" title="5. 关于VueComponent"></a>5. 关于VueComponent</h3><p> 1.school组件本质是一个名为VueComponent的构造函数,且不是程序员定义的,是Vue.extend生成的</p>
+<p> 2.我们只需要写<code>&lt;school/&gt;</code> 或 <code>&lt;school&gt;&lt;/school&gt;</code>,Vue解析时会帮我们创建school组件的实例对象,即Vue帮我们执行的:<code> new VueComponent(options)</code></p>
+<p> 3.特别注意<br>  每次调用Vue.extend,返回的都是一个全新的VueComponent</p>
+<p> 4.关于this指向<br>  Ⅰ. 组件配置中<br>   data函数、methods中的函数、watch中的函数、computed中的函数,它们的this均是【VueComponent实例对象】</p>
+<p>  Ⅱ. new Vue(options)配置中<br>   data函数、methods中的函数、watch中的函数、computed中的函数 它们的this均是【Vue实例对象】</p>
+<p>  5.VueComponent的实例对象，以后简称vc(也可称之为：组件实例对象)<br>  Vue的实例对象，以后简称vm。</p>
+<h2 id="十九、分析脚手架"><a href="#十九、分析脚手架" class="headerlink" title="十九、分析脚手架"></a>十九、分析脚手架</h2><h3 id="1-脚手架文件结构"><a href="#1-脚手架文件结构" class="headerlink" title="1. 脚手架文件结构"></a>1. 脚手架文件结构</h3><pre class="language-none"><code class="language-none">├── node_modules 
+├── public
+│   ├── favicon.ico: 页签图标
+│   └── index.html: 主页面
+├── src
+│   ├── assets: 存放静态资源
+│   │   └── logo.png
+│   │── component: 存放组件
+│   │   └── HelloWorld.vue
+│   │── App.vue: 汇总所有组件
+│   │── main.js: 入口文件
+├── .gitignore: git版本管制忽略的配置
+├── babel.config.js: babel的配置文件
+├── package.json: 应用包配置文件 
+├── README.md: 应用描述文件
+├── package-lock.json：包版本控制文件</code></pre>
+<h2 id="二十、Vue的不同版本"><a href="#二十、Vue的不同版本" class="headerlink" title="二十、Vue的不同版本"></a>二十、Vue的不同版本</h2><h3 id="1-关于vue-js与vue-runtime-xxx-js的区别"><a href="#1-关于vue-js与vue-runtime-xxx-js的区别" class="headerlink" title="1. 关于vue.js与vue.runtime.xxx.js的区别"></a>1. 关于vue.js与vue.runtime.xxx.js的区别</h3><p> ①vue.js是完整版的Vue，包含：核心功能 + 模板解析器</p>
+<p> ②vue.runtime.xxx.js是运行版的Vue，只包含：核心功能；没有模板解析器</p>
+<h3 id="2-vue-runtime-xxx-js"><a href="#2-vue-runtime-xxx-js" class="headerlink" title="2. vue.runtime.xxx.js"></a>2. vue.runtime.xxx.js</h3><p> 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template这个配置项，需要使用render函数接收到的createElement函数去指定具体内容</p>
+<h2 id="二十一、Vue-config-js"><a href="#二十一、Vue-config-js" class="headerlink" title="二十一、Vue.config.js"></a>二十一、Vue.config.js</h2><p> 1.使用vue inspect &gt; output.js 可以查看Vue脚手架的默认配置</p>
+<p> 2.使用Vue.config.js可以对脚手架进行个性化定制,详情见: <a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh">https://cli.vuejs.org/zh</a></p>
+<h2 id="二十二、ref属性"><a href="#二十二、ref属性" class="headerlink" title="二十二、ref属性"></a>二十二、ref属性</h2><p> 1.被用来给元素或子组件注册引用信息(id的替代者)</p>
+<p> 2.应用在html标签上获取的是真实DOM元素，应用在组件标签上是组件实例对象(vc)</p>
+<p> 3.使用方式<br>  ①打标识: <code>&lt;h1 ref=&quot;xxx&quot;&gt;.....&lt;/h1&gt;``` 或 ```&lt;School ref=&quot;xxx&quot;&gt;&lt;/School&gt;</code></p>
+<p>  ②获取: this.$refs.xxx</p>
+<h2 id="二十三、props配置项"><a href="#二十三、props配置项" class="headerlink" title="二十三、props配置项"></a>二十三、props配置项</h2><h3 id="1-功能"><a href="#1-功能" class="headerlink" title="1. 功能"></a>1. 功能</h3><p> 让组件接收外部传过来的数据</p>
+<h3 id="2-传递数据"><a href="#2-传递数据" class="headerlink" title="2. 传递数据"></a>2. 传递数据</h3><p> <code>&lt;Demo name=&quot;xxx&quot;/&gt;</code></p>
+<h3 id="3-接收数据"><a href="#3-接收数据" class="headerlink" title="3. 接收数据"></a>3. 接收数据</h3><p> ①第一种方式(只接收): <code>props:[&#39;name&#39;]</code></p>
+<p> ②第二种方式(限制类型): <code>props:&#123;name:String&#125;</code></p>
+<p> ③第三种方式(限制类型、限制必要性、指定默认值)<br>  <pre class="language-none"><code class="language-none">props:&#123;
+name:&#123;
+ type:String, &#x2F;&#x2F;类型
+ required:true, &#x2F;&#x2F;必要性
+ default:&#39;老王&#39; &#x2F;&#x2F;默认值
+ &#125;
+&#125;
+
+备注：props是只读的，Vue底层会监测你对props的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，那么请复制props的内容到data中一份，然后去修改data中的数据。</code></pre></p>
+<h2 id="二十四、minin-混入"><a href="#二十四、minin-混入" class="headerlink" title="二十四、minin(混入)"></a>二十四、minin(混入)</h2><h3 id="1-功能-1"><a href="#1-功能-1" class="headerlink" title="1. 功能"></a>1. 功能</h3><p> 可以把多个组件共用的配置提取成一个混入对象</p>
+<h3 id="2-使用方式"><a href="#2-使用方式" class="headerlink" title="2. 使用方式"></a>2. 使用方式</h3><p> ①第一步定义混合<br>   <pre class="language-none"><code class="language-none">&#123;
+  data()&#123;....&#125;,
+  methods:&#123;....&#125;
+  ....
+&#125;</code></pre><br> ②第二步使用混入<br>  全局混入: <code>Vue.mixin(xxx)</code><br>  局部混入: <code>mixins:[&#39;xxx&#39;]</code></p>
 
                 
             </div>
@@ -1048,7 +1210,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">37.1k</span>
+                        class="white-color">40.7k</span>
             
             
             
