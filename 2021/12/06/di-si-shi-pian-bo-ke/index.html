@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-13
+                    2021-12-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    5.9k
                 </div>
                 
 
@@ -686,6 +686,49 @@ name:&#123;
   methods:&#123;....&#125;
   ....
 &#125;</code></pre><br> ②第二步使用混入<br>  全局混入: <code>Vue.mixin(xxx)</code><br>  局部混入: <code>mixins:[&#39;xxx&#39;]</code></p>
+<h2 id="二十五、插件"><a href="#二十五、插件" class="headerlink" title="二十五、插件"></a>二十五、插件</h2><h3 id="1-功能-2"><a href="#1-功能-2" class="headerlink" title="1. 功能"></a>1. 功能</h3><p> 用于增强vue</p>
+<h3 id="2-本质"><a href="#2-本质" class="headerlink" title="2. 本质"></a>2. 本质</h3><p> 包含install方法的一个对象,install的第一个参数是Vue,第二个以后的参数是插件使用者传递的数据</p>
+<h3 id="3-插件定义与使用"><a href="#3-插件定义与使用" class="headerlink" title="3. 插件定义与使用"></a>3. 插件定义与使用</h3><h4 id="3-1-定义"><a href="#3-1-定义" class="headerlink" title="3.1 定义"></a>3.1 定义</h4> <pre class="language-none"><code class="language-none">对象.install &#x3D; function (Vue, options) &#123;
+   &#x2F;&#x2F; 1. 添加全局过滤器
+   Vue.filter(....)
+
+   &#x2F;&#x2F; 2. 添加全局指令
+   Vue.directive(....)
+
+   &#x2F;&#x2F; 3. 配置全局混入(合)
+   Vue.mixin(....)
+
+   &#x2F;&#x2F; 4. 添加实例方法
+   Vue.prototype.$myMethod &#x3D; function () &#123;...&#125;
+   Vue.prototype.$myProperty &#x3D; xxxx
+&#125;</code></pre>
+<h4 id="3-2-使用"><a href="#3-2-使用" class="headerlink" title="3.2 使用"></a>3.2 使用</h4><p> <code>Vue.use() </code></p>
+<h2 id="二十六、-scoped样式"><a href="#二十六、-scoped样式" class="headerlink" title="二十六、 scoped样式"></a>二十六、 scoped样式</h2><p> 1.作用<br>  让样式在局部生效,防止冲突</p>
+<p> 2.写法<br>  <code>&lt;style scoped&gt; </code></p>
+<h2 id="二十七、webStorage"><a href="#二十七、webStorage" class="headerlink" title="二十七、webStorage"></a>二十七、webStorage</h2><h3 id="1-存储大小"><a href="#1-存储大小" class="headerlink" title="1. 存储大小"></a>1. 存储大小</h3><p> 存储内容大小一般支持5MB左右(不同浏览器可能还不一样)</p>
+<h3 id="2-本地存储"><a href="#2-本地存储" class="headerlink" title="2. 本地存储"></a>2. 本地存储</h3><p> 浏览器通过Window.sessionStorage 和 Window.localStorage属性来实现本地存储机制</p>
+<h3 id="3-相关API"><a href="#3-相关API" class="headerlink" title="3. 相关API"></a>3. 相关API</h3><h4 id="①-xxxxxStorage-setItem-39-key-39-39-value-39"><a href="#①-xxxxxStorage-setItem-39-key-39-39-value-39" class="headerlink" title="① xxxxxStorage.setItem(&#39;key&#39;, &#39;value&#39;);"></a>① <code>xxxxxStorage.setItem(&#39;key&#39;, &#39;value&#39;);</code></h4><p>  该方法接收一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值</p>
+<h4 id="②-xxxxxStorage-getItem-39-person-39"><a href="#②-xxxxxStorage-getItem-39-person-39" class="headerlink" title="② xxxxxStorage.getItem(&#39;person&#39;);"></a>② <code>xxxxxStorage.getItem(&#39;person&#39;);</code></h4><p>  该方法接收一个键名作为参数,返回键名对应的值</p>
+<h4 id="③-xxxxxStorage-removeItem-39-key-39"><a href="#③-xxxxxStorage-removeItem-39-key-39" class="headerlink" title="③ xxxxxStorage.removeItem(&#39;key&#39;);"></a>③ <code>xxxxxStorage.removeItem(&#39;key&#39;);</code></h4><p>  该方法接收一个键名作为参数,并把该键名从存储中删除</p>
+<h4 id="④-xxxxxStorage-clear"><a href="#④-xxxxxStorage-clear" class="headerlink" title="④  xxxxxStorage.clear()"></a>④ <code> xxxxxStorage.clear()</code></h4><p>  该方法会清空存储中的所有数据</p>
+<h3 id="4-备注-1"><a href="#4-备注-1" class="headerlink" title="4. 备注"></a>4. 备注</h3><ol>
+<li><p>SessionStorage存储的内容会随着浏览器窗口关闭而消失</p>
+</li>
+<li><p>LocalStorage存储的内容，需要手动清除才会消失</p>
+</li>
+<li><p><code>xxxxxStorage.getItem(xxx)</code>如果xxx对应的value获取不到，那么getItem的返回值是null</p>
+</li>
+<li><p><code>JSON.parse(null)</code>的结果依然是null</p>
+</li>
+</ol>
+<h2 id="二十八、组件的自定义事件"><a href="#二十八、组件的自定义事件" class="headerlink" title="二十八、组件的自定义事件"></a>二十八、组件的自定义事件</h2><h3 id="1-什么是组件自定义事件"><a href="#1-什么是组件自定义事件" class="headerlink" title="1. 什么是组件自定义事件"></a>1. 什么是组件自定义事件</h3><p> 一种组件间通信的方式,适用于: <strong style="color:red">子组件 ===&gt; 父组件</strong></p>
+<h3 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a>2. 使用场景</h3><p> A是父组件,B是子组件,B想给A传数据,那么就要在A中给B绑定自定义事件(<span style="color:red">事件的回调在A中</span>)</p>
+<h3 id="3-绑定自定义事件的几种方式"><a href="#3-绑定自定义事件的几种方式" class="headerlink" title="3. 绑定自定义事件的几种方式"></a>3. 绑定自定义事件的几种方式</h3><p> ①第一种方式<br>  在父组件中：<code>&lt;Demo @atguigu=&quot;test&quot;/&gt;</code>  或 <code>&lt;Demo v-on:atguigu=&quot;test&quot;/&gt;</code></p>
+<p> ②第二种方式<br>  在父组件中:<br>  <pre class="language-none"><code class="language-none">&lt;Demo ref&#x3D;&quot;demo&quot;&#x2F;&gt;
+......
+mounted()&#123;
+  this.$refs.xxx.$on(&#39;atguigu&#39;,this.test)
+&#125;</code></pre></p>
 
                 
             </div>
@@ -1210,7 +1253,7 @@ name:&#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">40.7k</span>
+                        class="white-color">41.2k</span>
             
             
             
