@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-14
+                    2021-12-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.9k
+                    7.5k
                 </div>
                 
 
@@ -728,7 +728,154 @@ name:&#123;
 ......
 mounted()&#123;
   this.$refs.xxx.$on(&#39;atguigu&#39;,this.test)
+&#125;</code></pre><br>  备注: 若想让自定义事件只能触发一次,可以使用<code>once</code>修饰符,或<code>$once</code>方法</p>
+<h3 id="4-触发自定义事件"><a href="#4-触发自定义事件" class="headerlink" title="4. 触发自定义事件"></a>4. 触发自定义事件</h3><p> <code>this.$emit(&#39;atguigu&#39;,数据)</code>    </p>
+<h3 id="5-解绑自定义事件"><a href="#5-解绑自定义事件" class="headerlink" title="5. 解绑自定义事件"></a>5. 解绑自定义事件</h3><p> <code>this.$off(&#39;atguigu&#39;)</code></p>
+<h3 id="6-组件绑定原生事件"><a href="#6-组件绑定原生事件" class="headerlink" title="6. 组件绑定原生事件"></a>6. 组件绑定原生事件</h3><p> 组件上也可以绑定DOM事件,需要<code>native</code>修饰符</p>
+<h3 id="7-注意"><a href="#7-注意" class="headerlink" title="7. 注意"></a>7. 注意</h3><p> 通过<code>this.$refs.xxx.$on(&#39;atguigu&#39;,回调)</code>绑定自定义事件时，回调<span style="color:red">要么配置在methods中</span>，<span style="color:red">要么用箭头函数</span>，否则this指向会出问题！</p>
+<h2 id="二十九、全局事件总线-GlobalEventBus"><a href="#二十九、全局事件总线-GlobalEventBus" class="headerlink" title="二十九、全局事件总线(GlobalEventBus)"></a>二十九、全局事件总线(GlobalEventBus)</h2><h3 id="1-什么是全局事件总线"><a href="#1-什么是全局事件总线" class="headerlink" title="1. 什么是全局事件总线"></a>1. 什么是全局事件总线</h3><p> 一种组件间通信的方式,适用于<span style="color:red">任意组件间通信</span></p>
+<h3 id="2-安装全局事件总线"><a href="#2-安装全局事件总线" class="headerlink" title="2. 安装全局事件总线"></a>2. 安装全局事件总线</h3><pre class="language-none"><code class="language-none"> new Vue(&#123;
+	......
+	beforeCreate() &#123;
+		Vue.prototype.$bus &#x3D; this &#x2F;&#x2F;安装全局事件总线，$bus就是当前应用的vm
+	&#125;,
+    ......
+&#125;) </code></pre>
+<h3 id="3-使用事件总线"><a href="#3-使用事件总线" class="headerlink" title="3. 使用事件总线"></a>3. 使用事件总线</h3><p> ①接收数据<br>  A组件想接收数据,则在A组件中给$bus绑定自定义事件,事件的<span style="color:red">回调留在A组件自身</span></p>
+  <pre class="language-none"><code class="language-none">methods()&#123;
+  demo(data)&#123;......&#125;
+&#125;
+......
+mounted() &#123;
+  this.$bus.$on(&#39;xxxx&#39;,this.demo)
+&#125;</code></pre>
+<p> ②提供数据<br>  <code>this.$bus.$emit(&#39;xxxx&#39;,数据)</code></p>
+<h3 id="4-何时解绑"><a href="#4-何时解绑" class="headerlink" title="4. 何时解绑"></a>4. 何时解绑</h3><p> 最好在beforeDestroy钩子中,用$off去解绑<span style="color:red">当前组件所用到的</span>事件</p>
+<h2 id="三十、消息订阅与发布-pubsub"><a href="#三十、消息订阅与发布-pubsub" class="headerlink" title="三十、消息订阅与发布(pubsub)"></a>三十、消息订阅与发布(pubsub)</h2><h3 id="1-什么是消息订阅与发布"><a href="#1-什么是消息订阅与发布" class="headerlink" title="1. 什么是消息订阅与发布"></a>1. 什么是消息订阅与发布</h3><p> 一种组件间通信的方式,适用于<span style="color:red">任意组件间通信</span></p>
+<h3 id="2-使用步骤"><a href="#2-使用步骤" class="headerlink" title="2. 使用步骤"></a>2. 使用步骤</h3><p> ①安装pubsub<br>  <code>npm i pubsub-js</code></p>
+<p> ②引入<br>  <code>import pubsub from &#39;pubsub-js&#39;</code></p>
+<p> ③接收数据<br>  A组件想接收数据,则在A组件中订阅消息,订阅的<span style="color:red">回调留在A组件自身</span></p>
+  <pre class="language-none"><code class="language-none">methods()&#123;
+  demo(data)&#123;......&#125;
+&#125;
+......
+mounted() &#123;
+  this.pid &#x3D; pubsub.subscribe(&#39;xxx&#39;,this.demo) &#x2F;&#x2F;订阅消息
+&#125;</code></pre>
+<p>  ④提供数据<br>   <code>pubsub.publish(&#39;xxx&#39;,数据)</code></p>
+<p>  ⑤取消订阅<br>   最好在beforeDestroy钩子中，用<code>PubSub.unsubscribe(pid)</code>去<span style="color:red">取消订阅</span></p>
+<h2 id="三十一、nextTick"><a href="#三十一、nextTick" class="headerlink" title="三十一、nextTick"></a>三十一、nextTick</h2><h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h3><p> <code>this.$nextTick(回调函数)</code></p>
+<h3 id="2-作用"><a href="#2-作用" class="headerlink" title="2. 作用"></a>2. 作用</h3><p> 在下一次 DOM 更新结束后执行其指定的回调</p>
+<h3 id="3-何时使用"><a href="#3-何时使用" class="headerlink" title="3. 何时使用"></a>3. 何时使用</h3><p> 当改变数据后，要基于更新后的新DOM进行某些操作时，要在nextTick所指定的回调函数中执行</p>
+<h2 id="三十二、Vue封装的过度与动画"><a href="#三十二、Vue封装的过度与动画" class="headerlink" title="三十二、Vue封装的过度与动画"></a>三十二、Vue封装的过度与动画</h2><h3 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 在插入、更新或移除DOM元素时,在合适的时候给元素添加样式类名</p>
+<h3 id="2-写法"><a href="#2-写法" class="headerlink" title="2. 写法"></a>2. 写法</h3><h4 id="1-准备样式"><a href="#1-准备样式" class="headerlink" title="1.准备样式"></a>1.准备样式</h4><p>  ①进入的样式<br>    Ⅰ. v-enter: 进入的起点<br>    Ⅱ.v-enter-active: 进入的过程中<br>    Ⅲ. v-enter-to: 进入的终点</p>
+<p>  ②离开的样式<br>    Ⅰ. v-leave: 离开的起点<br>    Ⅱ.v-leave-active: 离开的过程中<br>    Ⅲ. v-leave-to: 离开的终点</p>
+<h4 id="2-包裹过度元素"><a href="#2-包裹过度元素" class="headerlink" title="2.包裹过度元素"></a>2.包裹过度元素</h4><p> 使用<code>&lt;transition&gt;</code>包裹要过度的元素，并配置name属性：</p>
+  <pre class="language-none"><code class="language-none">&lt;transition name&#x3D;&quot;hello&quot;&gt;
+ &lt;h1 v-show&#x3D;&quot;isShow&quot;&gt;你好啊！&lt;&#x2F;h1&gt;
+&lt;&#x2F;transition&gt;</code></pre>
+<h4 id="3-备注-1"><a href="#3-备注-1" class="headerlink" title="3.备注"></a>3.备注</h4><p> 若有多个元素需要过度，则需要使用：<code>&lt;transition-group&gt;</code>，且每个元素都要指定<code>key</code>值</p>
+<h2 id="三十三、Vue脚手架配置代理"><a href="#三十三、Vue脚手架配置代理" class="headerlink" title="三十三、Vue脚手架配置代理"></a>三十三、Vue脚手架配置代理</h2><h3 id="1-方法一"><a href="#1-方法一" class="headerlink" title="1.方法一"></a>1.方法一</h3><p> 在<code>vue.config.js</code>中添加如下配置：<br> <pre class="language-none"><code class="language-none">devServer:&#123;
+ proxy:&quot;http:&#x2F;&#x2F;localhost:5000&quot;
 &#125;</code></pre></p>
+<p> 说明:<br>  ①优点<br>   配置简单,请求资源时直接发给前端(8080)即可</p>
+<p>  ②缺点<br>   不能配置多个代理,不能灵活的控制请求是否走代理</p>
+<p>  ③工作方式<br>   若按照上述配置代理,当请求了前端不存在的资源时,那么该请求会转发给服务器(优先匹配前端资源)</p>
+<h3 id="2-方法二"><a href="#2-方法二" class="headerlink" title="2.方法二"></a>2.方法二</h3><p> 在<code>vue.config.js</code>配置具体代理规则:<br> <pre class="language-none"><code class="language-none">module.exports &#x3D; &#123;
+  devServer: &#123;
+      proxy: &#123;
+      &#39;&#x2F;api1&#39;: &#123;&#x2F;&#x2F; 匹配所有以 &#39;&#x2F;api1&#39;开头的请求路径
+        target: &#39;http:&#x2F;&#x2F;localhost:5000&#39;,&#x2F;&#x2F; 代理目标的基础路径
+        changeOrigin: true,
+        pathRewrite: &#123;&#39;^&#x2F;api1&#39;: &#39;&#39;&#125;
+      &#125;,
+      &#39;&#x2F;api2&#39;: &#123;&#x2F;&#x2F; 匹配所有以 &#39;&#x2F;api2&#39;开头的请求路径
+        target: &#39;http:&#x2F;&#x2F;localhost:5001&#39;,&#x2F;&#x2F; 代理目标的基础路径
+        changeOrigin: true,
+        pathRewrite: &#123;&#39;^&#x2F;api2&#39;: &#39;&#39;&#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+&#x2F;*
+  changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:5000
+  changeOrigin设置为false时，服务器收到的请求头中的host为：localhost:8080
+  changeOrigin默认值为true
+*&#x2F;</code></pre><br>  说明:<br>   ①优点<br>    可以配置多个代理,且可以灵活的控制请求是否走代理</p>
+<p>   ②缺点<br>    配置略微繁琐,请求资源时必须加前缀</p>
+<h2 id="三十四、插槽"><a href="#三十四、插槽" class="headerlink" title="三十四、插槽"></a>三十四、插槽</h2><h3 id="1-作用-1"><a href="#1-作用-1" class="headerlink" title="1.作用"></a>1.作用</h3><p> 让父组件可以向子组件指定位置插入html结构,也是一种组件间通信的方式,适用于1. <strong style="color:red">父组件 ===&gt; 子组件</strong> </p>
+<h3 id="2-分类-1"><a href="#2-分类-1" class="headerlink" title="2.分类"></a>2.分类</h3><p> ①默认插槽<br> ②具名插槽<br> ③作用域插槽</p>
+<h4 id="1-默认插槽"><a href="#1-默认插槽" class="headerlink" title="1. 默认插槽"></a>1. 默认插槽</h4> <pre class="language-none"><code class="language-none">父组件中：
+       &lt;Category&gt;
+          &lt;div&gt;html结构1&lt;&#x2F;div&gt;
+       &lt;&#x2F;Category&gt;
+子组件中：
+       &lt;template&gt;
+           &lt;div&gt;
+              &lt;!-- 定义插槽 --&gt;
+              &lt;slot&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+           &lt;&#x2F;div&gt;
+       &lt;&#x2F;template&gt;</code></pre>
+<h4 id="2-具名插槽"><a href="#2-具名插槽" class="headerlink" title="2. 具名插槽"></a>2. 具名插槽</h4> <pre class="language-none"><code class="language-none">父组件中：
+       &lt;Category&gt;
+           &lt;template slot&#x3D;&quot;center&quot;&gt;
+             &lt;div&gt;html结构1&lt;&#x2F;div&gt;
+           &lt;&#x2F;template&gt;
+
+           &lt;template v-slot:footer&gt;
+              &lt;div&gt;html结构2&lt;&#x2F;div&gt;
+           &lt;&#x2F;template&gt;
+       &lt;&#x2F;Category&gt;
+子组件中：
+       &lt;template&gt;
+           &lt;div&gt;
+              &lt;!-- 定义插槽 --&gt;
+              &lt;slot name&#x3D;&quot;center&quot;&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+              &lt;slot name&#x3D;&quot;footer&quot;&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+           &lt;&#x2F;div&gt;
+       &lt;&#x2F;template&gt;</code></pre>
+<h4 id="3-作用域插槽"><a href="#3-作用域插槽" class="headerlink" title="3. 作用域插槽"></a>3. 作用域插槽</h4><p> 1.理解<br>  <span style="color:red">数据在组件的自身，但根据数据生成的结构需要组件的使用者来决定。</span>（games数据在Category组件中，但使用数据所遍历出来的结构由App组件决定）</p>
+ <pre class="language-none"><code class="language-none">父组件中：
+	&lt;Category&gt;
+		&lt;template scope&#x3D;&quot;scopeData&quot;&gt;
+			&lt;!-- 生成的是ul列表 --&gt;
+			&lt;ul&gt;
+				&lt;li v-for&#x3D;&quot;g in scopeData.games&quot; :key&#x3D;&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;&#x2F;li&gt;
+			&lt;&#x2F;ul&gt;
+		&lt;&#x2F;template&gt;
+	&lt;&#x2F;Category&gt;
+
+	&lt;Category&gt;
+		&lt;template slot-scope&#x3D;&quot;scopeData&quot;&gt;
+			&lt;!-- 生成的是h4标题 --&gt;
+			&lt;h4 v-for&#x3D;&quot;g in scopeData.games&quot; :key&#x3D;&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;&#x2F;h4&gt;
+		&lt;&#x2F;template&gt;
+	&lt;&#x2F;Category&gt;
+子组件中：
+       &lt;template&gt;
+           &lt;div&gt;
+               &lt;slot :games&#x3D;&quot;games&quot;&gt;&lt;&#x2F;slot&gt;
+           &lt;&#x2F;div&gt;
+       &lt;&#x2F;template&gt;
+	
+       &lt;script&gt;
+           export default &#123;
+               name:&#39;Category&#39;,
+               props:[&#39;title&#39;],
+               &#x2F;&#x2F;数据在子组件自身
+               data() &#123;
+                   return &#123;
+                       games:[&#39;红色警戒&#39;,&#39;穿越火线&#39;,&#39;劲舞团&#39;,&#39;超级玛丽&#39;]
+                   &#125;
+               &#125;,
+           &#125;
+       &lt;&#x2F;script&gt;</code></pre>
+
+
+
+
+
+
 
                 
             </div>
@@ -1253,7 +1400,7 @@ mounted()&#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">41.2k</span>
+                        class="white-color">42.8k</span>
             
             
             
