@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第二十三篇博客, 张小六">
+    <meta name="keywords" content="Vuex, 张小六">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第二十三篇博客 | 张小六</title>
+    <title>Vuex | 张小六</title>
     <link rel="icon" type="image/jpeg" href="/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第二十三篇博客</h1>
+                    <h1 class="description center-align post-title">Vuex</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">-JavaScript</span>
+                            <a href="/tags/Vuex/">
+                                <span class="chip bg-color">-Vuex</span>
                             </a>
                         
                     </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-12-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-12-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    964
                 </div>
                 
 
@@ -418,88 +418,128 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="学习JavaScript的第四天-运算符"><a href="#学习JavaScript的第四天-运算符" class="headerlink" title="学习JavaScript的第四天(运算符)"></a>学习JavaScript的第四天(运算符)</h1><a id="more"></a>
-<h2 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1.运算符"></a>1.运算符</h2><p>1.运算符也叫操作符，通过运算符可以对一个或多个值进行运算，并获取运算结果。</p>
-<p>比如typeof就是运算符，可以获得一个值的类型<br>它会将该值的类型以字符串的形式返回，该值的类型(number、string、boolean、undefined、object)</p>
-<p><img src="/js/js24.png"></p>
-<h2 id="2-算数运算符"><a href="#2-算数运算符" class="headerlink" title="2.算数运算符"></a>2.算数运算符</h2><p>当对非Number类型的值进行运算时，会将这些值转换为Number然后在运算(除了字符串的加法,其他都是)<br>任何值和NaN做运算,运算结果都为NaN</p>
-<h3 id="2-1-（加）"><a href="#2-1-（加）" class="headerlink" title="2.1 +（加）"></a>2.1 +（加）</h3><p>1.可以对两个值进行加法运算，并将结果进行返回</p>
-<p>2.如果两个字符串相加，则会做拼串（字符串拼接到一起），会将两个字符串拼接成一个字符串。</p>
-<p>3.任何的值和字符串做加法运算时，都会先转换为字符串，然后再和字符串进行拼串操作。</p>
-<p><img src="/js/js25.png"></p>
-<p><img src="/js/js26.png"></p>
-<h3 id="2-2-（减）"><a href="#2-2-（减）" class="headerlink" title="2.2 -（减）"></a>2.2 -（减）</h3><p>可以对两个值进行减法运算，并将结果返回<br><img src="/js/js27.png"></p>
-<h3 id="2-3-（乘）"><a href="#2-3-（乘）" class="headerlink" title="2.3 *（乘）"></a>2.3 *（乘）</h3><p>可以对两个数值进行乘法运算</p>
-<h3 id="2-4-（除）"><a href="#2-4-（除）" class="headerlink" title="2.4 /（除）"></a>2.4 /（除）</h3><p>可以对两个数值进行除法运算</p>
-<h3 id="2-5-（取余数）"><a href="#2-5-（取余数）" class="headerlink" title="2.5 % （取余数）"></a>2.5 % （取余数）</h3><p>取模运算(取余数)</p>
-<p><img src="/js/js28.png"></p>
-<h3 id="2-6-补充"><a href="#2-6-补充" class="headerlink" title="2.6 补充"></a>2.6 补充</h3><p>任何值做”-”、”<em>”、”/”运算时都会自动转换为Number<br>我们可以利用这一提点来做隐式转换<br>可以通过为一个值-0、</em>1、/1来将其转换为Number<br>原理和Number（）函数一样，使用起来更加简单</p>
-<h2 id="3-一元运算符"><a href="#3-一元运算符" class="headerlink" title="3.一元运算符"></a>3.一元运算符</h2><p>1.一元运算符，只需要一个操作数</p>
-<p>2.一元运算符:+、-<br>① + 正号  正号不会对数字产生任何影响<br>② -    负号  负号可以对数字进行负号的取反(类似于负负得正)</p>
-<p>3.对于非Number的值，会将其先转换为Number，然后在运算。<br>可以对一个其他数据类型使用+(正号),来将其转换为Number，它的原理和Number()函数一样。</p>
-<p><img src="/js/js29.png"></p>
-<h2 id="4-自增和自减"><a href="#4-自增和自减" class="headerlink" title="4.自增和自减"></a>4.自增和自减</h2><h3 id="4-1-自增"><a href="#4-1-自增" class="headerlink" title="4.1 自增(++)"></a>4.1 自增(++)</h3><p>通过自增可以使变量在自身的基础上加1</p>
-<p>1.对于一个变量自增以后，原变量会立即自增加1</p>
-<p>2.自增分为两种：后++(a++)和前++(++a)<br>无论是a++还是++a，都会立即使原变量的值自增1<br>不同的是a++和++a的值不同<br>a++的值等于原变量的值(自增以前的值)<br>++a的值等于新值(自增以后的值)<br><img src="/js/js30.png"></p>
-<p><img src="/js/js31.png"></p>
-<h3 id="4-2-自减-–"><a href="#4-2-自减-–" class="headerlink" title="4.2 自减(–)"></a>4.2 自减(–)</h3><p>通过自减可以使变量在自身的基础上减1</p>
-<p>1.自减分为两种: 后–(a–)和前–(–a)<br>无论是a–还是–a，都会立即使原变量的值自减1<br>不同的是a–和–a的值不同<br>a–的值等于原变量的值(自减以前的值)<br>–a的值等于新值(自减以后的值)</p>
-<p><img src="/js/js32.png"></p>
-<h3 id="4-3-例子"><a href="#4-3-例子" class="headerlink" title="4.3 例子"></a>4.3 例子</h3><p><img src="/js/js33.png"></p>
-<h2 id="5-逻辑运算符"><a href="#5-逻辑运算符" class="headerlink" title="5.逻辑运算符"></a>5.逻辑运算符</h2><p>JS中有三种逻辑运算符</p>
-<h3 id="5-1-非"><a href="#5-1-非" class="headerlink" title="5.1 !(非)"></a>5.1 !(非)</h3><p>1.可以对一个值进行非运算，非运算就是指对一个布尔值进行取反操作: 1.true 变 false 2.false 变true</p>
-<p>2.如果对一个布尔值进行两次取反操作，它不会发生变化</p>
-<p>3.如果对非布尔值进行运算，会将其转换为布尔值，在取反,所以我们利用该特点，来将一个其他的数据类型转换为布尔值。</p>
-<p>4.可以将任意一个数据类型取两次反，来将其转换为布尔值。原理和Boolean()函数一样，使用起来简单<br><img src="/js/js34.png"></p>
-<h3 id="5-2-amp-amp-与"><a href="#5-2-amp-amp-与" class="headerlink" title="5.2 &amp;&amp; 与"></a>5.2 &amp;&amp; 与</h3><p>1.&amp;&amp;可以对符号两侧的值进行运算，并返回结果</p>
-<p>2.运算规则:<br>1.两个值中只要有一个值为false，就会返回false</p>
-<p>2.两个值都为true时，就会返回true</p>
-<p>3.JS中”与”属于短路的与，如果第一个值为false，将不会检查第二个值。</p>
-<p>3.例子<br><img src="/js/js35.png"></p>
-<h3 id="5-3-或"><a href="#5-3-或" class="headerlink" title="5.3 || 或"></a>5.3 || 或</h3><p>1.||可以对符号两侧的值进行运算，并返回结果</p>
-<p>2.运算规则:<br>1.两个值中只要有一个true，就会返回true</p>
-<p>2.两个值都为false，才会返回false</p>
-<p>3.JS中”或”属于短路的或，如果第一个值为true，将不会检查第二个值</p>
-<p>3.例子<br><img src="/js/js36.png"></p>
-<h3 id="5-4-与-amp-amp-、或-非布尔值的情况"><a href="#5-4-与-amp-amp-、或-非布尔值的情况" class="headerlink" title="5.4 与(&amp;&amp;)、或(||)非布尔值的情况"></a>5.4 与(&amp;&amp;)、或(||)非布尔值的情况</h3><p>1.对于非布尔值进行与、或运算时，会先将其转换为布尔值，在进行运算，并返回原值</p>
-<p>2.与运算:<br>1.如果第一个值为true，则必然会返回第二个值</p>
-<p>2.如果第一个值为false，则直接返回第一个false值</p>
-<p>3.例子<br><img src="/js/js37.png"></p>
-<p>3.或运算:<br>1.如果第一个值为true，则直接返回第一个值</p>
-<p>2.如果第一个值为false，则返回第二个值</p>
-<p>3.例子<br><img src="/js/js38.png"></p>
-<h2 id="6-赋值运算符"><a href="#6-赋值运算符" class="headerlink" title="6.赋值运算符"></a>6.赋值运算符</h2><p>1.=(等于) 将符号右边的值赋值给符号左侧的变量</p>
-<p>2.+=(加等于) a+=5 等价于 a=a+5;</p>
-<p>3.-=(减等于) a-=5 等价于 a=a-5;</p>
-<p>4.<em>=(乘等于) a</em>=5 等价于 a=a*5;</p>
-<p>5./=(除等于) a/=5 等价于 a=a/5;</p>
-<p>6.%=(取模等于，取余数) a%=5 等价于 a=a%5;</p>
-<p><img src="/js/js39.png"></p>
-<h2 id="7-关系运算符"><a href="#7-关系运算符" class="headerlink" title="7.关系运算符"></a>7.关系运算符</h2><p>1.通过关系运算符可以比较两个值之间的大小关系，如果关系成立，返回true。如果关系不成立，返回false</p>
-<p>2.大于号(&gt;)<br>判断符号左侧的值是否大于右侧的值<br>如果关系成立返回true，关系不成立返回false</p>
-<p>3.大于等于号(&gt;=)<br>判断符号左侧的值是否大于等于右侧的值<br>如果关系成立(成立一个条件即可)返回true，关系不成立返回false。</p>
-<p>4.小于号(&lt;)<br>判断符号左侧的值是否小于符号右侧的值<br>如果关系成立返回true，关系不成立返回false</p>
-<p>5.小于等于号(&lt;=)<br>判断符号左侧的值是否小于等于右侧的值<br>如果关系成立(成立一个条件即可)返回true，关系不成立返回false。</p>
-<p>6.对于非数值的情况下:<br>1.对于非数值情况进行比较时，会将其先转换为数值，再进行比较。</p>
-<p>2.如果符号两侧都为字符串时，不会将其转换为数字进行比较，而会分别比较字符串中字符的Unicode编码</p>
-<p>例子<br><img src="/js/js40.png"></p>
-<h2 id="8-相等运算符"><a href="#8-相等运算符" class="headerlink" title="8.相等运算符"></a>8.相等运算符</h2><p>1.相等运算符用来判断两个值是否相等，如果相等返回true，不相等返回false</p>
-<p>2.使用==(等等) 来做相等运算<br>当使用==来比较两个值时，如果值的类型不同，则会自动进行类型转换，将其转换为相同的类型后，在进行比较。</p>
-<p>3.使用!=(不等) 来做不相等运算<br>不相等用来判断两个值是否不相等，如果不相等返回true，否则返回false。<br>使用!=来比较两个值时，如果值的类型不同，则会自动进行类型转换，将其转换为相同类型，再进行比较<br>如果转换后相等，则返回false。</p>
-<p>4.=== 全等<br>用来判断两个值是否全等，它和等等相似，但不同的是它不会做自动类型转换,如果两个值的类型不同，直接返回false。</p>
-<p>5.!== 不全等<br>用来判断两个值是否不全等，它和不等类似，但不同的是它不会做类型转换，如果两个类型值不同，直接返回true。</p>
-<p><img src="/js/js43.png"></p>
-<h2 id="9-条件运算符"><a href="#9-条件运算符" class="headerlink" title="9.条件运算符"></a>9.条件运算符</h2><p>1.条件运算符也叫三元运算符</p>
-<p>2.语法 条件表达式?语句1:语句2；</p>
-<p>3.执行流程<br>条件运算符在执行时，先对条件表达式进行求值<br>如果值为true，执行语句1<br>如果值为false, 执行语句2</p>
-<p>4.如果条件表达式不是布尔值时，会先将其转换为布尔值在进行运算</p>
-<p><img src="/js/js44.png"></p>
-<h2 id="10-运算符优先级"><a href="#10-运算符优先级" class="headerlink" title="10.运算符优先级"></a>10.运算符优先级</h2><p>1.“,”（逗号）运算符，可以分割多个语句，一般用在声明多个变量。</p>
-<p>2.JS中优先级:先乘除后加减</p>
-<p>3.在JS中有运算符优先级的表，在表中越靠上，优先级越高，优先级越高就越先计算 如果优先级一样，则从左往右计算</p>
-<p>4.()(括号)可以改变优先级</p>
-<p><img src="/js/js45.png"></p>
+                <h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><a id="more"></a>
+<h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h2><p> 在Vue中实现集中式状态(数据)管理的一个Vue插件,对Vue应用中多个组件的共享状态进行集中式的管理(读/写),也是一种组件间通信的方式,且适用于任意组件间通信</p>
+<h2 id="2-何时使用"><a href="#2-何时使用" class="headerlink" title="2. 何时使用"></a>2. 何时使用</h2><p> 多个组件需要共享数据时</p>
+<h2 id="3-搭建Vuex环境"><a href="#3-搭建Vuex环境" class="headerlink" title="3. 搭建Vuex环境"></a>3. 搭建Vuex环境</h2><h3 id="3-1-创建文件"><a href="#3-1-创建文件" class="headerlink" title="3.1 创建文件"></a>3.1 创建文件</h3><p> <code>src/store/index.js</code></p>
+ <pre class="language-none"><code class="language-none">&#x2F;&#x2F;引入Vue核心库
+import Vue from &#39;vue&#39;
+&#x2F;&#x2F;引入Vuex
+import Vuex from &#39;vuex&#39;
+&#x2F;&#x2F;应用Vuex插件
+Vue.use(Vuex)
 
+&#x2F;&#x2F;准备actions对象——响应组件中用户的动作
+const actions &#x3D; &#123;&#125;
+&#x2F;&#x2F;准备mutations对象——修改state中的数据
+const mutations &#x3D; &#123;&#125;
+&#x2F;&#x2F;准备state对象——保存具体的数据
+const state &#x3D; &#123;&#125;
+
+&#x2F;&#x2F;创建并暴露store
+export default new Vuex.Store(&#123;
+  actions,
+  mutations,
+  state
+&#125;)</code></pre>
+<h3 id="3-2-配置"><a href="#3-2-配置" class="headerlink" title="3.2 配置"></a>3.2 配置</h3><p> 在<code>main.js</code>中创建vm时传入<code>store</code>配置项</p>
+ <pre class="language-none"><code class="language-none">......
+&#x2F;&#x2F;引入store
+import store from &#39;.&#x2F;store&#39;
+......
+
+&#x2F;&#x2F;创建vm
+new Vue(&#123;
+  el:&#39;#app&#39;,
+  render: h &#x3D;&gt; h(App),
+  store
+&#125;)</code></pre>
+<h2 id="4-基本使用"><a href="#4-基本使用" class="headerlink" title="4. 基本使用"></a>4. 基本使用</h2><p> ①初始化数据、配置<code>actions</code>、配置<code>mutations</code>，操作文件<code>store.js</code></p>
+ <pre class="language-none"><code class="language-none">&#x2F;&#x2F;引入Vue核心库
+import Vue from &#39;vue&#39;
+&#x2F;&#x2F;引入Vuex
+import Vuex from &#39;vuex&#39;
+&#x2F;&#x2F;引用Vuex
+Vue.use(Vuex)
+
+const actions &#x3D; &#123;
+    &#x2F;&#x2F;响应组件中加的动作
+    jia(context,value)&#123;
+    &#x2F;&#x2F; console.log(&#39;actions中的jia被调用了&#39;,miniStore,value)
+    context.commit(&#39;JIA&#39;,value)
+    &#125;,
+&#125;
+
+const mutations &#x3D; &#123;
+    &#x2F;&#x2F;执行加
+  JIA(state,value)&#123;
+    &#x2F;&#x2F; console.log(&#39;mutations中的JIA被调用了&#39;,state,value)
+    state.sum +&#x3D; value
+  &#125;
+&#125;
+
+&#x2F;&#x2F;初始化数据
+const state &#x3D; &#123;
+  sum:0
+&#125;
+
+&#x2F;&#x2F;创建并暴露store
+export default new Vuex.Store(&#123;
+  actions,
+  mutations,
+  state,
+&#125;)</code></pre>
+<p> ②组件中读取vuex中的数据<br>  <code>$store.state.sum</code></p>
+<p> ③组件中修改vuex的数据<br>  <code>$store.dispatch(&#39;action中的方法名&#39;,数据)</code> 或 <code>$store.commit(&#39;mutations中的方法名&#39;,数据)</code></p>
+<p> 备注：若没有网络请求或其他业务逻辑，组件中也可以越过actions，即不写<code>dispatch</code>，直接编写<code>commit</code></p>
+<h2 id="5-getters的使用"><a href="#5-getters的使用" class="headerlink" title="5. getters的使用"></a>5. getters的使用</h2><h3 id="①-概念"><a href="#①-概念" class="headerlink" title="①.概念"></a>①.概念</h3><p> 当state中的数据需要经过加工后再使用时,可以使用getters加工</p>
+<h3 id="②-配置"><a href="#②-配置" class="headerlink" title="②.配置"></a>②.配置</h3><p> 在<code>store.js</code>中追加<code>getters</code>配置<br> <pre class="language-none"><code class="language-none">......
+
+const getters &#x3D; &#123;
+  bigSum(state)&#123;
+    return state.sum * 10
+  &#125;
+&#125;
+
+&#x2F;&#x2F;创建并暴露store
+export default new Vuex.Store(&#123;
+  ......
+  getters
+&#125;)</code></pre></p>
+<h3 id="③-组件中读取数据"><a href="#③-组件中读取数据" class="headerlink" title="③.组件中读取数据"></a>③.组件中读取数据</h3><p>  <code>$store.getters.bigSum</code></p>
+<h2 id="6-四个map方法的使用"><a href="#6-四个map方法的使用" class="headerlink" title="6. 四个map方法的使用"></a>6. 四个map方法的使用</h2><h3 id="6-1-mapState"><a href="#6-1-mapState" class="headerlink" title="6.1 mapState"></a>6.1 mapState</h3><p> 用于帮助我们映射state中的数据为计算属性<br> <pre class="language-none"><code class="language-none">computed: &#123;
+   &#x2F;&#x2F;借助mapState生成计算属性：sum、school、subject（对象写法）
+    ...mapState(&#123;sum:&#39;sum&#39;,school:&#39;school&#39;,subject:&#39;subject&#39;&#125;),
+        
+   &#x2F;&#x2F;借助mapState生成计算属性：sum、school、subject（数组写法）
+   ...mapState([&#39;sum&#39;,&#39;school&#39;,&#39;subject&#39;]),
+ &#125;,</code></pre></p>
+<h3 id="6-2-mapGetters"><a href="#6-2-mapGetters" class="headerlink" title="6.2 mapGetters"></a>6.2 mapGetters</h3><p> 用于帮助我们映射getters中的数据为计算属性<br> <pre class="language-none"><code class="language-none">computed: &#123;
+   &#x2F;&#x2F;借助mapGetters生成计算属性：bigSum（对象写法）
+   ...mapGetters(&#123;bigSum:&#39;bigSum&#39;&#125;),
+
+   &#x2F;&#x2F;借助mapGetters生成计算属性：bigSum（数组写法）
+   ...mapGetters([&#39;bigSum&#39;])
+&#125;,</code></pre></p>
+<h3 id="6-3-mapActions"><a href="#6-3-mapActions" class="headerlink" title="6.3 mapActions"></a>6.3 mapActions</h3><p> 用于帮助我们生成与actions对话的方法,即: 包含<code>$store.commit(xxx)</code>的函数</p>
+ <pre class="language-none"><code class="language-none">methods:&#123;
+  &#x2F;&#x2F;靠mapActions生成：incrementOdd、incrementWait（对象形式）
+  ...mapActions(&#123;incrementOdd:&#39;jiaOdd&#39;,incrementWait:&#39;jiaWait&#39;&#125;)
+
+  &#x2F;&#x2F;靠mapActions生成：incrementOdd、incrementWait（数组形式）
+  ...mapActions([&#39;jiaOdd&#39;,&#39;jiaWait&#39;])
+&#125;</code></pre>
+<h3 id="6-4-mapMutations"><a href="#6-4-mapMutations" class="headerlink" title="6.4 mapMutations"></a>6.4 mapMutations</h3><p> 用于帮助我们生产与<code>mutations</code>对话的方法,即：包含<code>$store.commit(xxx)</code>的函数</p>
+ <pre class="language-none"><code class="language-none">methods:&#123;
+   &#x2F;&#x2F;靠mapActions生成：increment、decrement（对象形式）
+   ...mapMutations(&#123;increment:&#39;JIA&#39;,decrement:&#39;JIAN&#39;&#125;),
+   
+   &#x2F;&#x2F;靠mapMutations生成：JIA、JIAN（对象形式）
+   ...mapMutations([&#39;JIA&#39;,&#39;JIAN&#39;]),
+&#125;</code></pre>
+<p> 备注：mapActions与mapMutations使用时，若需要传递参数需要：在模板中绑定事件时传递好参数，否则参数是事件对象</p>
+<h2 id="7-模块化-命名空间"><a href="#7-模块化-命名空间" class="headerlink" title="7. 模块化+命名空间"></a>7. 模块化+命名空间</h2><h3 id="7-1-目的"><a href="#7-1-目的" class="headerlink" title="7.1 目的"></a>7.1 目的</h3><p> 让代码更好维护,让多种数据分类更加明确</p>
+<h3 id="7-2-配置"><a href="#7-2-配置" class="headerlink" title="7.2 配置"></a>7.2 配置</h3>
                 
             </div>
             <hr/>
@@ -525,7 +565,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaoliu824.github.io/2021/03/31/di-er-shi-san-pian-bo-ke/">https://xiaoliu824.github.io/2021/03/31/di-er-shi-san-pian-bo-ke/</a>
+                    <a href="https://xiaoliu824.github.io/2021/12/16/vuex/">https://xiaoliu824.github.io/2021/12/16/vuex/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -563,8 +603,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">-JavaScript</span>
+                                <a href="/tags/Vuex/">
+                                    <span class="chip bg-color">-Vuex</span>
                                 </a>
                             
                         </div>
@@ -736,29 +776,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/31/di-er-shi-si-pian-bo-ke/">
+                <a href="/2021/12/16/vuex/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第二十四篇博客">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Vuex">
                         
-                        <span class="card-title">第二十四篇博客</span>
+                        <span class="card-title">Vuex</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习JavaScript的第五天(语句)
+                            Vuex
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -767,11 +808,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">-JavaScript</span>
+                    <a href="/tags/Vuex/">
+                        <span class="chip bg-color">-Vuex</span>
                     </a>
                     
                 </div>
@@ -785,24 +827,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/31/di-er-shi-er-pian-bo-ke/">
+                <a href="/2021/12/06/di-si-shi-pian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第二十二篇博客">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第四十篇博客">
                         
-                        <span class="card-title">第二十二篇博客</span>
+                        <span class="card-title">第四十篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习JavaScript的第三天(数据类型)
+                            Vue知识点
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
                             </span>
                         <span class="publish-author">
                             
@@ -815,8 +857,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">-JavaScript</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">-Vue</span>
                     </a>
                     
                 </div>
