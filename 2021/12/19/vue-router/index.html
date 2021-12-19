@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vuex, 张小六">
+    <meta name="keywords" content="Vue-Router, 张小六">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vuex | 张小六</title>
+    <title>Vue-Router | 张小六</title>
     <link rel="icon" type="image/jpeg" href="/medias/logo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vuex</h1>
+                    <h1 class="description center-align post-title">Vue-Router</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vuex/">
-                                <span class="chip bg-color">-Vuex</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">-Vue</span>
                             </a>
                         
                     </div>
@@ -384,7 +384,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-16
+                    2021-12-19
                 </div>
                 
 
@@ -398,7 +398,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.6k
                 </div>
                 
 
@@ -418,170 +418,204 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><a id="more"></a>
-<h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h2><p> 在Vue中实现集中式状态(数据)管理的一个Vue插件,对Vue应用中多个组件的共享状态进行集中式的管理(读/写),也是一种组件间通信的方式,且适用于任意组件间通信</p>
-<h2 id="2-何时使用"><a href="#2-何时使用" class="headerlink" title="2. 何时使用"></a>2. 何时使用</h2><p> 多个组件需要共享数据时</p>
-<h2 id="3-搭建Vuex环境"><a href="#3-搭建Vuex环境" class="headerlink" title="3. 搭建Vuex环境"></a>3. 搭建Vuex环境</h2><h3 id="3-1-创建文件"><a href="#3-1-创建文件" class="headerlink" title="3.1 创建文件"></a>3.1 创建文件</h3><p> <code>src/store/index.js</code></p>
- <pre class="language-none"><code class="language-none">&#x2F;&#x2F;引入Vue核心库
-import Vue from &#39;vue&#39;
-&#x2F;&#x2F;引入Vuex
-import Vuex from &#39;vuex&#39;
-&#x2F;&#x2F;应用Vuex插件
-Vue.use(Vuex)
+                <h1 id="VueRouter"><a href="#VueRouter" class="headerlink" title="VueRouter"></a>VueRouter</h1><a id="more"></a>
+<h2 id="一、什么是路由"><a href="#一、什么是路由" class="headerlink" title="一、什么是路由"></a>一、什么是路由</h2><h3 id="1-理解"><a href="#1-理解" class="headerlink" title="1. 理解"></a>1. 理解</h3><p> 一个路由(route)就是一组映射关系(key-value),多个路由需要路由器(router)进行管理</p>
+<h3 id="2-前端路由"><a href="#2-前端路由" class="headerlink" title="2. 前端路由"></a>2. 前端路由</h3><p> key是路径,value是组件</p>
+<h2 id="二、路由的基本使用"><a href="#二、路由的基本使用" class="headerlink" title="二、路由的基本使用"></a>二、路由的基本使用</h2><h3 id="①-安装"><a href="#①-安装" class="headerlink" title="① 安装"></a>① 安装</h3><p> 安装vue-router,命令: <code>npm i vue-router</code></p>
+<h3 id="②-应用"><a href="#②-应用" class="headerlink" title="② 应用"></a>② 应用</h3><p> 应用插件: <code>Vue.use(VueRouter)</code></p>
+<h3 id="③-编写router配置项"><a href="#③-编写router配置项" class="headerlink" title="③ 编写router配置项"></a>③ 编写router配置项</h3> <pre class="language-none"><code class="language-none">  &#x2F;&#x2F;引入VueRouter
+import VueRouter from &#39;vue-router&#39;
+&#x2F;&#x2F;引入Luyou 组件
+import About from &#39;..&#x2F;components&#x2F;About&#39;
+import Home from &#39;..&#x2F;components&#x2F;Home&#39;
 
-&#x2F;&#x2F;准备actions对象——响应组件中用户的动作
-const actions &#x3D; &#123;&#125;
-&#x2F;&#x2F;准备mutations对象——修改state中的数据
-const mutations &#x3D; &#123;&#125;
-&#x2F;&#x2F;准备state对象——保存具体的数据
-const state &#x3D; &#123;&#125;
-
-&#x2F;&#x2F;创建并暴露store
-export default new Vuex.Store(&#123;
-  actions,
-  mutations,
-  state
+&#x2F;&#x2F;创建router实例对象，去管理一组一组的路由规则
+const router &#x3D; new VueRouter(&#123;
+	routes:[
+		&#123;
+			path:&#39;&#x2F;about&#39;,
+			component:About
+		&#125;,
+		&#123;
+			path:&#39;&#x2F;home&#39;,
+			component:Home
+		&#125;
+	]
 &#125;)</code></pre>
-<h3 id="3-2-配置"><a href="#3-2-配置" class="headerlink" title="3.2 配置"></a>3.2 配置</h3><p> 在<code>main.js</code>中创建vm时传入<code>store</code>配置项</p>
- <pre class="language-none"><code class="language-none">......
-&#x2F;&#x2F;引入store
-import store from &#39;.&#x2F;store&#39;
-......
+<h3 id="④-实现切换-active-class可配置高亮样式"><a href="#④-实现切换-active-class可配置高亮样式" class="headerlink" title="④ 实现切换(active-class可配置高亮样式)"></a>④ 实现切换(active-class可配置高亮样式)</h3><p> <code>&lt;router-link active-class=&quot;active&quot; to=&quot;/about&quot;&gt;About&lt;/router-link&gt;</code></p>
+<h3 id="⑤-指定展示位置"><a href="#⑤-指定展示位置" class="headerlink" title="⑤ 指定展示位置"></a>⑤ 指定展示位置</h3><p> <code>&lt;router-view&gt;&lt;/router-view&gt;</code></p>
+<h2 id="三、几个注意点"><a href="#三、几个注意点" class="headerlink" title="三、几个注意点"></a>三、几个注意点</h2><p> Ⅰ.路由组件通常存放在<code>pages</code>文件夹,一般组件通常存放在<br> <pre class="language-components```文件夹" data-language="components```文件夹"><code class="language-components```文件夹">
+ Ⅱ.通过切换,&quot;隐藏&quot;了的路由组件,默认是被销毁掉的,需要的时候再去挂载
 
-&#x2F;&#x2F;创建vm
-new Vue(&#123;
-  el:&#39;#app&#39;,
-  render: h &#x3D;&gt; h(App),
-  store
-&#125;)</code></pre>
-<h2 id="4-基本使用"><a href="#4-基本使用" class="headerlink" title="4. 基本使用"></a>4. 基本使用</h2><p> ①初始化数据、配置<code>actions</code>、配置<code>mutations</code>，操作文件<code>store.js</code></p>
- <pre class="language-none"><code class="language-none">&#x2F;&#x2F;引入Vue核心库
-import Vue from &#39;vue&#39;
-&#x2F;&#x2F;引入Vuex
-import Vuex from &#39;vuex&#39;
-&#x2F;&#x2F;引用Vuex
-Vue.use(Vuex)
+ Ⅲ.每个组件都有自己的$route属性,里面存储着自己的路由信息
 
-const actions &#x3D; &#123;
-    &#x2F;&#x2F;响应组件中加的动作
-    jia(context,value)&#123;
-    &#x2F;&#x2F; console.log(&#39;actions中的jia被调用了&#39;,miniStore,value)
-    context.commit(&#39;JIA&#39;,value)
-    &#125;,
-&#125;
+ Ⅳ.整个应用只有一个router,可以通过组件的&#96;&#96;&#96;$router&#96;&#96;&#96;属性获取到
 
-const mutations &#x3D; &#123;
-    &#x2F;&#x2F;执行加
-  JIA(state,value)&#123;
-    &#x2F;&#x2F; console.log(&#39;mutations中的JIA被调用了&#39;,state,value)
-    state.sum +&#x3D; value
-  &#125;
-&#125;
+## 四、多级路由
+### 1. 配置路由规则
+ 配置路由规则,使用children配置项</code></pre><br> routes:[<br>    {<br>        path:’/about’,<br>        component:About,<br>    },<br>    {<br>        path:’/home’,<br>        component:Home,<br>        children:[ //通过children配置子级路由<br>            {<br>                path:’news’, //此处一定不要写：/news<br>                component:News<br>            },<br>            {<br>                path:’message’,//此处一定不要写：/message<br>                component:Message<br>            }<br>        ]<br>    }<br>]</p>
+<pre class="language-none"><code class="language-none">
+### 2. 跳转
+ &#96;&#96;&#96;&lt;router-link to&#x3D;&quot;&#x2F;home&#x2F;news&quot;&gt;News&lt;&#x2F;router-link&gt;&#96;&#96;&#96;
 
-&#x2F;&#x2F;初始化数据
-const state &#x3D; &#123;
-  sum:0
-&#125;
+## 五、路由的query参数
+ 1.传递参数</code></pre>
+  <!-- 跳转并携带query参数，to的字符串写法 -->
+<p><router-link :to="/home/message/detail?id=666&title=你好">跳转</router-link></p>
+<!-- 跳转并携带query参数，to的对象写法 -->
+<p>&lt;router-link<br>    :to=”{<br>        path:’/home/message/detail’,<br>        query:{<br>           id:666,<br>            title:’你好’<br>        }<br>    }”</p>
+<blockquote>
+<p>跳转</router-link></p>
+</blockquote>
+<pre class="language-none"><code class="language-none">
+2.接收参数</code></pre>
+<p>  $route.query.id<br>  $route.query.title<br>  <pre class="language-none"><code class="language-none">
+## 六、命名路由
+### 1. 作用
+ 可以简化路由的跳转
 
-&#x2F;&#x2F;创建并暴露store
-export default new Vuex.Store(&#123;
-  actions,
-  mutations,
-  state,
-&#125;)</code></pre>
-<p> ②组件中读取vuex中的数据<br>  <code>$store.state.sum</code></p>
-<p> ③组件中修改vuex的数据<br>  <code>$store.dispatch(&#39;action中的方法名&#39;,数据)</code> 或 <code>$store.commit(&#39;mutations中的方法名&#39;,数据)</code></p>
-<p> 备注：若没有网络请求或其他业务逻辑，组件中也可以越过actions，即不写<code>dispatch</code>，直接编写<code>commit</code></p>
-<h2 id="5-getters的使用"><a href="#5-getters的使用" class="headerlink" title="5. getters的使用"></a>5. getters的使用</h2><h3 id="①-概念"><a href="#①-概念" class="headerlink" title="①.概念"></a>①.概念</h3><p> 当state中的数据需要经过加工后再使用时,可以使用getters加工</p>
-<h3 id="②-配置"><a href="#②-配置" class="headerlink" title="②.配置"></a>②.配置</h3><p> 在<code>store.js</code>中追加<code>getters</code>配置<br> <pre class="language-none"><code class="language-none">......
+### 2. 如何使用
+ ①给路由命名</code></pre><br>  {<br>    path:’/demo’,<br>    component:Demo,<br>    children:[<br>        {<br>            path:’test’,<br>            component:Test,<br>            children:[<br>                {<br>                      name:’hello’ //给路由命名<br>                    path:’welcome’,<br>                    component:Hello,<br>                }<br>            ]<br>        }<br>    ]<br>}</p>
+<pre class="language-none"><code class="language-none">
+②简化跳转</code></pre>
+  <!--简化前，需要写完整的路径 -->
+<p><router-link to="/demo/test/welcome">跳转</router-link></p>
+<!--简化后，直接通过名字跳转 -->
+<p><router-link :to="{name:'hello'}">跳转</router-link></p>
+<!--简化写法配合传递参数 -->
+<p>&lt;router-link<br>    :to=”{<br>        name:’hello’,<br>        query:{<br>           id:666,<br>            title:’你好’<br>        }<br>    }”</p>
+<blockquote>
+<p>跳转</router-link></p>
+</blockquote>
+<pre class="language-none"><code class="language-none">
+## 七、路由的params参数
+### 1. 配置路由
+ 配置路由,声明接收params参数</code></pre>
+<p> {<br>    path:’/home’,<br>    component:Home,<br>    children:[<br>        {<br>            path:’news’,<br>            component:News<br>        },<br>        {<br>            component:Message,<br>            children:[<br>                {<br>                    name:’xiangqing’,<br>                    path:’detail/:id/:title’, //使用占位符声明接收params参数<br>                    component:Detail<br>                }<br>            ]<br>        }<br>    ]<br>}</p>
+<pre class="language-none"><code class="language-none">
+### 2. 传递参数</code></pre>
+ <!-- 跳转并携带params参数，to的字符串写法 -->
+<p><router-link :to="/home/message/detail/666/你好">跳转</router-link></p>
+<!-- 跳转并携带params参数，to的对象写法 -->
+<p>&lt;router-link<br>    :to=”{<br>        name:’xiangqing’,<br>        params:{<br>           id:666,<br>       title:’你好’<br>        }<br>    }”</p>
+<blockquote>
+<p>跳转</router-link></p>
+</blockquote>
+<pre class="language-none"><code class="language-none"> 
+ 特别注意: 路由携带params参数时，若使用to的对象写法，则不能使用path配置项，必须使用name配置！
 
-const getters &#x3D; &#123;
-  bigSum(state)&#123;
-    return state.sum * 10
-  &#125;
-&#125;
+### 3. 接收参数</code></pre>
+<p>  $route.params.id<br>  $route.params.title<br>  <pre class="language-none"><code class="language-none">
+## 八、路由的props配置
+### 1. 作用
+ 让路由组件更方便的收到参数</code></pre><br>  {<br>    name:’xiangqing’,<br>    path:’detail/:id’,<br>    component:Detail,</p>
+<pre><code>//第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件
+// props:&#123;a:900&#125;
 
-&#x2F;&#x2F;创建并暴露store
-export default new Vuex.Store(&#123;
-  ......
-  getters
-&#125;)</code></pre></p>
-<h3 id="③-组件中读取数据"><a href="#③-组件中读取数据" class="headerlink" title="③.组件中读取数据"></a>③.组件中读取数据</h3><p>  <code>$store.getters.bigSum</code></p>
-<h2 id="6-四个map方法的使用"><a href="#6-四个map方法的使用" class="headerlink" title="6. 四个map方法的使用"></a>6. 四个map方法的使用</h2><h3 id="6-1-mapState"><a href="#6-1-mapState" class="headerlink" title="6.1 mapState"></a>6.1 mapState</h3><p> 用于帮助我们映射state中的数据为计算属性<br> <pre class="language-none"><code class="language-none">computed: &#123;
-   &#x2F;&#x2F;借助mapState生成计算属性：sum、school、subject（对象写法）
-    ...mapState(&#123;sum:&#39;sum&#39;,school:&#39;school&#39;,subject:&#39;subject&#39;&#125;),
-        
-   &#x2F;&#x2F;借助mapState生成计算属性：sum、school、subject（数组写法）
-   ...mapState([&#39;sum&#39;,&#39;school&#39;,&#39;subject&#39;]),
- &#125;,</code></pre></p>
-<h3 id="6-2-mapGetters"><a href="#6-2-mapGetters" class="headerlink" title="6.2 mapGetters"></a>6.2 mapGetters</h3><p> 用于帮助我们映射getters中的数据为计算属性<br> <pre class="language-none"><code class="language-none">computed: &#123;
-   &#x2F;&#x2F;借助mapGetters生成计算属性：bigSum（对象写法）
-   ...mapGetters(&#123;bigSum:&#39;bigSum&#39;&#125;),
+//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件
+// props:true
 
-   &#x2F;&#x2F;借助mapGetters生成计算属性：bigSum（数组写法）
-   ...mapGetters([&#39;bigSum&#39;])
-&#125;,</code></pre></p>
-<h3 id="6-3-mapActions"><a href="#6-3-mapActions" class="headerlink" title="6.3 mapActions"></a>6.3 mapActions</h3><p> 用于帮助我们生成与actions对话的方法,即: 包含<code>$store.commit(xxx)</code>的函数</p>
- <pre class="language-none"><code class="language-none">methods:&#123;
-  &#x2F;&#x2F;靠mapActions生成：incrementOdd、incrementWait（对象形式）
-  ...mapActions(&#123;incrementOdd:&#39;jiaOdd&#39;,incrementWait:&#39;jiaWait&#39;&#125;)
-
-  &#x2F;&#x2F;靠mapActions生成：incrementOdd、incrementWait（数组形式）
-  ...mapActions([&#39;jiaOdd&#39;,&#39;jiaWait&#39;])
-&#125;</code></pre>
-<h3 id="6-4-mapMutations"><a href="#6-4-mapMutations" class="headerlink" title="6.4 mapMutations"></a>6.4 mapMutations</h3><p> 用于帮助我们生产与<code>mutations</code>对话的方法,即：包含<code>$store.commit(xxx)</code>的函数</p>
- <pre class="language-none"><code class="language-none">methods:&#123;
-   &#x2F;&#x2F;靠mapActions生成：increment、decrement（对象形式）
-   ...mapMutations(&#123;increment:&#39;JIA&#39;,decrement:&#39;JIAN&#39;&#125;),
-   
-   &#x2F;&#x2F;靠mapMutations生成：JIA、JIAN（对象形式）
-   ...mapMutations([&#39;JIA&#39;,&#39;JIAN&#39;]),
-&#125;</code></pre>
-<p> 备注：mapActions与mapMutations使用时，若需要传递参数需要：在模板中绑定事件时传递好参数，否则参数是事件对象</p>
-<h2 id="7-模块化-命名空间"><a href="#7-模块化-命名空间" class="headerlink" title="7. 模块化+命名空间"></a>7. 模块化+命名空间</h2><h3 id="7-1-目的"><a href="#7-1-目的" class="headerlink" title="7.1 目的"></a>7.1 目的</h3><p> 让代码更好维护,让多种数据分类更加明确</p>
-<h3 id="7-2-配置"><a href="#7-2-配置" class="headerlink" title="7.2 配置"></a>7.2 配置</h3><p> 修改<code>store.js</code><br> <pre class="language-none"><code class="language-none">const countAbout &#x3D; &#123;
-  namespaced:true,&#x2F;&#x2F;开启命名空间
-  state:&#123;x:1&#125;,
-  mutations: &#123; ... &#125;,
-  actions: &#123; ... &#125;,
-  getters: &#123;
-    bigSum(state)&#123;
-      return state.sum * 10
+//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件
+props(route)&#123;
+    return &#123;
+        id:route.query.id,
+        title:route.query.title
     &#125;
-  &#125;
-&#125;
+&#125;</code></pre>
+<p>}</p>
+<pre class="language-none"><code class="language-none">
+## 九、&#96;&#96;&#96;&lt;router-link&gt;&#96;&#96;&#96;的replace属性
+### 1. 作用
+ 控制路由跳转时操作浏览器历史记录的模式
 
-const personAbout &#x3D; &#123;
-  namespaced:true,&#x2F;&#x2F;开启命名空间
-  state:&#123; ... &#125;,
-  mutations: &#123; ... &#125;,
-  actions: &#123; ... &#125;
-  &#125;
+### 2. 浏览器历史记录写入方式
+ 路由跳转时,默认是push
 
-const store &#x3D; new Vuex.Store(&#123;
-  modules: &#123;
-    countAbout,
-    personAbout
-  &#125;
-&#125;)</code></pre></p>
-<h3 id="7-3-开启命名空间后读取数据"><a href="#7-3-开启命名空间后读取数据" class="headerlink" title="7.3 开启命名空间后读取数据"></a>7.3 开启命名空间后读取数据</h3><h4 id="①-组件中读取state数据"><a href="#①-组件中读取state数据" class="headerlink" title="① 组件中读取state数据"></a>① 组件中读取state数据</h4> <pre class="language-none"><code class="language-none">&#x2F;&#x2F;方式一：自己直接读取
-this.$store.state.personAbout.list
-&#x2F;&#x2F;方式二：借助mapState读取：
-...mapState(&#39;countAbout&#39;,[&#39;sum&#39;,&#39;school&#39;,&#39;subject&#39;]),</code></pre>
-<h4 id="②-组件中读取getters数据"><a href="#②-组件中读取getters数据" class="headerlink" title="② 组件中读取getters数据"></a>② 组件中读取getters数据</h4> <pre class="language-none"><code class="language-none">&#x2F;&#x2F;方式一：自己直接读取
-this.$store.getters[&#39;personAbout&#x2F;firstPersonName&#39;]
-&#x2F;&#x2F;方式二：借助mapGetters读取：
-...mapGetters(&#39;countAbout&#39;,[&#39;bigSum&#39;])</code></pre>
-<h4 id="③-组件中调用dispatch"><a href="#③-组件中调用dispatch" class="headerlink" title="③ 组件中调用dispatch"></a>③ 组件中调用dispatch</h4> <pre class="language-none"><code class="language-none">&#x2F;&#x2F;方式一：自己直接dispatch
-this.$store.dispatch(&#39;personAbout&#x2F;addPersonWang&#39;,person)
-&#x2F;&#x2F;方式二：借助mapActions：
-...mapActions(&#39;countAbout&#39;,&#123;incrementOdd:&#39;jiaOdd&#39;,incrementWait:&#39;jiaWait&#39;&#125;)</code></pre>
-<h4 id="④-组件中调用commit"><a href="#④-组件中调用commit" class="headerlink" title="④ 组件中调用commit"></a>④ 组件中调用commit</h4> <pre class="language-none"><code class="language-none">&#x2F;&#x2F;方式一：自己直接commit
-this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
-&#x2F;&#x2F;方式二：借助mapMutations：
-...mapMutations(&#39;countAbout&#39;,&#123;increment:&#39;JIA&#39;,decrement:&#39;JIAN&#39;&#125;),</code></pre>
+ 浏览器的历史记录有两种写入方式
+  ①push
+   push是追加历史记录
 
+  ②replace
+   replace是替换当前记录
 
+### 3. 如何开启&#96;&#96;&#96;replace&#96;&#96;&#96;模式
+ &#96;&#96;&#96;&lt;router-link replace .......&gt;News&lt;&#x2F;router-link&gt;&#96;&#96;&#96;
+
+## 十、编程式路由导航
+### 1. 作用
+ 不借助&#96;&#96;&#96;&lt;router-link&gt; &#96;&#96;&#96;实现路由跳转,让路由跳转更加灵活
+
+### 2. 具体代码</code></pre>
+<p> //$router的两个API<br>this.$router.push({<br>    name:’xiangqing’,<br>        params:{<br>            id:xxx,<br>            title:xxx<br>        }<br>})</p>
+<p>this.$router.replace({<br>    name:’xiangqing’,<br>        params:{<br>            id:xxx,<br>            title:xxx<br>        }<br>})<br>this.$router.forward() //前进<br>this.$router.back() //后退<br>this.$router.go() //可前进也可后退</p>
+<pre class="language-none"><code class="language-none">
+## 十一、缓存路由组件
+### 1. 作用
+ 让不展示的路由保持挂载,不被销毁
+
+### 2. 具体代码
+ include &#x3D; &quot;组件名&quot; (让组件保持活跃状态)</code></pre>
+ <keep-alive include="News"> 
+    <router-view></router-view>
+</keep-alive>
+<pre class="language-none"><code class="language-none">
+## 十二、两个新的生命周期钩子
+### 1. 作用
+ 路由组件所独有的两个钩子,用于捕获路由组件的激活状态
+
+### 2. 钩子名称
+ 1. &#96;&#96;&#96;activated&#96;&#96;&#96;路由组件被激活时触发
+
+ 2. &#96;&#96;&#96;deactivated&#96;&#96;&#96;路由组件失活时触发
+
+## 十三、路由守卫
+### 1. 作用
+ 对路由进行权限控制
+
+### 2. 分类
+ 全局守卫、独享守卫、组件内守卫
+
+### 3. 全局守卫</code></pre>
+ //全局前置守卫：初始化时执行、每次路由切换前执行
+router.beforeEach((to,from,next)=>{
+    console.log('beforeEach',to,from)
+    if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
+        if(localStorage.getItem('school') === 'atguigu'){ //权限控制的具体规则
+            next() //放行
+        }else{
+            alert('暂无权限查看')
+            // next({name:'guanyu'})
+        }
+    }else{
+        next() //放行
+    }
+})
+
+<p>//全局后置守卫：初始化时执行、每次路由切换后执行<br>router.afterEach((to,from)=&gt;{<br>    console.log(‘afterEach’,to,from)<br>    if(to.meta.title){<br>        document.title = to.meta.title //修改网页的title<br>    }else{<br>        document.title = ‘vue_test’<br>    }<br>})</p>
+<pre class="language-none"><code class="language-none">
+### 4. 独享守卫</code></pre>
+<p> beforeEnter(to,from,next){<br>    console.log(‘beforeEnter’,to,from)<br>    if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制<br>        if(localStorage.getItem(‘school’) === ‘atguigu’){<br>            next()<br>        }else{<br>            alert(‘暂无权限查看’)<br>            // next({name:’guanyu’})<br>        }<br>    }else{<br>        next()<br>    }<br>}</p>
+<pre class="language-none"><code class="language-none">
+### 5. 组件内守卫</code></pre>
+<p> //进入守卫：通过路由规则，进入该路由组件时被调用<br>beforeRouteEnter (to, from, next) {<br>},</p>
+<p>//离开守卫：通过路由规则，离开该路由组件时被调用<br>beforeRouteLeave (to, from, next) {<br>}</p>
+<pre><code>
+## 十四、路由的两种工作模式
+### 1. 什么是hash值?
+ 对于一个url来说——#及其后面的内容就是hash值
+
+### 2. hash值是否会包含在请求中
+ hash值不会包含在HTTP请求中,即: hash值不会带给服务器
+
+### 3. hash模式
+ ①地址中永远带着#号,不美观
+ ②若以后将地址通过第三方手机app分享,若app校验严格,则地址会被标记为不合法
+ ③兼容性较好
+
+### 4.history模式
+ ①地址干净、美观
+ ②兼容性和hash模式相比略差
+ ③应用部署上线时需要后端人员支持,解决刷新页面服务端404的问题</code></pre>
 
                 
             </div>
@@ -608,7 +642,7 @@ this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaoliu824.github.io/2021/12/16/vuex/">https://xiaoliu824.github.io/2021/12/16/vuex/</a>
+                    <a href="https://xiaoliu824.github.io/2021/12/19/vue-router/">https://xiaoliu824.github.io/2021/12/19/vue-router/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -646,8 +680,8 @@ this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Vuex/">
-                                    <span class="chip bg-color">-Vuex</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">-Vue</span>
                                 </a>
                             
                         </div>
@@ -819,9 +853,10 @@ this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/19/vue-router/">
                     <div class="card-image">
@@ -839,9 +874,9 @@ this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -850,6 +885,7 @@ this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -868,24 +904,24 @@ this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/06/di-si-shi-pian-bo-ke/">
+                <a href="/2021/12/16/vuex/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第四十篇博客">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Vuex">
                         
-                        <span class="card-title">第四十篇博客</span>
+                        <span class="card-title">Vuex</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue知识点
+                            Vuex
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
                             </span>
                         <span class="publish-author">
                             
@@ -898,8 +934,8 @@ this.$store.commit(&#39;personAbout&#x2F;ADD_PERSON&#39;,person)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">-Vue</span>
+                    <a href="/tags/Vuex/">
+                        <span class="chip bg-color">-Vuex</span>
                     </a>
                     
                 </div>
