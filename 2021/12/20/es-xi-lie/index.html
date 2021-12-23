@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-20
+                    2021-12-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    3.3k
                 </div>
                 
 
@@ -531,6 +531,161 @@ console.log(number(2)) &#x2F;&#x2F;3</code></pre></p>
   &#125;
 &#125;
 console.log(obj.getName())</code></pre></p>
+<h2 id="七、参数默认值"><a href="#七、参数默认值" class="headerlink" title="七、参数默认值"></a>七、参数默认值</h2><p> ES6允许给函数参数赋初始值(如果传了值,就用传过来的值,没有的话就用初始值)</p>
+<p> ①形参初始值,具有默认值的参数一般要靠后放(潜规则)<br> <pre class="language-none"><code class="language-none">function add(a,b,c&#x3D;10) &#123;
+  return a+b+c;
+&#125;
+let result &#x3D; add(1,5);
+console.log(result) &#x2F;&#x2F;16</code></pre><br> ②与解构赋值结合<br> <pre class="language-none"><code class="language-none">function content(&#123;name,age,hoby,dream &#x3D; &quot;月入w&quot;&#125;) &#123;
+  console.log(name); &#x2F;&#x2F;小6
+  console.log(age);  &#x2F;&#x2F;不祥
+  console.log(hoby); &#x2F;&#x2F;写bug
+  console.log(dream); &#x2F;&#x2F;月入w
+&#125;
+content(&#123;
+ name: &#39;小6&#39;,
+ age: &#39;不祥&#39;,
+ hoby: &#39;写bug&#39;,
+&#125;)</code></pre></p>
+<h2 id="八、rest参数"><a href="#八、rest参数" class="headerlink" title="八、rest参数"></a>八、rest参数</h2><p> ES6引入rest参数,用于获取函数的实参,用来代替 arguments<br> <pre class="language-none"><code class="language-none">&#x2F;&#x2F;ES5获取实参方式
+ function getData() &#123;
+   console.log(arguments);
+ &#125;
+
+ getData(&#39;小沈阳&#39;,&#39;赵本山&#39;);
+
+ &#x2F;&#x2F;rest 参数
+ function Data(...args) &#123;
+   console.log(args);
+ &#125;
+
+ Data(1,2,3,4,5,6)
+
+ &#x2F;&#x2F;rest 参数必须要放到参数最后
+ function fn(a,b,...args) &#123;
+   console.log(a);
+   console.log(b);
+   console.log(args);
+ &#125;
+ fn(1,2,3,4,5,6)</code></pre></p>
+<h2 id="九、扩展运算符"><a href="#九、扩展运算符" class="headerlink" title="九、扩展运算符"></a>九、扩展运算符</h2><h3 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h3> <pre class="language-...```扩展运算符能将数组转换为逗号分隔的参数序列" data-language="...```扩展运算符能将数组转换为逗号分隔的参数序列"><code class="language-...```扩展运算符能将数组转换为逗号分隔的参数序列">&#96;&#96;&#96;
+ &#x2F;&#x2F;声明一个数组
+ const F4 &#x3D; [&#39;小沈阳&#39;,&#39;赵本山&#39;,&#39;刘能&#39;,&#39;赵四&#39;];
+ &#x2F;&#x2F;&#39;小沈阳&#39;,&#39;赵本山&#39;,&#39;刘能&#39;,&#39;赵四&#39;
+ function Chunw() &#123;
+   console.log(arguments);
+ &#125;
+ Chunw(...F4) &#x2F;&#x2F;&#39;小沈阳&#39;,&#39;赵本山&#39;,&#39;刘能&#39;,&#39;赵四&#39;</code></pre>
+<h3 id="2-扩展运算符的运用"><a href="#2-扩展运算符的运用" class="headerlink" title="2. 扩展运算符的运用"></a>2. 扩展运算符的运用</h3><h4 id="①-数组的合并"><a href="#①-数组的合并" class="headerlink" title="① 数组的合并"></a>① 数组的合并</h4> <pre class="language-none"><code class="language-none">const kuaizi &#x3D; [&#39;肖央&#39;,&#39;王太利&#39;];
+const F2 &#x3D; [&#39;小6&#39;,&#39;张三&#39;];
+const Arr &#x3D; [...kuaizi,...F2];
+console.log(Arr)&#x2F;&#x2F;[&#39;肖央&#39;, &#39;王太利&#39;, &#39;小6&#39;, &#39;张三&#39;]</code></pre>
+<h4 id="②-数组的克隆"><a href="#②-数组的克隆" class="headerlink" title="② 数组的克隆"></a>② 数组的克隆</h4> <pre class="language-none"><code class="language-none">const szh &#x3D; [&#39;E&#39;,&#39;G&#39;,&#39;M&#39;,&#123;name:&#39;张四&#39;&#125;];
+const syc &#x3D; [...szh]; &#x2F;&#x2F;如果数组中含有引用数据类型的 也是属于浅拷贝
+syc[3].name &#x3D;&#39;66&#39;;
+console.log(szh)
+console.log(syc)</code></pre>
+<h4 id="③-将伪数组转为真正的数组"><a href="#③-将伪数组转为真正的数组" class="headerlink" title="③ 将伪数组转为真正的数组"></a>③ 将伪数组转为真正的数组</h4> <pre class="language-none"><code class="language-none">const divs &#x3D; document.querySelectorAll(&#39;div&#39;);
+console.log(divs)
+const divArr &#x3D; [...divs];
+console.log(divArr)</code></pre>
+<h2 id="十、Symbol"><a href="#十、Symbol" class="headerlink" title="十、Symbol"></a>十、Symbol</h2><h3 id="1-什么是Symbol"><a href="#1-什么是Symbol" class="headerlink" title="1. 什么是Symbol"></a>1. 什么是Symbol</h3> <pre class="language-Symbol```表示独一无二的值,类似于字符串的数据类型" data-language="Symbol```表示独一无二的值,类似于字符串的数据类型"><code class="language-Symbol```表示独一无二的值,类似于字符串的数据类型">
+### 2. 特点
+ ① Symbol的值是唯一的,用来解决命名冲突的问题
+
+ ② Symbol的值不能与其他数据进行运算
+
+ ③ Symbol定义的对象属性不能使用for...in循环遍历,但是可以使用Reflect.ownKeys来获取对象的所有键名</code></pre>
+<p> let s = Symbol();<br> console.log(s, typeof s); //Symbol() ‘symbol’<br> let s1 = Symbol(‘测试’);<br> console.log(s1); //Symbol(测试)<br> //Symbol.for 创建<br> let s2 = Symbol.for(‘测试001’);<br> console.log(s2) //Symbol(测试001)<br> //不能和其他数据类型进行运算<br> // let result = s + 100;<br> // let result = s &gt; 10;<br> // let result = s + s;<br> // console.log(result); //报错<br> <pre class="language-none"><code class="language-none">
+④ 向对象中添加方法</code></pre><br>  //向对象中添加方法 up down<br>    let game = {<br>      name: ‘俄罗斯方块’,<br>      up:function() {<br>        console.log(‘上’);<br>      },<br>      down: ()=&gt; console.log(‘下’)<br>    }<br>    let methods = {<br>      up: Symbol(),<br>      down: Symbol(),<br>    }<br>    game[methods.up] = () =&gt; console.log(‘我可以改变形状’)<br>    game[methods.down] = () =&gt; console.log(‘我可以快速向上’)<br>    console.log(game)<br>  <pre class="language-none"><code class="language-none">
+⑤ 创建对象属性</code></pre><br>   //Symbol创建对象属性<br>    let youxi = {<br>      name: ‘狼人杀’,<br>      //[Symbol(‘say’)] Sybol是一个动态的,通过这种方式添加属性<br>      [Symbol(‘say’)]: function() {<br>        console.log(‘我可以发言’);<br>      },<br>      [Symbol(‘zibao’)]: function() {<br>        console.log(‘我可以自爆’);<br>      }<br>    }<br>    console.log(youxi)<br>  <pre class="language-none"><code class="language-none">
+## 十一、Iterator
+### 1. 什么是Iterator
+ iterator接口在JS中相当于对象的一个属性,属性名是Symbol.iterator,属性值是一个函数
+</code></pre><br>  let xyj = [‘唐僧’,’孙悟空’,’猪八戒’,’沙僧’];<br>  for(let v in xyj) { //for…in循环前面的变量v保存的是,键名<br>    console.log(v); //0 1 2 3<br>  }<br>  for(let v of xyj) { //for…of循环前面的变量v保存的是,键值<br>    console.log(v); //‘唐僧’,’孙悟空’,’猪八戒’,’沙僧’<br>  }<br> <pre class="language-none"><code class="language-none">
+### 2. 工作原理(迭代器遍历数据的原理)
+ ①创建一个指针对象,指向当前数据结构的起始位置
+
+ ②第一次调用它的next方法,指针指向数据结构的第一个成员
+
+ ③不断调用next方法,指针一直往后移动,直到最后一个成员
+
+ ④每调用一个next方法,返回一个包含value和done属性的值</code></pre><br>  console.log(iterator.next()); //{value: ‘唐僧’, done: false}<br>  console.log(iterator.next()); //{value: ‘唐僧’, done: false}<br>  console.log(iterator.next()); //{value: ‘唐僧’, done: false}<br>  console.log(iterator.next()); //{value: undefined, done: true}<br>  console.log(iterator)<br> <pre class="language-none"><code class="language-none">
+## 十二、生成器
+### 1. 生成器
+ 生成器也是一个特殊的函数,这个函数主要用来做异步编程,函数代码的分隔符yield,它返回的结果是一个迭代器对象</code></pre><br>  function * gen() {<br>      yield ‘一只没有耳朵’;<br>      yield ‘一只没有尾巴’;<br>      yield ‘真奇怪’;<br>    }<br>    let iterator = gen(); //它返回的结果是一个迭代器对象</p>
+<pre><code>//调用next()方法才会运行
+console.log(iterator.next()); &#123;value: &#39;一只没有耳朵&#39;, done: false&#125;
+
+console.log(iterator.next()); &#123;value: &#39;一只没有尾巴&#39;, done: false&#125;
+
+console.log(iterator.next()); &#123;value: &#39;真奇怪&#39;, done: false&#125;
+
+console.log(iterator.next()); &#123;value: undefined, done: true&#125;</code></pre>
+  <pre class="language-none"><code class="language-none">
+### 2. 生成器函数参数
+ next可以传入参数,传入参数将作为上一个yield语句的返回结果</code></pre>
+<p>   //生成器函数参数<br>    function * Add(args) {<br>      console.log(args); //AAA<br>      let one =yield 111;<br>      console.log(one) //BB<br>      let two= yield 222;<br>      console.log(two); //CC<br>      let three= yield 333;<br>      console.log(three) //DD<br>    }</p>
+<pre><code>//获取迭代器对象
+let result = Add(&#39;AAA&#39;);
+
+console.log(result.next()) //&#123;value: 111, done: false&#125;
+
+//next也可以传入参数,传入参数将作为上一个yield语句的返回结果
+console.log(result.next(&#39;BB&#39;)) //&#123;value: 222, done: false&#125;
+
+console.log(result.next(&#39;CC&#39;)) //&#123;value: 333, done: false&#125;
+
+console.log(result.next(&#39;DD&#39;)) //&#123;value: undefined, done: true&#125;</code></pre>
+  <pre class="language-none"><code class="language-none">
+## 十三、Promise基本语法
+### 1. 实例化Promise对象
+ new Promise(参数) 参数为一个函数,函数有两个形参resolve,reject 这两个参数也是函数
+
+### 2. 对象状态
+ 初始化(pending)、成功(fulfilled)、失败(rejected)
+
+### 3. 状态变更
+ 调用resolve、reject这两个函数,来改变promise对象的状态
+
+  ①调用resolve，promise对象的状态就会变为成功,成功后调用promise对象的then方法,之后会执行then方法中第一个回调函数
+
+  ②调用reject，promise对象的状态就会变为失败,失败后调用promise对象的then方法,之后会执行then方法中第二个回调函数
+
+### 4. then方法
+ 1. promise对象的then方法,then方法接收两个参数,两个参数都是函数类型的值
+
+ 成功的形参一般是value,失败的形参一般是reason
+</code></pre>
+<p>  const p = new Promise(function(resolve,reject){<br>      setTimeout(() =&gt; {<br>        //成功状态<br>        //  let data = ‘数据拉取成功’;<br>        //  resolve(data); //将对象的状态变为成功,之后执行then方法中的第一个回调函数<br>        //失败状态<br>         let data2 = ‘数据拉取失败’;<br>         reject(data2);<br>      }, 1000);<br>    })</p>
+<pre><code>p.then(function(value)&#123;
+  console.log(value);
+&#125;,function(reason)&#123;
+  console.log(reason)
+&#125;)</code></pre>
+  <pre class="language-none"><code class="language-none">
+2. 调用then方法,then方法返回的结果是promise对象,对象的状态由回调函数的执行结果决定
+
+ ① 如果回调函数中返回的结果是非promise类型数据,状态为成功,返回值为对象的成功值
+
+ ② 如果回调函数种返回的结果是promise对象,内部返回的promise状态决定then方法返回promise的状态
+
+ ③ 如果回调函数内部返回的结果是抛出错误,状态也是失败,返回值为抛出的值
+</code></pre>
+<p>   //可以通过链式调用解决回调地狱<br>    let result=p.then((value)=&gt; {<br>      console.log(value)<br>      // return new Promise((resolve,reject) =&gt; {<br>      //   reject(‘error’)//二内部promise<br>      // })<br>      throw new Error(‘出错了’); //三抛出异常<br>    },(reason)=&gt; {<br>      console.warn(reason)<br>    })</p>
+<pre><code>//第一种结果
+//返回状态为成功,因为未设置返回值,函数默认返回undefined，它为非promise类型数据
+//所以返回值为undefined
+console.log(result); 
+<pre class="language-none"><code class="language-none">
+### 5. catch方法</code></pre></code></pre>
+<p> const p =new Promise((resolve,reject) =&gt; {<br>      const data = ‘失误拉’;<br>      reject(data);<br>  })<br>  p.catch(error=&gt; {<br>   console.log(error)<br>  })</p>
+<pre><code>
+
+
+
+
+</code></pre>
 
                 
             </div>
@@ -1055,7 +1210,7 @@ console.log(obj.getName())</code></pre></p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">47k</span>
+                        class="white-color">49k</span>
             
             
             
