@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-19
+                    2021-12-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2k
                 </div>
                 
 
@@ -444,178 +444,221 @@ const router &#x3D; new VueRouter(&#123;
 &#125;)</code></pre>
 <h3 id="④-实现切换-active-class可配置高亮样式"><a href="#④-实现切换-active-class可配置高亮样式" class="headerlink" title="④ 实现切换(active-class可配置高亮样式)"></a>④ 实现切换(active-class可配置高亮样式)</h3><p> <code>&lt;router-link active-class=&quot;active&quot; to=&quot;/about&quot;&gt;About&lt;/router-link&gt;</code></p>
 <h3 id="⑤-指定展示位置"><a href="#⑤-指定展示位置" class="headerlink" title="⑤ 指定展示位置"></a>⑤ 指定展示位置</h3><p> <code>&lt;router-view&gt;&lt;/router-view&gt;</code></p>
-<h2 id="三、几个注意点"><a href="#三、几个注意点" class="headerlink" title="三、几个注意点"></a>三、几个注意点</h2><p> Ⅰ.路由组件通常存放在<code>pages</code>文件夹,一般组件通常存放在<br> <pre class="language-components```文件夹" data-language="components```文件夹"><code class="language-components```文件夹">
- Ⅱ.通过切换,&quot;隐藏&quot;了的路由组件,默认是被销毁掉的,需要的时候再去挂载
+<h2 id="三、几个注意点"><a href="#三、几个注意点" class="headerlink" title="三、几个注意点"></a>三、几个注意点</h2><p> Ⅰ.路由组件通常存放在<code>pages</code>文件夹,一般组件通常存放在<code>components</code>文件夹</p>
+<p> Ⅱ.通过切换,”隐藏”了的路由组件,默认是被销毁掉的,需要的时候再去挂载</p>
+<p> Ⅲ.每个组件都有自己的$route属性,里面存储着自己的路由信息</p>
+<p> Ⅳ.整个应用只有一个router,可以通过组件的<code>$router</code>属性获取到</p>
+<h2 id="四、多级路由"><a href="#四、多级路由" class="headerlink" title="四、多级路由"></a>四、多级路由</h2><h3 id="1-配置路由规则"><a href="#1-配置路由规则" class="headerlink" title="1. 配置路由规则"></a>1. 配置路由规则</h3><p> 配置路由规则,使用children配置项<br> <pre class="language-none"><code class="language-none"> routes:[
+	&#123;
+		path:&#39;&#x2F;about&#39;,
+		component:About,
+	&#125;,
+	&#123;
+		path:&#39;&#x2F;home&#39;,
+		component:Home,
+		children:[ &#x2F;&#x2F;通过children配置子级路由
+			&#123;
+				path:&#39;news&#39;, &#x2F;&#x2F;此处一定不要写：&#x2F;news
+				component:News
+			&#125;,
+			&#123;
+				path:&#39;message&#39;,&#x2F;&#x2F;此处一定不要写：&#x2F;message
+				component:Message
+			&#125;
+		]
+	&#125;
+]</code></pre></p>
+<h3 id="2-跳转"><a href="#2-跳转" class="headerlink" title="2. 跳转"></a>2. 跳转</h3><p> <code>&lt;router-link to=&quot;/home/news&quot;&gt;News&lt;/router-link&gt;</code></p>
+<h2 id="五、路由的query参数"><a href="#五、路由的query参数" class="headerlink" title="五、路由的query参数"></a>五、路由的query参数</h2><p> 1.传递参数<br>  <pre class="language-none"><code class="language-none">  &lt;!-- 跳转并携带query参数，to的字符串写法 --&gt;
+&lt;router-link :to&#x3D;&quot;&#x2F;home&#x2F;message&#x2F;detail?id&#x3D;666&amp;title&#x3D;你好&quot;&gt;跳转&lt;&#x2F;router-link&gt;
+				
+&lt;!-- 跳转并携带query参数，to的对象写法 --&gt;
+&lt;router-link 
+	:to&#x3D;&quot;&#123;
+		path:&#39;&#x2F;home&#x2F;message&#x2F;detail&#39;,
+		query:&#123;
+		   id:666,
+            title:&#39;你好&#39;
+		&#125;
+	&#125;&quot;
+&gt;跳转&lt;&#x2F;router-link&gt;</code></pre></p>
+<p> 2.接收参数<br>  <pre class="language-none"><code class="language-none">$route.query.id
+$route.query.title</code></pre></p>
+<h2 id="六、命名路由"><a href="#六、命名路由" class="headerlink" title="六、命名路由"></a>六、命名路由</h2><h3 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 可以简化路由的跳转</p>
+<h3 id="2-如何使用"><a href="#2-如何使用" class="headerlink" title="2. 如何使用"></a>2. 如何使用</h3><p> ①给路由命名<br>  <pre class="language-none"><code class="language-none">  &#123;
+	path:&#39;&#x2F;demo&#39;,
+	component:Demo,
+	children:[
+		&#123;
+			path:&#39;test&#39;,
+			component:Test,
+			children:[
+				&#123;
+                      name:&#39;hello&#39; &#x2F;&#x2F;给路由命名
+					path:&#39;welcome&#39;,
+					component:Hello,
+				&#125;
+			]
+		&#125;
+	]
+&#125;</code></pre><br> ②简化跳转<br>  <pre class="language-none"><code class="language-none">  &lt;!--简化前，需要写完整的路径 --&gt;
+&lt;router-link to&#x3D;&quot;&#x2F;demo&#x2F;test&#x2F;welcome&quot;&gt;跳转&lt;&#x2F;router-link&gt;
 
- Ⅲ.每个组件都有自己的$route属性,里面存储着自己的路由信息
+&lt;!--简化后，直接通过名字跳转 --&gt;
+&lt;router-link :to&#x3D;&quot;&#123;name:&#39;hello&#39;&#125;&quot;&gt;跳转&lt;&#x2F;router-link&gt;
 
- Ⅳ.整个应用只有一个router,可以通过组件的&#96;&#96;&#96;$router&#96;&#96;&#96;属性获取到
+&lt;!--简化写法配合传递参数 --&gt;
+&lt;router-link 
+	:to&#x3D;&quot;&#123;
+		name:&#39;hello&#39;,
+		query:&#123;
+		   id:666,
+            title:&#39;你好&#39;
+		&#125;
+	&#125;&quot;
+&gt;跳转&lt;&#x2F;router-link&gt;</code></pre></p>
+<h2 id="七、路由的params参数"><a href="#七、路由的params参数" class="headerlink" title="七、路由的params参数"></a>七、路由的params参数</h2><h3 id="1-配置路由"><a href="#1-配置路由" class="headerlink" title="1. 配置路由"></a>1. 配置路由</h3><p> 配置路由,声明接收params参数<br> <pre class="language-none"><code class="language-none"> &#123;
+	path:&#39;&#x2F;home&#39;,
+	component:Home,
+	children:[
+		&#123;
+			path:&#39;news&#39;,
+			component:News
+		&#125;,
+		&#123;
+			component:Message,
+			children:[
+				&#123;
+					name:&#39;xiangqing&#39;,
+					path:&#39;detail&#x2F;:id&#x2F;:title&#39;, &#x2F;&#x2F;使用占位符声明接收params参数
+					component:Detail
+				&#125;
+			]
+		&#125;
+	]
+&#125;</code></pre></p>
+<h3 id="2-传递参数"><a href="#2-传递参数" class="headerlink" title="2. 传递参数"></a>2. 传递参数</h3> <pre class="language-none"><code class="language-none"> &lt;!-- 跳转并携带params参数，to的字符串写法 --&gt;
+&lt;router-link :to&#x3D;&quot;&#x2F;home&#x2F;message&#x2F;detail&#x2F;666&#x2F;你好&quot;&gt;跳转&lt;&#x2F;router-link&gt;
+				
+&lt;!-- 跳转并携带params参数，to的对象写法 --&gt;
+&lt;router-link 
+	:to&#x3D;&quot;&#123;
+		name:&#39;xiangqing&#39;,
+		params:&#123;
+		   id:666,
+       title:&#39;你好&#39;
+		&#125;
+	&#125;&quot;
+&gt;跳转&lt;&#x2F;router-link&gt;</code></pre>
 
-## 四、多级路由
-### 1. 配置路由规则
- 配置路由规则,使用children配置项</code></pre><br> routes:[<br>    {<br>        path:’/about’,<br>        component:About,<br>    },<br>    {<br>        path:’/home’,<br>        component:Home,<br>        children:[ //通过children配置子级路由<br>            {<br>                path:’news’, //此处一定不要写：/news<br>                component:News<br>            },<br>            {<br>                path:’message’,//此处一定不要写：/message<br>                component:Message<br>            }<br>        ]<br>    }<br>]</p>
-<pre class="language-none"><code class="language-none">
-### 2. 跳转
- &#96;&#96;&#96;&lt;router-link to&#x3D;&quot;&#x2F;home&#x2F;news&quot;&gt;News&lt;&#x2F;router-link&gt;&#96;&#96;&#96;
+<p> 特别注意: 路由携带params参数时，若使用to的对象写法，则不能使用path配置项，必须使用name配置！</p>
+<h3 id="3-接收参数"><a href="#3-接收参数" class="headerlink" title="3. 接收参数"></a>3. 接收参数</h3> <pre class="language-none"><code class="language-none">$route.params.id
+$route.params.title</code></pre>
+<h2 id="八、路由的props配置"><a href="#八、路由的props配置" class="headerlink" title="八、路由的props配置"></a>八、路由的props配置</h2><h3 id="1-作用-1"><a href="#1-作用-1" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 让路由组件更方便的收到参数<br> <pre class="language-none"><code class="language-none">  &#123;
+	name:&#39;xiangqing&#39;,
+	path:&#39;detail&#x2F;:id&#39;,
+	component:Detail,
 
-## 五、路由的query参数
- 1.传递参数</code></pre>
-  <!-- 跳转并携带query参数，to的字符串写法 -->
-<p><router-link :to="/home/message/detail?id=666&title=你好">跳转</router-link></p>
-<!-- 跳转并携带query参数，to的对象写法 -->
-<p>&lt;router-link<br>    :to=”{<br>        path:’/home/message/detail’,<br>        query:{<br>           id:666,<br>            title:’你好’<br>        }<br>    }”</p>
-<blockquote>
-<p>跳转</router-link></p>
-</blockquote>
-<pre class="language-none"><code class="language-none">
-2.接收参数</code></pre>
-<p>  $route.query.id<br>  $route.query.title<br>  <pre class="language-none"><code class="language-none">
-## 六、命名路由
-### 1. 作用
- 可以简化路由的跳转
+	&#x2F;&#x2F;第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件
+	&#x2F;&#x2F; props:&#123;a:900&#125;
 
-### 2. 如何使用
- ①给路由命名</code></pre><br>  {<br>    path:’/demo’,<br>    component:Demo,<br>    children:[<br>        {<br>            path:’test’,<br>            component:Test,<br>            children:[<br>                {<br>                      name:’hello’ //给路由命名<br>                    path:’welcome’,<br>                    component:Hello,<br>                }<br>            ]<br>        }<br>    ]<br>}</p>
-<pre class="language-none"><code class="language-none">
-②简化跳转</code></pre>
-  <!--简化前，需要写完整的路径 -->
-<p><router-link to="/demo/test/welcome">跳转</router-link></p>
-<!--简化后，直接通过名字跳转 -->
-<p><router-link :to="{name:'hello'}">跳转</router-link></p>
-<!--简化写法配合传递参数 -->
-<p>&lt;router-link<br>    :to=”{<br>        name:’hello’,<br>        query:{<br>           id:666,<br>            title:’你好’<br>        }<br>    }”</p>
-<blockquote>
-<p>跳转</router-link></p>
-</blockquote>
-<pre class="language-none"><code class="language-none">
-## 七、路由的params参数
-### 1. 配置路由
- 配置路由,声明接收params参数</code></pre>
-<p> {<br>    path:’/home’,<br>    component:Home,<br>    children:[<br>        {<br>            path:’news’,<br>            component:News<br>        },<br>        {<br>            component:Message,<br>            children:[<br>                {<br>                    name:’xiangqing’,<br>                    path:’detail/:id/:title’, //使用占位符声明接收params参数<br>                    component:Detail<br>                }<br>            ]<br>        }<br>    ]<br>}</p>
-<pre class="language-none"><code class="language-none">
-### 2. 传递参数</code></pre>
- <!-- 跳转并携带params参数，to的字符串写法 -->
-<p><router-link :to="/home/message/detail/666/你好">跳转</router-link></p>
-<!-- 跳转并携带params参数，to的对象写法 -->
-<p>&lt;router-link<br>    :to=”{<br>        name:’xiangqing’,<br>        params:{<br>           id:666,<br>       title:’你好’<br>        }<br>    }”</p>
-<blockquote>
-<p>跳转</router-link></p>
-</blockquote>
-<pre class="language-none"><code class="language-none"> 
- 特别注意: 路由携带params参数时，若使用to的对象写法，则不能使用path配置项，必须使用name配置！
+	&#x2F;&#x2F;第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件
+	&#x2F;&#x2F; props:true
+	
+	&#x2F;&#x2F;第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件
+	props(route)&#123;
+		return &#123;
+			id:route.query.id,
+			title:route.query.title
+		&#125;
+	&#125;
+&#125;</code></pre></p>
+<h2 id="九、-lt-router-link-gt-的replace属性"><a href="#九、-lt-router-link-gt-的replace属性" class="headerlink" title="九、&lt;router-link&gt;的replace属性"></a>九、<code>&lt;router-link&gt;</code>的replace属性</h2><h3 id="1-作用-2"><a href="#1-作用-2" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 控制路由跳转时操作浏览器历史记录的模式</p>
+<h3 id="2-浏览器历史记录写入方式"><a href="#2-浏览器历史记录写入方式" class="headerlink" title="2. 浏览器历史记录写入方式"></a>2. 浏览器历史记录写入方式</h3><p> 路由跳转时,默认是push</p>
+<p> 浏览器的历史记录有两种写入方式<br>  ①push<br>   push是追加历史记录</p>
+<p>  ②replace<br>   replace是替换当前记录</p>
+<h3 id="3-如何开启replace模式"><a href="#3-如何开启replace模式" class="headerlink" title="3. 如何开启replace模式"></a>3. 如何开启<code>replace</code>模式</h3><p> <code>&lt;router-link replace .......&gt;News&lt;/router-link&gt;</code></p>
+<h2 id="十、编程式路由导航"><a href="#十、编程式路由导航" class="headerlink" title="十、编程式路由导航"></a>十、编程式路由导航</h2><h3 id="1-作用-3"><a href="#1-作用-3" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 不借助<code>&lt;router-link&gt; </code>实现路由跳转,让路由跳转更加灵活</p>
+<h3 id="2-具体代码"><a href="#2-具体代码" class="headerlink" title="2. 具体代码"></a>2. 具体代码</h3> <pre class="language-none"><code class="language-none"> &#x2F;&#x2F;$router的两个API
+this.$router.push(&#123;
+	name:&#39;xiangqing&#39;,
+		params:&#123;
+			id:xxx,
+			title:xxx
+		&#125;
+&#125;)
 
-### 3. 接收参数</code></pre>
-<p>  $route.params.id<br>  $route.params.title<br>  <pre class="language-none"><code class="language-none">
-## 八、路由的props配置
-### 1. 作用
- 让路由组件更方便的收到参数</code></pre><br>  {<br>    name:’xiangqing’,<br>    path:’detail/:id’,<br>    component:Detail,</p>
-<pre><code>//第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件
-// props:&#123;a:900&#125;
+this.$router.replace(&#123;
+	name:&#39;xiangqing&#39;,
+		params:&#123;
+			id:xxx,
+			title:xxx
+		&#125;
+&#125;)
+this.$router.forward() &#x2F;&#x2F;前进
+this.$router.back() &#x2F;&#x2F;后退
+this.$router.go() &#x2F;&#x2F;可前进也可后退</code></pre>
+<h2 id="十一、缓存路由组件"><a href="#十一、缓存路由组件" class="headerlink" title="十一、缓存路由组件"></a>十一、缓存路由组件</h2><h3 id="1-作用-4"><a href="#1-作用-4" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 让不展示的路由保持挂载,不被销毁</p>
+<h3 id="2-具体代码-1"><a href="#2-具体代码-1" class="headerlink" title="2. 具体代码"></a>2. 具体代码</h3><p> include = “组件名” (让组件保持活跃状态)<br> <pre class="language-none"><code class="language-none"> &lt;keep-alive include&#x3D;&quot;News&quot;&gt; 
+    &lt;router-view&gt;&lt;&#x2F;router-view&gt;
+&lt;&#x2F;keep-alive&gt;</code></pre></p>
+<h2 id="十二、两个新的生命周期钩子"><a href="#十二、两个新的生命周期钩子" class="headerlink" title="十二、两个新的生命周期钩子"></a>十二、两个新的生命周期钩子</h2><h3 id="1-作用-5"><a href="#1-作用-5" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 路由组件所独有的两个钩子,用于捕获路由组件的激活状态</p>
+<h3 id="2-钩子名称"><a href="#2-钩子名称" class="headerlink" title="2. 钩子名称"></a>2. 钩子名称</h3><ol>
+<li><p><code>activated</code>路由组件被激活时触发</p>
+</li>
+<li><p><code>deactivated</code>路由组件失活时触发</p>
+</li>
+</ol>
+<h2 id="十三、路由守卫"><a href="#十三、路由守卫" class="headerlink" title="十三、路由守卫"></a>十三、路由守卫</h2><h3 id="1-作用-6"><a href="#1-作用-6" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 对路由进行权限控制</p>
+<h3 id="2-分类"><a href="#2-分类" class="headerlink" title="2. 分类"></a>2. 分类</h3><p> 全局守卫、独享守卫、组件内守卫</p>
+<h3 id="3-全局守卫"><a href="#3-全局守卫" class="headerlink" title="3. 全局守卫"></a>3. 全局守卫</h3> <pre class="language-none"><code class="language-none"> &#x2F;&#x2F;全局前置守卫：初始化时执行、每次路由切换前执行
+router.beforeEach((to,from,next)&#x3D;&gt;&#123;
+	console.log(&#39;beforeEach&#39;,to,from)
+	if(to.meta.isAuth)&#123; &#x2F;&#x2F;判断当前路由是否需要进行权限控制
+		if(localStorage.getItem(&#39;school&#39;) &#x3D;&#x3D;&#x3D; &#39;atguigu&#39;)&#123; &#x2F;&#x2F;权限控制的具体规则
+			next() &#x2F;&#x2F;放行
+		&#125;else&#123;
+			alert(&#39;暂无权限查看&#39;)
+			&#x2F;&#x2F; next(&#123;name:&#39;guanyu&#39;&#125;)
+		&#125;
+	&#125;else&#123;
+		next() &#x2F;&#x2F;放行
+	&#125;
+&#125;)
 
-//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件
-// props:true
-
-//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件
-props(route)&#123;
-    return &#123;
-        id:route.query.id,
-        title:route.query.title
-    &#125;
+&#x2F;&#x2F;全局后置守卫：初始化时执行、每次路由切换后执行
+router.afterEach((to,from)&#x3D;&gt;&#123;
+	console.log(&#39;afterEach&#39;,to,from)
+	if(to.meta.title)&#123; 
+		document.title &#x3D; to.meta.title &#x2F;&#x2F;修改网页的title
+	&#125;else&#123;
+		document.title &#x3D; &#39;vue_test&#39;
+	&#125;
+&#125;)</code></pre>
+<h3 id="4-独享守卫"><a href="#4-独享守卫" class="headerlink" title="4. 独享守卫"></a>4. 独享守卫</h3> <pre class="language-none"><code class="language-none"> beforeEnter(to,from,next)&#123;
+	console.log(&#39;beforeEnter&#39;,to,from)
+	if(to.meta.isAuth)&#123; &#x2F;&#x2F;判断当前路由是否需要进行权限控制
+		if(localStorage.getItem(&#39;school&#39;) &#x3D;&#x3D;&#x3D; &#39;atguigu&#39;)&#123;
+			next()
+		&#125;else&#123;
+			alert(&#39;暂无权限查看&#39;)
+			&#x2F;&#x2F; next(&#123;name:&#39;guanyu&#39;&#125;)
+		&#125;
+	&#125;else&#123;
+		next()
+	&#125;
 &#125;</code></pre>
-<p>}</p>
-<pre class="language-none"><code class="language-none">
-## 九、&#96;&#96;&#96;&lt;router-link&gt;&#96;&#96;&#96;的replace属性
-### 1. 作用
- 控制路由跳转时操作浏览器历史记录的模式
+<h3 id="5-组件内守卫"><a href="#5-组件内守卫" class="headerlink" title="5. 组件内守卫"></a>5. 组件内守卫</h3> <pre class="language-none"><code class="language-none"> &#x2F;&#x2F;进入守卫：通过路由规则，进入该路由组件时被调用
+beforeRouteEnter (to, from, next) &#123;
+&#125;,
 
-### 2. 浏览器历史记录写入方式
- 路由跳转时,默认是push
-
- 浏览器的历史记录有两种写入方式
-  ①push
-   push是追加历史记录
-
-  ②replace
-   replace是替换当前记录
-
-### 3. 如何开启&#96;&#96;&#96;replace&#96;&#96;&#96;模式
- &#96;&#96;&#96;&lt;router-link replace .......&gt;News&lt;&#x2F;router-link&gt;&#96;&#96;&#96;
-
-## 十、编程式路由导航
-### 1. 作用
- 不借助&#96;&#96;&#96;&lt;router-link&gt; &#96;&#96;&#96;实现路由跳转,让路由跳转更加灵活
-
-### 2. 具体代码</code></pre>
-<p> //$router的两个API<br>this.$router.push({<br>    name:’xiangqing’,<br>        params:{<br>            id:xxx,<br>            title:xxx<br>        }<br>})</p>
-<p>this.$router.replace({<br>    name:’xiangqing’,<br>        params:{<br>            id:xxx,<br>            title:xxx<br>        }<br>})<br>this.$router.forward() //前进<br>this.$router.back() //后退<br>this.$router.go() //可前进也可后退</p>
-<pre class="language-none"><code class="language-none">
-## 十一、缓存路由组件
-### 1. 作用
- 让不展示的路由保持挂载,不被销毁
-
-### 2. 具体代码
- include &#x3D; &quot;组件名&quot; (让组件保持活跃状态)</code></pre>
- <keep-alive include="News"> 
-    <router-view></router-view>
-</keep-alive>
-<pre class="language-none"><code class="language-none">
-## 十二、两个新的生命周期钩子
-### 1. 作用
- 路由组件所独有的两个钩子,用于捕获路由组件的激活状态
-
-### 2. 钩子名称
- 1. &#96;&#96;&#96;activated&#96;&#96;&#96;路由组件被激活时触发
-
- 2. &#96;&#96;&#96;deactivated&#96;&#96;&#96;路由组件失活时触发
-
-## 十三、路由守卫
-### 1. 作用
- 对路由进行权限控制
-
-### 2. 分类
- 全局守卫、独享守卫、组件内守卫
-
-### 3. 全局守卫</code></pre>
- //全局前置守卫：初始化时执行、每次路由切换前执行
-router.beforeEach((to,from,next)=>{
-    console.log('beforeEach',to,from)
-    if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
-        if(localStorage.getItem('school') === 'atguigu'){ //权限控制的具体规则
-            next() //放行
-        }else{
-            alert('暂无权限查看')
-            // next({name:'guanyu'})
-        }
-    }else{
-        next() //放行
-    }
-})
-
-<p>//全局后置守卫：初始化时执行、每次路由切换后执行<br>router.afterEach((to,from)=&gt;{<br>    console.log(‘afterEach’,to,from)<br>    if(to.meta.title){<br>        document.title = to.meta.title //修改网页的title<br>    }else{<br>        document.title = ‘vue_test’<br>    }<br>})</p>
-<pre class="language-none"><code class="language-none">
-### 4. 独享守卫</code></pre>
-<p> beforeEnter(to,from,next){<br>    console.log(‘beforeEnter’,to,from)<br>    if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制<br>        if(localStorage.getItem(‘school’) === ‘atguigu’){<br>            next()<br>        }else{<br>            alert(‘暂无权限查看’)<br>            // next({name:’guanyu’})<br>        }<br>    }else{<br>        next()<br>    }<br>}</p>
-<pre class="language-none"><code class="language-none">
-### 5. 组件内守卫</code></pre>
-<p> //进入守卫：通过路由规则，进入该路由组件时被调用<br>beforeRouteEnter (to, from, next) {<br>},</p>
-<p>//离开守卫：通过路由规则，离开该路由组件时被调用<br>beforeRouteLeave (to, from, next) {<br>}</p>
-<pre><code>
-## 十四、路由的两种工作模式
-### 1. 什么是hash值?
- 对于一个url来说——#及其后面的内容就是hash值
-
-### 2. hash值是否会包含在请求中
- hash值不会包含在HTTP请求中,即: hash值不会带给服务器
-
-### 3. hash模式
- ①地址中永远带着#号,不美观
- ②若以后将地址通过第三方手机app分享,若app校验严格,则地址会被标记为不合法
- ③兼容性较好
-
-### 4.history模式
- ①地址干净、美观
- ②兼容性和hash模式相比略差
- ③应用部署上线时需要后端人员支持,解决刷新页面服务端404的问题</code></pre>
+&#x2F;&#x2F;离开守卫：通过路由规则，离开该路由组件时被调用
+beforeRouteLeave (to, from, next) &#123;
+&#125;</code></pre>
+<h2 id="十四、路由的两种工作模式"><a href="#十四、路由的两种工作模式" class="headerlink" title="十四、路由的两种工作模式"></a>十四、路由的两种工作模式</h2><h3 id="1-什么是hash值"><a href="#1-什么是hash值" class="headerlink" title="1. 什么是hash值?"></a>1. 什么是hash值?</h3><p> 对于一个url来说——#及其后面的内容就是hash值</p>
+<h3 id="2-hash值是否会包含在请求中"><a href="#2-hash值是否会包含在请求中" class="headerlink" title="2. hash值是否会包含在请求中"></a>2. hash值是否会包含在请求中</h3><p> hash值不会包含在HTTP请求中,即: hash值不会带给服务器</p>
+<h3 id="3-hash模式"><a href="#3-hash模式" class="headerlink" title="3. hash模式"></a>3. hash模式</h3><p> ①地址中永远带着#号,不美观<br> ②若以后将地址通过第三方手机app分享,若app校验严格,则地址会被标记为不合法<br> ③兼容性较好</p>
+<h3 id="4-history模式"><a href="#4-history模式" class="headerlink" title="4.history模式"></a>4.history模式</h3><p> ①地址干净、美观<br> ②兼容性和hash模式相比略差<br> ③应用部署上线时需要后端人员支持,解决刷新页面服务端404的问题</p>
 
                 
             </div>
@@ -1138,7 +1181,7 @@ router.beforeEach((to,from,next)=>{
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49k</span>
+                        class="white-color">49.9k</span>
             
             
             

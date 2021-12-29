@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-23
+                    2021-12-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.8k
                 </div>
                 
 
@@ -666,21 +666,52 @@ console.log(result.next(&#39;DD&#39;)) //&#123;value: undefined, done: true&#125
   <pre class="language-none"><code class="language-none">
 2. 调用then方法,then方法返回的结果是promise对象,对象的状态由回调函数的执行结果决定
 
- ① 如果回调函数中返回的结果是非promise类型数据,状态为成功,返回值为对象的成功值
+  ① 如果回调函数中返回的结果是非promise类型数据,状态为成功,返回值为对象的成功值
 
- ② 如果回调函数种返回的结果是promise对象,内部返回的promise状态决定then方法返回promise的状态
+  ② 如果回调函数种返回的结果是promise对象,内部返回的promise状态决定then方法返回promise的状态
 
- ③ 如果回调函数内部返回的结果是抛出错误,状态也是失败,返回值为抛出的值
+  ③ 如果回调函数内部返回的结果是抛出错误,状态也是失败,返回值为抛出的值
 </code></pre>
 <p>   //可以通过链式调用解决回调地狱<br>    let result=p.then((value)=&gt; {<br>      console.log(value)<br>      // return new Promise((resolve,reject) =&gt; {<br>      //   reject(‘error’)//二内部promise<br>      // })<br>      throw new Error(‘出错了’); //三抛出异常<br>    },(reason)=&gt; {<br>      console.warn(reason)<br>    })</p>
 <pre><code>//第一种结果
 //返回状态为成功,因为未设置返回值,函数默认返回undefined，它为非promise类型数据
 //所以返回值为undefined
-console.log(result); 
-<pre class="language-none"><code class="language-none">
-### 5. catch方法</code></pre></code></pre>
-<p> const p =new Promise((resolve,reject) =&gt; {<br>      const data = ‘失误拉’;<br>      reject(data);<br>  })<br>  p.catch(error=&gt; {<br>   console.log(error)<br>  })</p>
+console.log(result); </code></pre>
+  <pre class="language-none"><code class="language-none">
+### 5. catch方法</code></pre>
+<p> const p =new Promise((resolve,reject) =&gt; {<br>      const data = ‘失误拉’;<br>      reject(data);<br>  })<br>  p.catch(error=&gt; {<br>   console.log(error)<br>  })<br> <pre class="language-none"><code class="language-none">
+## 十四、Set
+### 1. 什么是Set
+ ES6提供了新的数据结构Set(集合),它类似于数组，但成员的值都是唯一的,集合实现了iterator接口,可以使用&#96;&#96;&#96;扩展运算符&#96;&#96;&#96;和&#96;&#96;&#96;for···of&#96;&#96;&#96;进行遍历</code></pre><br> //声明一个Set<br>    let s = new Set();<br>    let s2 = new Set([‘好事儿’,’坏事儿’,’小事儿’,’大事儿’,’坏事儿’]);<br>    //Set会进行自动去重<br>    console.log(s2) //{‘好事儿’, ‘坏事儿’, ‘小事儿’, ‘大事儿’}<br>  <pre class="language-none"><code class="language-none">
+### 2. 集合的属性和方法
+#### ① size
+ 返回集合的元素个数</code></pre><br> //元素的个数<br>  console.log(s2.size)<br> <pre class="language-none"><code class="language-none">
+#### ② add
+ 增加一个新元素,返回当前集合</code></pre><br> //添加新的元素<br>    s2.add(‘烦心事’);<br>    console.log(s2) //{‘好事儿’, ‘坏事儿’, ‘小事儿’, ‘大事儿’, ‘烦心事’}<br>  <pre class="language-none"><code class="language-none">
+#### ③ delete
+ 删除元素,返回boolean值</code></pre><br> //删除元素<br>    s2.delete(‘坏事儿’);<br>    console.log(s2); //{‘好事儿’, ‘小事儿’, ‘大事儿’, ‘烦心事’}<br> <pre class="language-none"><code class="language-none">
+#### ④ has
+ 检测集合中是否包含某个元素,返回boolean值</code></pre><br> //检测集合中是否有某个元素，返回布尔值，有则返回true,没有则返回false<br>    let result =s2.has(‘小事儿’);<br>    console.log(result)<br>  <pre class="language-none"><code class="language-none">
+#### ⑤ clear
+ 清空集合,返回undefined</code></pre><br> result = s2.clear();<br> console.log(result) //undefined<br> <pre class="language-none"><code class="language-none">
+## 十五、Map
+### 1.什么是Map
+ ES6提供了Map数据结构,它类似于对象,也是键值对集合.但是&quot;键&quot;的范围不限于字符串,各种类型的值(包括对象)都可以当作键.Map也实现了iterator接口,可以使用&#96;&#96;&#96;扩展运算符&#96;&#96;&#96;和&#96;&#96;&#96;for···of&#96;&#96;&#96;进行遍历</code></pre><br> //声明map<br>  let m = new Map();<br>  <pre class="language-none"><code class="language-none">
+### 2. Map属性和方法
+#### ① size
+ 返回Map的元素个数</code></pre><br> //size<br>    console.log(m.size)<br>  <pre class="language-none"><code class="language-none">
+#### ② set
+ 增加一个新元素,返回当前Map</code></pre><br> m.set(‘name’,’张小6’); //key: “name” value: “张小6”<br>    m.set(‘change’,function() {<br>      console.log(‘改变’);<br>    })  //{“change” =&gt; function() { console.log(‘改变’); }}<br>    let school = {<br>      name: ‘NBA’<br>    }<br>    m.set(school,[‘Kobe’,’Jordan’,’James’])<br>    //key: {name: ‘NBA’} value: (3) [‘Kobe’, ‘Jordan’, ‘James’]<br> <pre class="language-none"><code class="language-none">
+#### ③ get
+ 返回键名对应的键值</code></pre><br>  //获取<br>    console.log(m.get(school)) //[‘Kobe’, ‘Jordan’, ‘James’]<br>  <pre class="language-none"><code class="language-none">
+#### ④ has
+ 检测Map中是否包含某个元素,返回boolean值</code></pre><br> //检测<br>    let result = m.has(school)<br>    console.log(result) //true<br>  <pre class="language-none"><code class="language-none">
+#### ⑤ clear
+ 清空集合,返回undefined</code></pre><br> //清空<br>    m.clear();</p>
 <pre><code>
+## 十六、class
+
+
 
 
 
@@ -1210,7 +1241,7 @@ console.log(result);
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49k</span>
+                        class="white-color">49.9k</span>
             
             
             
