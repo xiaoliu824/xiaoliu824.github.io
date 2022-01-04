@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-28
+                    2022-01-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    6.2k
                 </div>
                 
 
@@ -707,17 +707,106 @@ console.log(result); </code></pre>
 #### ④ has
  检测Map中是否包含某个元素,返回boolean值</code></pre><br> //检测<br>    let result = m.has(school)<br>    console.log(result) //true<br>  <pre class="language-none"><code class="language-none">
 #### ⑤ clear
- 清空集合,返回undefined</code></pre><br> //清空<br>    m.clear();</p>
-<pre><code>
-## 十六、class
+ 清空集合,返回undefined</code></pre><br> //清空<br>    m.clear();<br> <pre class="language-none"><code class="language-none">
+## 十六、class 类
+### 1. 什么是class
+ ES6引入了Class(类)这个概念,作为对象的模板.
+ 通过class关键字,可以定义类,ES6的class可以看作只是一个语法糖,它的绝大部分功能,ES5都可以做到,新的class写法让对象原型写法更加清晰。
 
+### 2. constructor 定义构造函数初始化
+#### ① ES5实现</code></pre><br> function Phone(band,price) {<br>      this.band = band;<br>      this.price = price;<br>    }<br>    //添加方法<br>    Phone.prototype.call = function() {<br>      console.log(‘我可以打电话’);<br>    }<br>    //创建实例<br>    let ip12 = new Phone(‘苹果12’,’6999’);<br>    ip12.call()<br>    console.log(ip12)<br>  <pre class="language-none"><code class="language-none">
+#### ② ES6实现</code></pre><br>    //class<br>    class ChPhone{//ChPhone 类名<br>      //构造方法 名字不能修改 (该方法自动执行的,当使用new 类名时执行)<br>      constructor(bind,price) {<br>        this.bind = bind;<br>        this.price = price;<br>      }<br>      //方法必须使用该语法,不能使用ES5的对象完整形式 call:function() {}<br>      //class中不支持Es5这种完整形式<br>      call() {<br>        console.log(‘我可以打电话啊!!!’)<br>      }<br>    }<br>    const hw = new ChPhone(‘华为5g’,’6999’);<br>    hw.call()<br>    console.log(hw);<br>  <pre class="language-none"><code class="language-none">
+### 3. extends 继承父类
+#### ① ES5构造函数实现继承</code></pre><br> //定义父类<br>    function PHone(brand,price) {<br>      this.brand = brand;<br>      this.price = price;<br>    }<br>    PHone.prototype.call = function() {<br>      console.log(‘我可以打电话’);<br>    }<br>    //定义子类<br>    function smallPhone(brand,price,color,size) {<br>      PHone.call(this,brand,price) //这里的this指向smallPhone的实例对象<br>      this.color = color;<br>      this.size = size;<br>    }<br>    //设置子类的原型对象为父类的实例对象<br>    smallPhone.prototype = new PHone;<br>    smallPhone.prototype.constructor = smallPhone;</p>
+<pre><code>smallPhone.prototype.photo = function()&#123;
+  console.log(&#39;我可以拍照&#39;);
+&#125;
+let chuizi = new smallPhone(&#39;锤子&#39;,3033,&#39;紫色&#39;,&#39;6.6&#39;)
+console.log(chuizi)</code></pre>
+  <pre class="language-none"><code class="language-none">
+#### ② ES6实现</code></pre>
+<p>  //定义父类<br>    class Phone{<br>      //构造方法<br>      constructor(brind,price) {<br>        this.brind = brind;<br>        this.price = price;<br>      }<br>      //父类成员的属性<br>      call() {<br>        console.log(‘我可以打电话’)<br>      }<br>    }<br>    //定义子类<br>    class SmallPhone extends Phone{ //extends继承<br>      //构造方法<br>      constructor(brand,price,color,size) {<br>        //super就是父类的constructor方法(构造方法)<br>        super(brand,price) //相当于Phone.call(this,brand,price)<br>        this.color = color;<br>        this.size = size;<br>      }<br>      photo() {<br>        console.log(‘我可以拍照’)<br>      }<br>      playG() {<br>        console.log(‘我可以玩游戏’)<br>      }<br>      //对父的同名方法进行重写<br>      //在js的class语法中,子类不可以调用父类的同名方法<br>      //在普通的成员方法中不允许出现super去调用父类的同名方法<br>      call() {<br>        console.log(‘我可以视频’)<br>      }<br>    }<br>   <pre class="language-none"><code class="language-none">
+### 4. super 调用父级构造方法</code></pre><br>  //定义父类<br>    class Phone{<br>      //构造方法<br>      constructor(brind,price) {<br>        this.brind = brind;<br>        this.price = price;<br>      }<br>      //父类成员的属性<br>      call() {<br>        console.log(‘我可以打电话’)<br>      }<br>    }<br>    //定义子类<br>    class SmallPhone extends Phone{ //extends继承<br>      //构造方法<br>      constructor(brand,price,color,size) {<br>        //super就是父类的constructor方法(构造方法)<br>        super(brand,price) //相当于Phone.call(this,brand,price)<br>        this.color = color;<br>        this.size = size;<br>      }<br>    }<br> <pre class="language-none"><code class="language-none">### 5. static 定义静态方法和属性
+#### ① ES5实现</code></pre><br>   function Phone() {</p>
+<pre><code>&#125;
+Phone.names = &#39;手机&#39;;
+Phone.change = function() &#123;
+  console.log(&#39;我可以改变世界&#39;);
+&#125;
+console.log(Phone.names) //手机
+Phone.change() //我可以改变世界
+let ip = new Phone()
+//实例对象身上是没有构造函数(构造函数本身)身上的属性和方法
+//实例对象(ip)和函数对象(Phone)的属性是不相通的,
+//函数对象添加的(names和change)属性是属于函数对象（Phone）的,它并不属于实例对象(ip)
+//对于上面说的这样的属性,我们把它称为静态成员
+console.log(ip.names) //undefined</code></pre>
+ <pre class="language-none"><code class="language-none">
+#### ② ES6实现</code></pre>
+<p>   //静态成员,在面向对象中,这样的属性是属于类的,并不属于实例对象<br>    class PHONE {<br>      //静态属性<br>      //对于static标注的属性和方法,它属于类而不属于实例对象<br>      static names = ‘华为手机’<br>      static change() {<br>        console.log(‘中国制造’)<br>      }<br>    }<br>    let pg = new PHONE()<br>    console.log(pg.names); //undefined<br>    console.log(PHONE.names) //华为手机<br>  <pre class="language-none"><code class="language-none">
+### 6. 父类方法可以重写</code></pre><br>  //定义父类<br>    class Phone{<br>      //构造方法<br>      constructor(brind,price) {<br>        this.brind = brind;<br>        this.price = price;<br>      }<br>      //父类成员的属性<br>      call() {<br>        console.log(‘我可以打电话’)<br>      }<br>    }<br>    //定义子类<br>    class SmallPhone extends Phone{ //extends继承<br>      //构造方法<br>      constructor(brand,price,color,size) {<br>        //super就是父类的constructor方法(构造方法)<br>        super(brand,price) //相当于Phone.call(this,brand,price)<br>        this.color = color;<br>        this.size = size;<br>      }<br>      //对父的同名方法进行重写<br>      //在js的class语法中,子类不可以调用父类的同名方法<br>      //在普通的成员方法中不允许出现super去调用父类的同名方法<br>      call() {<br>        console.log(‘我可以视频’)<br>      }<br>    }<br>    let xiaomi = new SmallPhone(‘小米’,4567,’天蓝’,’6.6’)<br>    console.log(xiaomi)<br>    xiaomi.call() //我可以视频  这里是调用了子类的call方法<br> <pre class="language-none"><code class="language-none">
+### 7. get和set
+ ES5中的get、set,可以对一个对象的属性进行方法的绑定
+ ① get 添加一个get方法,当对某一个属性进行获取时,执行get对应的函数
 
+ ② set 添加一个set方法,当对一个属性进行设置时,执行set对应的函数 </code></pre><br>  class Phone {//没有构造函数也是合法的<br>      //对price属性的读取绑定了个函数,只要读取实例对象的price属性,<br>      //就会执行这个函数(price)中的代码,该函数的返回值就是实例对象该属性的值<br>      get price() {<br>        console.log(‘价格被读取了’);<br>        return ‘111’<br>      }<br>      //对price属性的修改绑定了个函数,当你对price这个属性进行赋值时<br>      //就会执行这个函数(price)中的代码<br>      //set函数必须有一个参数<br>      set price(newV) {<br>        console.log(‘价格被修改了’);<br>      }<br>    }<br>    let sj = new Phone()<br>    console.log(sj.price) //它的值为get函数中的返回值<br>    sj.price = ‘222’;<br>   <pre class="language-none"><code class="language-none">
+## 十七、数值扩展
+### 1. 二进制和八进制
+ ES6提供了二进制和八进制数值的新写法,分别用0b(二进制)和0o(八进制)表示</code></pre><br>  //1.二进制和八进制<br>    let b = 0b1010; //二进制ob<br>    let c = 0o777; //八进制(0o)<br>    console.log(b);<br>    console.log(c);<br>  <pre class="language-none"><code class="language-none">
+### 2. Number.isFinite() 与 Number.isNaN()
+ ① Number.isFinite() 用来检查一个数值是否为有限的</code></pre><br>  let yxs = Number.isFinite(10);  //有限 true<br>    //let yxs = Number.isFinite(10); //无限 false<br>    console.log(yxs)<br>  <pre class="language-none"><code class="language-none">
+② Number.isNaN() 用来检查一个值是否为 NaN</code></pre><br>  // let ret = Number.isNaN(‘字符串001’); //false<br>    let ret = Number.isNaN(001);<br>    console.log(ret);<br>  <pre class="language-none"><code class="language-none">
+### 3. Number.parseInt() 与 Number.parseFloat()
+ ES6 将全局方法 parseInt 和 parseFloat，移植到 Number 对象上面，使用不变</code></pre><br>  let zs = Number.parseInt(‘11560张三’);<br>  let xs = Number.parseFloat(‘3.1415926张三001’);<br>  console.log(zs)  //11560<br>  console.log(xs)  //3.1415926<br>  <pre class="language-none"><code class="language-none">
+### 4. Number.isInteger
+ Number.isInteger() 用来判断一个数值是否为整数</code></pre><br>  // let sz = Number.isInteger(0.06) //false<br>  let sz = Number.isInteger(110) //true<br>  console.log(sz)<br> <pre class="language-none"><code class="language-none">
+### 5. Math.trunc
+ 用于去除一个数的小数部分，返回整数部分</code></pre><br>  let qw = Math.trunc(3.50);<br>    console.log(qw); //3<br>  <pre class="language-none"><code class="language-none">
+### 6. Math.sign
+ Math.sign 判断一个数到底是正数、负数还是0</code></pre><br>  //如果是正数,返回1 负数返回-1 零返回0<br>  let zz = Math.sign(100)<br>  let fz = Math.sign(0)<br>  let xsz = Math.sign(-22)<br>  console.log(zz); // 1<br>  console.log(fz); // 0<br>  console.log(xsz); // -1<br> <pre class="language-none"><code class="language-none">
+## 十八、对象扩展
+### 1. Object.is 
+ 判断两个值是否严格相等,与全等基本一致</code></pre><br>  // let result = Object.is(135,135) true<br>  let result = Object.is(NaN,NaN);<br>  //NaN和任何数值作比较时,除了不等于以外,其他都为false<br>  console.log(NaN === NaN) //false<br>  console.log(result)  //true<br>  <pre class="language-none"><code class="language-none">
+### 2. Object.assign
+ 对象的合并，将源对象的所有可枚举属性，复制到目标对象</code></pre><br> //参数1:模板,被覆盖的 参数2: 覆盖的<br>    //如果出现重名的属性,后面的会把前面的覆盖掉<br>    //一个中有一个中没有也会合并<br>    let school = {<br>      name: ‘武大’,<br>      gps: ‘湖北武汉’,<br>      test: ‘法外狂徒’<br>    }<br>    let school2 = {<br>      name: ‘张三’,<br>      gps: ‘陕西西安’<br>    }<br>    let res = Object.assign(school,school2)<br>    console.log(res) //{name: ‘张三’, gps: ‘陕西西安’, test: ‘法外狂徒’}<br>  <pre class="language-none"><code class="language-none">
+### 3. Object.setPrototypeOf 和 Object.getPrototypeOf 
+ Object.setPrototypeOf 设置原型对象 Object.getPrototypeOf 得到原型对象</code></pre><br>  const schoo = {<br>      name: ‘法外狂徒’<br>    }<br>    const gps = {<br>      teach: ‘罗翔老师’<br>    }<br>    let ret = Object.setPrototypeOf(schoo,school2)<br>    console.log(Object.getPrototypeOf(schoo)) //{name: ‘张三’, gps: ‘陕西西安’}<br>    console.log(ret) // {name: ‘法外狂徒’}<br>  <pre class="language-none"><code class="language-none">
+## 十九、模块化
+### 1. 什么是模块化
+ 模块化是指将一个大的程序文件，拆分成许多小的文件，然后将小文件组合起来
 
+### 2. 模块化的好处
+ (1) 防止命名冲突
+ (2) 代码复用
+ (3) 高维护性
 
+### 3. ES6之前的模块化规范
+ (1) CommonJS &#x3D;&gt; NodeJS、Browserify
+ (2) AMD &#x3D;&gt; requireJS
+ (3) CMD &#x3D;&gt; seaJS
 
+### 4. ES6模块化语法
+模块功能主要由两个命令构成：export 和 import。
+ ① export 命令用于规定模块的对外接口
+ ② import 命令用于输入其他模块提供的功能
 
-</code></pre>
-
+### 5. 基本使用
+#### ① 不同暴露的模块
+ (1) 分别暴露</code></pre><br>   export let zxl = “张三”;<br>   export function say() {<br>   console.log(‘say’);<br>   }<br> <pre class="language-none"><code class="language-none">
+(2) 统一暴露</code></pre><br>    let name = “法外狂徒张三”;<br>    function say() {<br>      console.log(‘我可以说相声!!!’);<br>    }</p>
+<pre><code>export &#123; name,say &#125;</code></pre>
+   <pre class="language-none"><code class="language-none">
+(3) 默认暴露</code></pre>
+<p>   export default {<br>      name: ‘小6’,<br>      change: function() {<br>        console.log(‘我什么时候才可以攒更多的钱呐!!!’);<br>      }<br>   }<br>  <pre class="language-none"><code class="language-none">
+#### ② 通用的导入方式</code></pre><br> //引入m.js文件 (分别暴露) as 别名<br>    import * as m1 from ‘./js/m.js’<br>    //引入m2.js文件 (统一暴露)<br>    import * as m2 from ‘./js/m2.js’<br>    // console.log(m2);<br>    //引入m3.js文件(默认暴露)<br>    import * as m3 from ‘./js/m3.js’<br>    // m3.default.change()<br>  <pre class="language-none"><code class="language-none">
+#### ③ 解构赋值形式</code></pre><br>  import {zxl,say} from ‘./js/m.js’<br>    console.log(zxl)<br>    console.log(say)<br>    //可以用as起别名,解决引入时同名的问题<br>    import {name,say as toSay} from ‘./js/m2.js’<br>    console.log(name);<br>    console.log(toSay)<br>    //注意:引入默认暴露的js文件时,这里不可以直接用default，可以起一个别名<br>    import {default as zzz} from ‘./js/m3.js’<br>    console.log(zzz.name);<br>    console.log(zzz.change)<br>  <pre class="language-none"><code class="language-none">
+#### ④ 简便形式
+ 只针对于默认输出</code></pre><br>  import bl from ‘./js/m3.js’<br>    console.log(bl)<br>  <pre class="language-none"><code class="language-none">
+#### ⑤ 模块引入
+ 将多个模块整合到一个文件中，在进行引入</code></pre><br>  //引入其他模块<br>  import * as m1 from ‘./m.js’<br>  import * as m2 from ‘./m2.js’<br>  import * as m3 from ‘./m3.js’<br> <pre class="language-none"><code class="language-none">&#96;&#96;&#96;
+ &lt;!--写一个入口文件app,在页面中进行引入--&gt;
+ &lt;script src&#x3D;&quot;.&#x2F;js&#x2F;app.js&quot; type&#x3D;&quot;module&quot;&gt;&lt;&#x2F;script&gt;</code></pre></p>
+<h2 id="二十、数组新特性"><a href="#二十、数组新特性" class="headerlink" title="二十、数组新特性"></a>二十、数组新特性</h2>
                 
             </div>
             <hr/>
@@ -1232,7 +1321,7 @@ console.log(result); </code></pre>
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2021</span>
+                <span id="year">2019-2022</span>
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">张小六</a>
@@ -1241,7 +1330,7 @@ console.log(result); </code></pre>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49.9k</span>
+                        class="white-color">52.3k</span>
             
             
             
