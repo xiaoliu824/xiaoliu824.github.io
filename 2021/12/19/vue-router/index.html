@@ -391,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-29
+                    2022-01-10
                 </div>
                 
 
@@ -423,51 +423,51 @@
 <h3 id="2-前端路由"><a href="#2-前端路由" class="headerlink" title="2. 前端路由"></a>2. 前端路由</h3><p> key是路径,value是组件</p>
 <h2 id="二、路由的基本使用"><a href="#二、路由的基本使用" class="headerlink" title="二、路由的基本使用"></a>二、路由的基本使用</h2><h3 id="①-安装"><a href="#①-安装" class="headerlink" title="① 安装"></a>① 安装</h3><p> 安装vue-router,命令: <code>npm i vue-router</code></p>
 <h3 id="②-应用"><a href="#②-应用" class="headerlink" title="② 应用"></a>② 应用</h3><p> 应用插件: <code>Vue.use(VueRouter)</code></p>
-<h3 id="③-编写router配置项"><a href="#③-编写router配置项" class="headerlink" title="③ 编写router配置项"></a>③ 编写router配置项</h3> <pre class="language-none"><code class="language-none">  &#x2F;&#x2F;引入VueRouter
-import VueRouter from &#39;vue-router&#39;
-&#x2F;&#x2F;引入Luyou 组件
-import About from &#39;..&#x2F;components&#x2F;About&#39;
-import Home from &#39;..&#x2F;components&#x2F;Home&#39;
+<h3 id="③-编写router配置项"><a href="#③-编写router配置项" class="headerlink" title="③ 编写router配置项"></a>③ 编写router配置项</h3> <pre class="language-js" data-language="js"><code class="language-js">  <span class="token comment">//引入VueRouter</span>
+<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+<span class="token comment">//引入Luyou 组件</span>
+<span class="token keyword">import</span> About <span class="token keyword">from</span> <span class="token string">'../components/About'</span>
+<span class="token keyword">import</span> Home <span class="token keyword">from</span> <span class="token string">'../components/Home'</span>
 
-&#x2F;&#x2F;创建router实例对象，去管理一组一组的路由规则
-const router &#x3D; new VueRouter(&#123;
-	routes:[
-		&#123;
-			path:&#39;&#x2F;about&#39;,
-			component:About
-		&#125;,
-		&#123;
-			path:&#39;&#x2F;home&#39;,
-			component:Home
-		&#125;
-	]
-&#125;)</code></pre>
+<span class="token comment">//创建router实例对象，去管理一组一组的路由规则</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+	routes<span class="token operator">:</span><span class="token punctuation">[</span>
+		<span class="token punctuation">&#123;</span>
+			path<span class="token operator">:</span><span class="token string">'/about'</span><span class="token punctuation">,</span>
+			component<span class="token operator">:</span>About
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#123;</span>
+			path<span class="token operator">:</span><span class="token string">'/home'</span><span class="token punctuation">,</span>
+			component<span class="token operator">:</span>Home
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 <h3 id="④-实现切换-active-class可配置高亮样式"><a href="#④-实现切换-active-class可配置高亮样式" class="headerlink" title="④ 实现切换(active-class可配置高亮样式)"></a>④ 实现切换(active-class可配置高亮样式)</h3><p> <code>&lt;router-link active-class=&quot;active&quot; to=&quot;/about&quot;&gt;About&lt;/router-link&gt;</code></p>
 <h3 id="⑤-指定展示位置"><a href="#⑤-指定展示位置" class="headerlink" title="⑤ 指定展示位置"></a>⑤ 指定展示位置</h3><p> <code>&lt;router-view&gt;&lt;/router-view&gt;</code></p>
 <h2 id="三、几个注意点"><a href="#三、几个注意点" class="headerlink" title="三、几个注意点"></a>三、几个注意点</h2><p> Ⅰ.路由组件通常存放在<code>pages</code>文件夹,一般组件通常存放在<code>components</code>文件夹</p>
 <p> Ⅱ.通过切换,”隐藏”了的路由组件,默认是被销毁掉的,需要的时候再去挂载</p>
 <p> Ⅲ.每个组件都有自己的$route属性,里面存储着自己的路由信息</p>
 <p> Ⅳ.整个应用只有一个router,可以通过组件的<code>$router</code>属性获取到</p>
-<h2 id="四、多级路由"><a href="#四、多级路由" class="headerlink" title="四、多级路由"></a>四、多级路由</h2><h3 id="1-配置路由规则"><a href="#1-配置路由规则" class="headerlink" title="1. 配置路由规则"></a>1. 配置路由规则</h3><p> 配置路由规则,使用children配置项<br> <pre class="language-none"><code class="language-none"> routes:[
-	&#123;
-		path:&#39;&#x2F;about&#39;,
-		component:About,
-	&#125;,
-	&#123;
-		path:&#39;&#x2F;home&#39;,
-		component:Home,
-		children:[ &#x2F;&#x2F;通过children配置子级路由
-			&#123;
-				path:&#39;news&#39;, &#x2F;&#x2F;此处一定不要写：&#x2F;news
-				component:News
-			&#125;,
-			&#123;
-				path:&#39;message&#39;,&#x2F;&#x2F;此处一定不要写：&#x2F;message
-				component:Message
-			&#125;
-		]
-	&#125;
-]</code></pre></p>
+<h2 id="四、多级路由"><a href="#四、多级路由" class="headerlink" title="四、多级路由"></a>四、多级路由</h2><h3 id="1-配置路由规则"><a href="#1-配置路由规则" class="headerlink" title="1. 配置路由规则"></a>1. 配置路由规则</h3><p> 配置路由规则,使用children配置项<br> <pre class="language-js" data-language="js"><code class="language-js"> routes<span class="token operator">:</span><span class="token punctuation">[</span>
+	<span class="token punctuation">&#123;</span>
+		path<span class="token operator">:</span><span class="token string">'/about'</span><span class="token punctuation">,</span>
+		component<span class="token operator">:</span>About<span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#123;</span>
+		path<span class="token operator">:</span><span class="token string">'/home'</span><span class="token punctuation">,</span>
+		component<span class="token operator">:</span>Home<span class="token punctuation">,</span>
+		children<span class="token operator">:</span><span class="token punctuation">[</span> <span class="token comment">//通过children配置子级路由</span>
+			<span class="token punctuation">&#123;</span>
+				path<span class="token operator">:</span><span class="token string">'news'</span><span class="token punctuation">,</span> <span class="token comment">//此处一定不要写：/news</span>
+				component<span class="token operator">:</span>News
+			<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+			<span class="token punctuation">&#123;</span>
+				path<span class="token operator">:</span><span class="token string">'message'</span><span class="token punctuation">,</span><span class="token comment">//此处一定不要写：/message</span>
+				component<span class="token operator">:</span>Message
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">]</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span></code></pre></p>
 <h3 id="2-跳转"><a href="#2-跳转" class="headerlink" title="2. 跳转"></a>2. 跳转</h3><p> <code>&lt;router-link to=&quot;/home/news&quot;&gt;News&lt;/router-link&gt;</code></p>
 <h2 id="五、路由的query参数"><a href="#五、路由的query参数" class="headerlink" title="五、路由的query参数"></a>五、路由的query参数</h2><p> 1.传递参数<br>  <pre class="language-none"><code class="language-none">  &lt;!-- 跳转并携带query参数，to的字符串写法 --&gt;
 &lt;router-link :to&#x3D;&quot;&#x2F;home&#x2F;message&#x2F;detail?id&#x3D;666&amp;title&#x3D;你好&quot;&gt;跳转&lt;&#x2F;router-link&gt;
@@ -1181,7 +1181,7 @@ beforeRouteLeave (to, from, next) &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">55.5k</span>
+                        class="white-color">56.1k</span>
             
             
             
