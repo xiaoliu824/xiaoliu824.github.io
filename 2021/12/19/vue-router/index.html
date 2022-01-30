@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-10
+                    2022-01-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.8k
                 </div>
                 
 
@@ -469,139 +469,139 @@
 	<span class="token punctuation">&#125;</span>
 <span class="token punctuation">]</span></code></pre></p>
 <h3 id="2-跳转"><a href="#2-跳转" class="headerlink" title="2. 跳转"></a>2. 跳转</h3><p> <code>&lt;router-link to=&quot;/home/news&quot;&gt;News&lt;/router-link&gt;</code></p>
-<h2 id="五、路由的query参数"><a href="#五、路由的query参数" class="headerlink" title="五、路由的query参数"></a>五、路由的query参数</h2><p> 1.传递参数<br>  <pre class="language-none"><code class="language-none">  &lt;!-- 跳转并携带query参数，to的字符串写法 --&gt;
-&lt;router-link :to&#x3D;&quot;&#x2F;home&#x2F;message&#x2F;detail?id&#x3D;666&amp;title&#x3D;你好&quot;&gt;跳转&lt;&#x2F;router-link&gt;
+<h2 id="五、路由的query参数"><a href="#五、路由的query参数" class="headerlink" title="五、路由的query参数"></a>五、路由的query参数</h2><p> 1.传递参数<br>  <pre class="language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 跳转并携带query参数，to的字符串写法 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link <span class="token operator">:</span>to<span class="token operator">=</span><span class="token string">"/home/message/detail?id=666&amp;title=你好"</span><span class="token operator">></span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
 				
-&lt;!-- 跳转并携带query参数，to的对象写法 --&gt;
-&lt;router-link 
-	:to&#x3D;&quot;&#123;
-		path:&#39;&#x2F;home&#x2F;message&#x2F;detail&#39;,
-		query:&#123;
-		   id:666,
-            title:&#39;你好&#39;
-		&#125;
-	&#125;&quot;
-&gt;跳转&lt;&#x2F;router-link&gt;</code></pre></p>
-<p> 2.接收参数<br>  <pre class="language-none"><code class="language-none">$route.query.id
-$route.query.title</code></pre></p>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 跳转并携带query参数，to的对象写法 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link 
+	<span class="token operator">:</span>to<span class="token operator">=</span>"<span class="token punctuation">&#123;</span>
+		path<span class="token operator">:</span><span class="token string">'/home/message/detail'</span><span class="token punctuation">,</span>
+		query<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+		   id<span class="token operator">:</span><span class="token number">666</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span><span class="token string">'你好'</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>"
+<span class="token operator">></span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre></p>
+<p> 2.接收参数<br>  <pre class="language-js" data-language="js"><code class="language-js">$route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>id
+$route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>title</code></pre></p>
 <h2 id="六、命名路由"><a href="#六、命名路由" class="headerlink" title="六、命名路由"></a>六、命名路由</h2><h3 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 可以简化路由的跳转</p>
-<h3 id="2-如何使用"><a href="#2-如何使用" class="headerlink" title="2. 如何使用"></a>2. 如何使用</h3><p> ①给路由命名<br>  <pre class="language-none"><code class="language-none">  &#123;
-	path:&#39;&#x2F;demo&#39;,
-	component:Demo,
-	children:[
-		&#123;
-			path:&#39;test&#39;,
-			component:Test,
-			children:[
-				&#123;
-                      name:&#39;hello&#39; &#x2F;&#x2F;给路由命名
-					path:&#39;welcome&#39;,
-					component:Hello,
-				&#125;
-			]
-		&#125;
-	]
-&#125;</code></pre><br> ②简化跳转<br>  <pre class="language-none"><code class="language-none">  &lt;!--简化前，需要写完整的路径 --&gt;
-&lt;router-link to&#x3D;&quot;&#x2F;demo&#x2F;test&#x2F;welcome&quot;&gt;跳转&lt;&#x2F;router-link&gt;
+<h3 id="2-如何使用"><a href="#2-如何使用" class="headerlink" title="2. 如何使用"></a>2. 如何使用</h3><p> ①给路由命名<br>  <pre class="language-js" data-language="js"><code class="language-js">  <span class="token punctuation">&#123;</span>
+	path<span class="token operator">:</span><span class="token string">'/demo'</span><span class="token punctuation">,</span>
+	component<span class="token operator">:</span>Demo<span class="token punctuation">,</span>
+	children<span class="token operator">:</span><span class="token punctuation">[</span>
+		<span class="token punctuation">&#123;</span>
+			path<span class="token operator">:</span><span class="token string">'test'</span><span class="token punctuation">,</span>
+			component<span class="token operator">:</span>Test<span class="token punctuation">,</span>
+			children<span class="token operator">:</span><span class="token punctuation">[</span>
+				<span class="token punctuation">&#123;</span>
+                      name<span class="token operator">:</span><span class="token string">'hello'</span> <span class="token comment">//给路由命名</span>
+					path<span class="token operator">:</span><span class="token string">'welcome'</span><span class="token punctuation">,</span>
+					component<span class="token operator">:</span>Hello<span class="token punctuation">,</span>
+				<span class="token punctuation">&#125;</span>
+			<span class="token punctuation">]</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre><br> ②简化跳转<br>  <pre class="language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>简化前，需要写完整的路径 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/demo/test/welcome"</span><span class="token operator">></span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
 
-&lt;!--简化后，直接通过名字跳转 --&gt;
-&lt;router-link :to&#x3D;&quot;&#123;name:&#39;hello&#39;&#125;&quot;&gt;跳转&lt;&#x2F;router-link&gt;
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>简化后，直接通过名字跳转 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link <span class="token operator">:</span>to<span class="token operator">=</span><span class="token string">"&#123;name:'hello'&#125;"</span><span class="token operator">></span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
 
-&lt;!--简化写法配合传递参数 --&gt;
-&lt;router-link 
-	:to&#x3D;&quot;&#123;
-		name:&#39;hello&#39;,
-		query:&#123;
-		   id:666,
-            title:&#39;你好&#39;
-		&#125;
-	&#125;&quot;
-&gt;跳转&lt;&#x2F;router-link&gt;</code></pre></p>
-<h2 id="七、路由的params参数"><a href="#七、路由的params参数" class="headerlink" title="七、路由的params参数"></a>七、路由的params参数</h2><h3 id="1-配置路由"><a href="#1-配置路由" class="headerlink" title="1. 配置路由"></a>1. 配置路由</h3><p> 配置路由,声明接收params参数<br> <pre class="language-none"><code class="language-none"> &#123;
-	path:&#39;&#x2F;home&#39;,
-	component:Home,
-	children:[
-		&#123;
-			path:&#39;news&#39;,
-			component:News
-		&#125;,
-		&#123;
-			component:Message,
-			children:[
-				&#123;
-					name:&#39;xiangqing&#39;,
-					path:&#39;detail&#x2F;:id&#x2F;:title&#39;, &#x2F;&#x2F;使用占位符声明接收params参数
-					component:Detail
-				&#125;
-			]
-		&#125;
-	]
-&#125;</code></pre></p>
-<h3 id="2-传递参数"><a href="#2-传递参数" class="headerlink" title="2. 传递参数"></a>2. 传递参数</h3> <pre class="language-none"><code class="language-none"> &lt;!-- 跳转并携带params参数，to的字符串写法 --&gt;
-&lt;router-link :to&#x3D;&quot;&#x2F;home&#x2F;message&#x2F;detail&#x2F;666&#x2F;你好&quot;&gt;跳转&lt;&#x2F;router-link&gt;
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>简化写法配合传递参数 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link 
+	<span class="token operator">:</span>to<span class="token operator">=</span>"<span class="token punctuation">&#123;</span>
+		name<span class="token operator">:</span><span class="token string">'hello'</span><span class="token punctuation">,</span>
+		query<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+		   id<span class="token operator">:</span><span class="token number">666</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span><span class="token string">'你好'</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>"
+<span class="token operator">></span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre></p>
+<h2 id="七、路由的params参数"><a href="#七、路由的params参数" class="headerlink" title="七、路由的params参数"></a>七、路由的params参数</h2><h3 id="1-配置路由"><a href="#1-配置路由" class="headerlink" title="1. 配置路由"></a>1. 配置路由</h3><p> 配置路由,声明接收params参数<br> <pre class="language-js" data-language="js"><code class="language-js"> <span class="token punctuation">&#123;</span>
+	path<span class="token operator">:</span><span class="token string">'/home'</span><span class="token punctuation">,</span>
+	component<span class="token operator">:</span>Home<span class="token punctuation">,</span>
+	children<span class="token operator">:</span><span class="token punctuation">[</span>
+		<span class="token punctuation">&#123;</span>
+			path<span class="token operator">:</span><span class="token string">'news'</span><span class="token punctuation">,</span>
+			component<span class="token operator">:</span>News
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#123;</span>
+			component<span class="token operator">:</span>Message<span class="token punctuation">,</span>
+			children<span class="token operator">:</span><span class="token punctuation">[</span>
+				<span class="token punctuation">&#123;</span>
+					name<span class="token operator">:</span><span class="token string">'xiangqing'</span><span class="token punctuation">,</span>
+					path<span class="token operator">:</span><span class="token string">'detail/:id/:title'</span><span class="token punctuation">,</span> <span class="token comment">//使用占位符声明接收params参数</span>
+					component<span class="token operator">:</span>Detail
+				<span class="token punctuation">&#125;</span>
+			<span class="token punctuation">]</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre></p>
+<h3 id="2-传递参数"><a href="#2-传递参数" class="headerlink" title="2. 传递参数"></a>2. 传递参数</h3> <pre class="language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 跳转并携带params参数，to的字符串写法 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link <span class="token operator">:</span>to<span class="token operator">=</span><span class="token string">"/home/message/detail/666/你好"</span><span class="token operator">></span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
 				
-&lt;!-- 跳转并携带params参数，to的对象写法 --&gt;
-&lt;router-link 
-	:to&#x3D;&quot;&#123;
-		name:&#39;xiangqing&#39;,
-		params:&#123;
-		   id:666,
-       title:&#39;你好&#39;
-		&#125;
-	&#125;&quot;
-&gt;跳转&lt;&#x2F;router-link&gt;</code></pre>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 跳转并携带params参数，to的对象写法 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link 
+	<span class="token operator">:</span>to<span class="token operator">=</span>"<span class="token punctuation">&#123;</span>
+		name<span class="token operator">:</span><span class="token string">'xiangqing'</span><span class="token punctuation">,</span>
+		params<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+		   id<span class="token operator">:</span><span class="token number">666</span><span class="token punctuation">,</span>
+       title<span class="token operator">:</span><span class="token string">'你好'</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>"
+<span class="token operator">></span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre>
 
 <p> 特别注意: 路由携带params参数时，若使用to的对象写法，则不能使用path配置项，必须使用name配置！</p>
-<h3 id="3-接收参数"><a href="#3-接收参数" class="headerlink" title="3. 接收参数"></a>3. 接收参数</h3> <pre class="language-none"><code class="language-none">$route.params.id
-$route.params.title</code></pre>
-<h2 id="八、路由的props配置"><a href="#八、路由的props配置" class="headerlink" title="八、路由的props配置"></a>八、路由的props配置</h2><h3 id="1-作用-1"><a href="#1-作用-1" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 让路由组件更方便的收到参数<br> <pre class="language-none"><code class="language-none">  &#123;
-	name:&#39;xiangqing&#39;,
-	path:&#39;detail&#x2F;:id&#39;,
-	component:Detail,
+<h3 id="3-接收参数"><a href="#3-接收参数" class="headerlink" title="3. 接收参数"></a>3. 接收参数</h3> <pre class="language-js" data-language="js"><code class="language-js">$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id
+$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>title</code></pre>
+<h2 id="八、路由的props配置"><a href="#八、路由的props配置" class="headerlink" title="八、路由的props配置"></a>八、路由的props配置</h2><h3 id="1-作用-1"><a href="#1-作用-1" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 让路由组件更方便的收到参数<br> <pre class="language-js" data-language="js"><code class="language-js">  <span class="token punctuation">&#123;</span>
+	name<span class="token operator">:</span><span class="token string">'xiangqing'</span><span class="token punctuation">,</span>
+	path<span class="token operator">:</span><span class="token string">'detail/:id'</span><span class="token punctuation">,</span>
+	component<span class="token operator">:</span>Detail<span class="token punctuation">,</span>
 
-	&#x2F;&#x2F;第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件
-	&#x2F;&#x2F; props:&#123;a:900&#125;
+	<span class="token comment">//第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件</span>
+	<span class="token comment">// props:&#123;a:900&#125;</span>
 
-	&#x2F;&#x2F;第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件
-	&#x2F;&#x2F; props:true
+	<span class="token comment">//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件</span>
+	<span class="token comment">// props:true</span>
 	
-	&#x2F;&#x2F;第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件
-	props(route)&#123;
-		return &#123;
-			id:route.query.id,
-			title:route.query.title
-		&#125;
-	&#125;
-&#125;</code></pre></p>
+	<span class="token comment">//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件</span>
+	<span class="token function">props</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+			id<span class="token operator">:</span>route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+			title<span class="token operator">:</span>route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>title
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre></p>
 <h2 id="九、-lt-router-link-gt-的replace属性"><a href="#九、-lt-router-link-gt-的replace属性" class="headerlink" title="九、&lt;router-link&gt;的replace属性"></a>九、<code>&lt;router-link&gt;</code>的replace属性</h2><h3 id="1-作用-2"><a href="#1-作用-2" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 控制路由跳转时操作浏览器历史记录的模式</p>
 <h3 id="2-浏览器历史记录写入方式"><a href="#2-浏览器历史记录写入方式" class="headerlink" title="2. 浏览器历史记录写入方式"></a>2. 浏览器历史记录写入方式</h3><p> 路由跳转时,默认是push</p>
 <p> 浏览器的历史记录有两种写入方式<br>  ①push<br>   push是追加历史记录</p>
 <p>  ②replace<br>   replace是替换当前记录</p>
 <h3 id="3-如何开启replace模式"><a href="#3-如何开启replace模式" class="headerlink" title="3. 如何开启replace模式"></a>3. 如何开启<code>replace</code>模式</h3><p> <code>&lt;router-link replace .......&gt;News&lt;/router-link&gt;</code></p>
 <h2 id="十、编程式路由导航"><a href="#十、编程式路由导航" class="headerlink" title="十、编程式路由导航"></a>十、编程式路由导航</h2><h3 id="1-作用-3"><a href="#1-作用-3" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 不借助<code>&lt;router-link&gt; </code>实现路由跳转,让路由跳转更加灵活</p>
-<h3 id="2-具体代码"><a href="#2-具体代码" class="headerlink" title="2. 具体代码"></a>2. 具体代码</h3> <pre class="language-none"><code class="language-none"> &#x2F;&#x2F;$router的两个API
-this.$router.push(&#123;
-	name:&#39;xiangqing&#39;,
-		params:&#123;
-			id:xxx,
-			title:xxx
-		&#125;
-&#125;)
+<h3 id="2-具体代码"><a href="#2-具体代码" class="headerlink" title="2. 具体代码"></a>2. 具体代码</h3> <pre class="language-js" data-language="js"><code class="language-js"> <span class="token comment">//$router的两个API</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+	name<span class="token operator">:</span><span class="token string">'xiangqing'</span><span class="token punctuation">,</span>
+		params<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+			id<span class="token operator">:</span>xxx<span class="token punctuation">,</span>
+			title<span class="token operator">:</span>xxx
+		<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
-this.$router.replace(&#123;
-	name:&#39;xiangqing&#39;,
-		params:&#123;
-			id:xxx,
-			title:xxx
-		&#125;
-&#125;)
-this.$router.forward() &#x2F;&#x2F;前进
-this.$router.back() &#x2F;&#x2F;后退
-this.$router.go() &#x2F;&#x2F;可前进也可后退</code></pre>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+	name<span class="token operator">:</span><span class="token string">'xiangqing'</span><span class="token punctuation">,</span>
+		params<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+			id<span class="token operator">:</span>xxx<span class="token punctuation">,</span>
+			title<span class="token operator">:</span>xxx
+		<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//前进</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//后退</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//可前进也可后退</span></code></pre>
 <h2 id="十一、缓存路由组件"><a href="#十一、缓存路由组件" class="headerlink" title="十一、缓存路由组件"></a>十一、缓存路由组件</h2><h3 id="1-作用-4"><a href="#1-作用-4" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 让不展示的路由保持挂载,不被销毁</p>
-<h3 id="2-具体代码-1"><a href="#2-具体代码-1" class="headerlink" title="2. 具体代码"></a>2. 具体代码</h3><p> include = “组件名” (让组件保持活跃状态)<br> <pre class="language-none"><code class="language-none"> &lt;keep-alive include&#x3D;&quot;News&quot;&gt; 
-    &lt;router-view&gt;&lt;&#x2F;router-view&gt;
-&lt;&#x2F;keep-alive&gt;</code></pre></p>
+<h3 id="2-具体代码-1"><a href="#2-具体代码-1" class="headerlink" title="2. 具体代码"></a>2. 具体代码</h3><p> include = “组件名” (让组件保持活跃状态)<br> <pre class="language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive include<span class="token operator">=</span><span class="token string">"News"</span><span class="token operator">></span> 
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span></code></pre></p>
 <h2 id="十二、两个新的生命周期钩子"><a href="#十二、两个新的生命周期钩子" class="headerlink" title="十二、两个新的生命周期钩子"></a>十二、两个新的生命周期钩子</h2><h3 id="1-作用-5"><a href="#1-作用-5" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 路由组件所独有的两个钩子,用于捕获路由组件的激活状态</p>
 <h3 id="2-钩子名称"><a href="#2-钩子名称" class="headerlink" title="2. 钩子名称"></a>2. 钩子名称</h3><ol>
 <li><p><code>activated</code>路由组件被激活时触发</p>
@@ -611,50 +611,50 @@ this.$router.go() &#x2F;&#x2F;可前进也可后退</code></pre>
 </ol>
 <h2 id="十三、路由守卫"><a href="#十三、路由守卫" class="headerlink" title="十三、路由守卫"></a>十三、路由守卫</h2><h3 id="1-作用-6"><a href="#1-作用-6" class="headerlink" title="1. 作用"></a>1. 作用</h3><p> 对路由进行权限控制</p>
 <h3 id="2-分类"><a href="#2-分类" class="headerlink" title="2. 分类"></a>2. 分类</h3><p> 全局守卫、独享守卫、组件内守卫</p>
-<h3 id="3-全局守卫"><a href="#3-全局守卫" class="headerlink" title="3. 全局守卫"></a>3. 全局守卫</h3> <pre class="language-none"><code class="language-none"> &#x2F;&#x2F;全局前置守卫：初始化时执行、每次路由切换前执行
-router.beforeEach((to,from,next)&#x3D;&gt;&#123;
-	console.log(&#39;beforeEach&#39;,to,from)
-	if(to.meta.isAuth)&#123; &#x2F;&#x2F;判断当前路由是否需要进行权限控制
-		if(localStorage.getItem(&#39;school&#39;) &#x3D;&#x3D;&#x3D; &#39;atguigu&#39;)&#123; &#x2F;&#x2F;权限控制的具体规则
-			next() &#x2F;&#x2F;放行
-		&#125;else&#123;
-			alert(&#39;暂无权限查看&#39;)
-			&#x2F;&#x2F; next(&#123;name:&#39;guanyu&#39;&#125;)
-		&#125;
-	&#125;else&#123;
-		next() &#x2F;&#x2F;放行
-	&#125;
-&#125;)
+<h3 id="3-全局守卫"><a href="#3-全局守卫" class="headerlink" title="3. 全局守卫"></a>3. 全局守卫</h3> <pre class="language-js" data-language="js"><code class="language-js"> <span class="token comment">//全局前置守卫：初始化时执行、每次路由切换前执行</span>
+router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'beforeEach'</span><span class="token punctuation">,</span>to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>isAuth<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//判断当前路由是否需要进行权限控制</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'school'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'atguigu'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//权限控制的具体规则</span>
+			<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//放行</span>
+		<span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+			<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'暂无权限查看'</span><span class="token punctuation">)</span>
+			<span class="token comment">// next(&#123;name:'guanyu'&#125;)</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+		<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//放行</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
-&#x2F;&#x2F;全局后置守卫：初始化时执行、每次路由切换后执行
-router.afterEach((to,from)&#x3D;&gt;&#123;
-	console.log(&#39;afterEach&#39;,to,from)
-	if(to.meta.title)&#123; 
-		document.title &#x3D; to.meta.title &#x2F;&#x2F;修改网页的title
-	&#125;else&#123;
-		document.title &#x3D; &#39;vue_test&#39;
-	&#125;
-&#125;)</code></pre>
-<h3 id="4-独享守卫"><a href="#4-独享守卫" class="headerlink" title="4. 独享守卫"></a>4. 独享守卫</h3> <pre class="language-none"><code class="language-none"> beforeEnter(to,from,next)&#123;
-	console.log(&#39;beforeEnter&#39;,to,from)
-	if(to.meta.isAuth)&#123; &#x2F;&#x2F;判断当前路由是否需要进行权限控制
-		if(localStorage.getItem(&#39;school&#39;) &#x3D;&#x3D;&#x3D; &#39;atguigu&#39;)&#123;
-			next()
-		&#125;else&#123;
-			alert(&#39;暂无权限查看&#39;)
-			&#x2F;&#x2F; next(&#123;name:&#39;guanyu&#39;&#125;)
-		&#125;
-	&#125;else&#123;
-		next()
-	&#125;
-&#125;</code></pre>
-<h3 id="5-组件内守卫"><a href="#5-组件内守卫" class="headerlink" title="5. 组件内守卫"></a>5. 组件内守卫</h3> <pre class="language-none"><code class="language-none"> &#x2F;&#x2F;进入守卫：通过路由规则，进入该路由组件时被调用
-beforeRouteEnter (to, from, next) &#123;
-&#125;,
+<span class="token comment">//全局后置守卫：初始化时执行、每次路由切换后执行</span>
+router<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span></span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'afterEach'</span><span class="token punctuation">,</span>to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> 
+		document<span class="token punctuation">.</span>title <span class="token operator">=</span> to<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title <span class="token comment">//修改网页的title</span>
+	<span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+		document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'vue_test'</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+<h3 id="4-独享守卫"><a href="#4-独享守卫" class="headerlink" title="4. 独享守卫"></a>4. 独享守卫</h3> <pre class="language-js" data-language="js"><code class="language-js"> <span class="token function">beforeEnter</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'beforeEnter'</span><span class="token punctuation">,</span>to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>isAuth<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//判断当前路由是否需要进行权限控制</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'school'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'atguigu'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+			<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+			<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'暂无权限查看'</span><span class="token punctuation">)</span>
+			<span class="token comment">// next(&#123;name:'guanyu'&#125;)</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+		<span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h3 id="5-组件内守卫"><a href="#5-组件内守卫" class="headerlink" title="5. 组件内守卫"></a>5. 组件内守卫</h3> <pre class="language-js" data-language="js"><code class="language-js"> <span class="token comment">//进入守卫：通过路由规则，进入该路由组件时被调用</span>
+<span class="token function">beforeRouteEnter</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
 
-&#x2F;&#x2F;离开守卫：通过路由规则，离开该路由组件时被调用
-beforeRouteLeave (to, from, next) &#123;
-&#125;</code></pre>
+<span class="token comment">//离开守卫：通过路由规则，离开该路由组件时被调用</span>
+<span class="token function">beforeRouteLeave</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span></code></pre>
 <h2 id="十四、路由的两种工作模式"><a href="#十四、路由的两种工作模式" class="headerlink" title="十四、路由的两种工作模式"></a>十四、路由的两种工作模式</h2><h3 id="1-什么是hash值"><a href="#1-什么是hash值" class="headerlink" title="1. 什么是hash值?"></a>1. 什么是hash值?</h3><p> 对于一个url来说——#及其后面的内容就是hash值</p>
 <h3 id="2-hash值是否会包含在请求中"><a href="#2-hash值是否会包含在请求中" class="headerlink" title="2. hash值是否会包含在请求中"></a>2. hash值是否会包含在请求中</h3><p> hash值不会包含在HTTP请求中,即: hash值不会带给服务器</p>
 <h3 id="3-hash模式"><a href="#3-hash模式" class="headerlink" title="3. hash模式"></a>3. hash模式</h3><p> ①地址中永远带着#号,不美观<br> ②若以后将地址通过第三方手机app分享,若app校验严格,则地址会被标记为不合法<br> ③兼容性较好</p>
@@ -975,8 +975,8 @@ beforeRouteLeave (to, from, next) &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vuex/">
-                        <span class="chip bg-color">-Vuex</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">-Vue</span>
                     </a>
                     
                 </div>
@@ -1181,7 +1181,7 @@ beforeRouteLeave (to, from, next) &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58.5k</span>
+                        class="white-color">63.3k</span>
             
             
             
