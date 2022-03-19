@@ -1,0 +1,1255 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="分类: js, HTML,CSS,JavaScript,Vue">
+    <meta name="description" content="本网站是个人兴趣爱好,分享经验,记录生活点滴的平台,希望你可以学到东西">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>分类: js | Coder_🐍</title>
+    <link rel="icon" type="image/jpeg" href="/medias/logo.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/xl.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Coder_🐍</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>档案</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/xl.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Coder_🐍</div>
+        <div class="logo-desc">
+            
+            本网站是个人兴趣爱好,分享经验,记录生活点滴的平台,希望你可以学到东西
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			档案
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                好事多磨
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "总有一个人要赢的,那为什么不能是我!",
+                            
+                                "There is always a person want to win,that is why can&#39;t I!",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 80,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + 0 + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+
+    
+<style>
+  /* 文章分类书本样式 */
+  .chip-container .tag-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+
+  .chip-container .tag-chips a {
+      margin: 0 7px 10px;
+  }
+
+  .chip-container .chip {
+      max-width: calc(100% / 4);
+      min-width: 10em;
+      height: 200px;
+      position: relative;
+      transition: .5s linear;
+      padding: 19px 0;
+      line-height: 20px;
+      z-index: 990;
+      border-radius: 5px 15px 15px 5px;
+      transform-origin: left center 0;
+  }
+
+  .chip-container .notebook-cover::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: calc(100% + 2px);
+      top: -1px;
+      z-index: 100;
+      border-radius: 2px;
+      right: 25px;
+      transition: 2s ease;
+      background: linear-gradient(to right, #1e606e 0, #2e95aa 12%, #1e606e 25%, #2e95aa 37%, #1e606e 50%, #2e95aa 62%, #1e606e 75%, #2e95aa 87%, #1e606e 100%);
+  }
+
+  .chip .notebook-skin {
+      height: 50px;
+      width: 100%;
+      background: #e8e8e0;
+      margin-top: 42px;
+      padding: 10px 32px 64px 10px;
+      font-size: 19px;
+      position: relative;
+      z-index: 10;
+      color: #222;
+      text-align: left;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  }
+
+  .chip .notebook-skin:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 15px;
+      left: 0;
+      bottom: 0;
+      background: #cddc39;
+  }
+
+  .notebook-cover {
+      background: #cc4b48;
+      height: 200px;
+      width: 140px;
+      position: absolute;
+      border-radius: 5px 15px 15px 5px;
+      z-index: 10;
+      transition: .5s linear;
+      transform-style: preserve-3d;
+      transform-origin: left center 0;
+  }
+
+  .moleskine-wrapper {
+      max-width: calc(100% / 4);
+      min-width: 10em;
+  }
+
+  .moleskine-notebook:hover .notebook-cover {
+      transform: rotateY(-50deg);
+      z-index: 99;
+      box-shadow: 20px 10px 50px rgba(0, 0, 0, .2);
+  }
+
+  .moleskine-notebook {
+      height: 200px;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      transition: .5s linear;
+      border-radius: 5px 15px 15px 5px;
+      transform-origin: left center 0;
+  }
+
+  .moleskine-notebook:hover {
+      transform: rotateZ(-10deg);
+  }
+
+  .notebook-page.dotted {
+      background: linear-gradient(to bottom, #fbfae8 9px, #e4e4e4 1px);
+      background-size: 100% 10px;
+  }
+
+  .chip-container .chip:hover {
+      filter: invert(.1);
+  }
+
+  .notebook-page {
+      height: 100%;
+      width: 140px;
+      position: absolute;
+      top: 10px;
+      background-color: #fbfae8;
+      z-index: 0;
+      border-radius: 5px 16px 16px 5px;
+      overflow: hidden;
+  }
+</style>
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/Promise/" title="Promise: 1">
+                  <div class="moleskine-wrapper">
+                    <div class="moleskine-notebook">
+                        <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                            style="background-color: #F9EBEA;">
+                            <div
+                                class="notebook-skin
+                                   chip-default ">
+                                Promise
+                            </div>
+                        </div>
+                        <div class="notebook-page dotted"></div>
+                    </div>
+                </div>
+                </a>
+                
+                
+                <a href="/categories/Vue/" title="Vue: 3">
+                  <div class="moleskine-wrapper">
+                    <div class="moleskine-notebook">
+                        <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                            style="background-color: #F5EEF8;">
+                            <div
+                                class="notebook-skin
+                                   chip-default ">
+                                Vue
+                            </div>
+                        </div>
+                        <div class="notebook-page dotted"></div>
+                    </div>
+                </div>
+                </a>
+                
+                
+                <a href="/categories/html/" title="html: 9">
+                  <div class="moleskine-wrapper">
+                    <div class="moleskine-notebook">
+                        <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                            style="background-color: #D5F5E3;">
+                            <div
+                                class="notebook-skin
+                                   chip-default ">
+                                html
+                            </div>
+                        </div>
+                        <div class="notebook-page dotted"></div>
+                    </div>
+                </div>
+                </a>
+                
+                
+                <a href="/categories/js/" title="js: 19">
+                  <div class="moleskine-wrapper">
+                    <div class="moleskine-notebook">
+                        <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-active "
+                            style="background-color: #E8F8F5;">
+                            <div
+                                class="notebook-skin
+                                   chip-active ">
+                                js
+                            </div>
+                        </div>
+                        <div class="notebook-page dotted"></div>
+                    </div>
+                </div>
+                </a>
+                
+                
+                <a href="/categories/json/" title="json: 1">
+                  <div class="moleskine-wrapper">
+                    <div class="moleskine-notebook">
+                        <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                            style="background-color: #FEF9E7;">
+                            <div
+                                class="notebook-skin
+                                   chip-default ">
+                                json
+                            </div>
+                        </div>
+                        <div class="notebook-page dotted"></div>
+                    </div>
+                </div>
+                </a>
+                
+                
+                <a href="/categories/css/" title="css: 10">
+                  <div class="moleskine-wrapper">
+                    <div class="moleskine-notebook">
+                        <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                            style="background-color: #F8F9F9;">
+                            <div
+                                class="notebook-skin
+                                   chip-default ">
+                                css
+                            </div>
+                        </div>
+                        <div class="notebook-page dotted"></div>
+                    </div>
+                </div>
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/24/di-er-shi-jiu-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第二十九篇博客">
+                            
+                            <span class="card-title">第二十九篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第十天(Date对象)
+1.Date对象①在js中使用Date对象来表示一个时间,Date对象用于处理日期和时间
+②创建一个指定的时间对象,需要在构造函数中传递一个表示时间的字符串作为参数
+③Date返回日期的格式
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/05/di-er-shi-ba-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第二十八篇博客">
+                            
+                            <span class="card-title">第二十八篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第九天(数组)
+1.数组1.数组也是一个对象，它和普通对象功能类似，也是用来存储一些值的。
+2.不同的是普通对象是使用字符串作为属性名的，而数组是使用数字来作为索引操作元素的。
+3.索引从0开始的整数数组的存储性能
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/05/di-er-shi-qi-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第二十七篇博客">
+                            
+                            <span class="card-title">第二十七篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第八天(原型)
+1.原型对象 原型 prototype1.我们每创建一个函数，解析器都会向函数中添加一个属性prototype,这个属性对应着一个对象，这个对象就是原型对象。
+2.①如果函数作为普通函数调用prot
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/05/di-er-shi-liu-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="第二十六篇博客">
+                            
+                            <span class="card-title">第二十六篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第七天(函数)
+1.函数(function)1.函数也是一个对象2.函数可以封装一些功能(代码),在需要时执行功能(代码),函数可以保存一些代码在需要时调用3.使用typeof检查函数对象时，返回一个functio
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/31/di-er-shi-wu-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第二十五篇博客">
+                            
+                            <span class="card-title">第二十五篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第六天(对象)
+1.对象Object1.JS中数据类型String、 number、 Boolean、Null、undefined（五种基本数据类型）以上5种为基本数据类型，只要不是上边5种，全都是对象。基本数据类
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/31/di-er-shi-san-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第二十三篇博客">
+                            
+                            <span class="card-title">第二十三篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第四天(运算符)
+1.运算符1.运算符也叫操作符，通过运算符可以对一个或多个值进行运算，并获取运算结果。
+比如typeof就是运算符，可以获得一个值的类型它会将该值的类型以字符串的形式返回，该值的类型(number
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/31/di-er-shi-er-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第二十二篇博客">
+                            
+                            <span class="card-title">第二十二篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第三天(数据类型)
+1.数据类型①数据类型指的就是字面量的类型。②JS中一共有6钟数据类型。（描述类型时，首字母大写）1.String 字符串2.Number 数值3.Boolean 布尔值4.Null 空值5.U
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/19/di-er-shi-yi-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第二十一篇博客">
+                            
+                            <span class="card-title">第二十一篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第二天
+1.JS编写位置
+2.JS基本语法①.JS中严格区分大小写
+②.JS中每一条语句以分号(;)结尾。如果不写分号，浏览器会自动添加，但会消耗一些系统资源，而且有些时候浏览器会加错分号。（开发中分号必须写）
+③
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/01/17/di-er-shi-pian-bo-ke/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第二十篇博客">
+                            
+                            <span class="card-title">第二十篇博客</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                学习JavaScript的第一天
+1. 起源JavaScript诞生于1995年，它的出现主要是用于处理网页中的前端验证。所谓的前端验证就是指检查用户输入的内容是否符合一定的规则。(用户名长度、邮箱格式等)
+2. 简史1.JavaScrip
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-17
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">-JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+</main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a href="/categories/js/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">2 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a class="right btn-floating btn-large disabled">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6941272404"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Coder_🐍</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">63.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xiaoliu824" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1079546912" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1079546912" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

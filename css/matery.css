@@ -1299,9 +1299,11 @@ thead {
 }
 
 .chip-container .chip-active {
-    color: #FFF !important;
+  color: rgb(16, 141, 243) !important;
+  box-shadow: 2px 5px 10px #aaa !important;
+    /* color: #FFF !important;
     background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%) !important;
-    box-shadow: 2px 5px 10px #aaa !important;
+    box-shadow: 2px 5px 10px #aaa !important; */
 }
 
 .chip-container .chip {
@@ -1318,8 +1320,10 @@ thead {
 }
 
 .chip-container .chip:hover {
-    color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+  color: rgb(16, 141, 243);
+  opacity: .8;
+    /* color: #fff;
+    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important; */
 }
 
 .chip .tag-length {
@@ -1329,12 +1333,15 @@ thead {
 }
 
 .chip-default .tag-length {
-    color: #e91e63;
-    margin-top: 1px;
+  color: rgba(66, 92, 118, .8);
+  margin-top: 1px;
+    /* color: #e91e63;
+    margin-top: 1px; */
 }
 
 .chip-active .tag-length {
-    color: #fff;
+    /* color: #fff; */
+    color: #64c45b;
 }
 
 /* archive page. */
